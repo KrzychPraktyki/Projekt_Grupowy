@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
+import 'language_changer.dart'; // Importujemy plik z logiką zmiany języka.
+
+void main() {
+  runApp(PierwszaStrona());
+}
 
 class PierwszaStrona extends StatelessWidget {
-  const PierwszaStrona ({Key? key}) : super(key: key);
+  const PierwszaStrona({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Język'),
+    return MaterialApp(
+      title: 'Language Changer',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('back!'),
-        ),
-      ),
+      home: LanguageChanger(), // Tutaj umieszczamy LanguageChanger jako główną stronę
     );
   }
 }
