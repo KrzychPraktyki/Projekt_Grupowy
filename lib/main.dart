@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '1.dart';
-import '2.dart';
-import '3.dart';
-import '4.dart';
-import '5.dart';
+import '1_ArturZaborowski.dart';
+import 'MartynaLeman.dart';
+import 'Danylo Kochurov.dart';
+import 'BartoszBatruch.dart';
+import 'KrzysztofGieresz.dart';
 
 
 void main() {
@@ -35,7 +35,7 @@ class FirstRoute extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => PierwszaStrona()),
+                MaterialPageRoute(builder: (context) => const PierwszaStrona()),
               );
             },
             child: const Text('Język'),
