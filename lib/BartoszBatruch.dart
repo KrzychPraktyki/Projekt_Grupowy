@@ -125,7 +125,6 @@ class _UnitConverterState extends State<UnitConverter> {
     double value = double.parse(input);
     double result = 0.0;
 
-    // Check if the units are compatible for conversion
     if (!areUnitsCompatible(inputUnit, outputUnit)) {
       throw Exception('Incompatible units for conversion: $inputUnit to $outputUnit');
     }
@@ -133,19 +132,15 @@ class _UnitConverterState extends State<UnitConverter> {
     if (inputUnit == outputUnit) {
       result = value;
     } else {
-      // Metric to Metric conversions
       if (isMetric(inputUnit) && isMetric(outputUnit)) {
         result = value * getMetricConversionFactor(inputUnit) / getMetricConversionFactor(outputUnit);
       }
-      // Imperial to Imperial conversions
       else if (isImperial(inputUnit) && isImperial(outputUnit)) {
         result = value * getImperialConversionFactor(inputUnit) / getImperialConversionFactor(outputUnit);
       }
-      // Metric to Imperial conversions
       else if (isMetric(inputUnit) && isImperial(outputUnit)) {
         result = value * getMetricToImperialConversionFactor(inputUnit, outputUnit);
       }
-      // Imperial to Metric conversions
       else if (isImperial(inputUnit) && isMetric(outputUnit)) {
         result = value / getMetricToImperialConversionFactor(outputUnit, inputUnit);
       }
@@ -155,13 +150,10 @@ class _UnitConverterState extends State<UnitConverter> {
   }
 
   bool areUnitsCompatible(String unit1, String unit2) {
-    // List of incompatible unit pairs
     List<List<String>> incompatibleUnits = [
       ['Meter', 'Gram'],
-      // Add more incompatible pairs here if needed
     ];
 
-    // Check if the unit pair exists in the list of incompatible units
     for (var pair in incompatibleUnits) {
       if (pair.contains(unit1) && pair.contains(unit2)) {
         return false;
@@ -224,9 +216,7 @@ class _UnitConverterState extends State<UnitConverter> {
   }
 
   double getMetricToImperialConversionFactor(String metricUnit, String imperialUnit) {
-    // Convert metric unit to its base unit (meter or gram)
     double baseValue = metricUnit == 'Celsius' ? 1.0 : getMetricConversionFactor(metricUnit);
-    // Convert base unit to imperial unit
     double imperialValue = baseValue * getImperialConversionFactor(imperialUnit);
     return imperialValue;
   }
