@@ -5,7 +5,6 @@ import 'Danylo Kochurov.dart';
 import 'BartoszBatruch.dart';
 import 'KrzysztofGieresz.dart';
 
-
 void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
@@ -13,7 +12,6 @@ void main() {
     debugShowCheckedModeBanner: false,
   ));
 }
-
 
 class FirstRoute extends StatelessWidget {
   const FirstRoute({super.key});
