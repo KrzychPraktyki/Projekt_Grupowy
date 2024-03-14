@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import '1.dart';
+import '2.dart';
+import '3.dart';
+import '4.dart';
+import '5.dart';
+
 
 void main() {
   runApp(const MaterialApp(
@@ -14,10 +20,10 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 50));
+    ElevatedButton.styleFrom(textStyle: const TextStyle(color:Colors.orange,fontSize: 30));
     return Scaffold(
       appBar: AppBar(
-        title: const Text('First Route'),
+        title: const Text('Strona Główna'),
       ),
       body: Center(
         child: Column(
@@ -28,10 +34,10 @@ class FirstRoute extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const SecondRoute()),
+                MaterialPageRoute(builder: (context) => PierwszaStrona()),
               );
             },
-            child: const Text('Open route'),
+            child: const Text('Język'),
           ),
             const SizedBox(
               height: 20.0,
@@ -41,11 +47,51 @@ class FirstRoute extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const SecondRoute()),
+                MaterialPageRoute(builder: (context) => const DrugaStrona()),
               );
             },
-            child: const Text('Open route'),
+            child: const Text('Motyw'),
           ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            ElevatedButton(
+              style: style,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const TrzeciaStrona()),
+                );
+              },
+              child: const Text('Task Manager'),
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            ElevatedButton(
+              style: style,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CzwartaStrona()),
+                );
+              },
+              child: const Text('Przelicznik jednostek'),
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            ElevatedButton(
+              style: style,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const PiataStrona()),
+                );
+              },
+              child: const Text('kalkulator kalorii'),
+            ),
+
             ]
         )
       ),
@@ -53,23 +99,10 @@ class FirstRoute extends StatelessWidget {
   }
 }
 
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
-        ),
-      ),
-    );
-  }
-}
+
+
+
+
+
+
