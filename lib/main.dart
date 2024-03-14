@@ -88,6 +88,7 @@ class FirstRoute extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => CalorieTracker()),
+
                 );
               },
               child: const Text('kalkulator kalorii'),
