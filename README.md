@@ -1,3 +1,1 @@
-# untitled
-
-A new Flutter project.
+Aktualnie gałąź kodu o nazwie 'different' jest tą aktualizowaną.
