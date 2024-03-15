@@ -48,7 +48,7 @@ class FirstRoute extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const DrugaStrona()),
+                MaterialPageRoute(builder: (context) => const DrugaStrona(title: 'Motywy')),
               );
             },
             child: const Text('Motyw'),
