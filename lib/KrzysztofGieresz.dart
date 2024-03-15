@@ -12,6 +12,7 @@ class PiataStrona extends StatelessWidget {
   }
 }
 
+
 class CalorieTracker extends StatefulWidget {
   @override
   _CalorieTrackerState createState() => _CalorieTrackerState();
@@ -43,7 +44,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
       appBar: AppBar(
         title: const Row(
           children: [
-            Text('Calorie Tracker'),
+            Text('Kalkulator Kalorii'),
           ],
         ),
       ),
@@ -73,7 +74,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                   child: TextField(
                     controller: _nameController,
                     decoration: InputDecoration(
-                      labelText: 'Name',
+                      labelText: 'Nazwa',
                     ),
                   ),
                 ),
@@ -83,7 +84,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                     controller: _caloriesController,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                      labelText: 'Calories',
+                      labelText: 'Kalorie',
                     ),
                   ),
                 ),
@@ -98,13 +99,13 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                       _caloriesController.clear();
                     }
                   },
-                  child: Text('Add'),
+                  child: Text('Dodaj'),
                 ),
               ],
             ),
           ),
           SizedBox(height: 10),
-          Text('Total Calories: $_totalCalories'),
+          Text('Wszystkie Kalorie: $_totalCalories'),
           SizedBox(height: 10),
         ],
       ),
