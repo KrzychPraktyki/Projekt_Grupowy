@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import '1_ArturZaborowski.dart';
 import 'MartynaLeman.dart';
 import 'Danylo Kochurov.dart';
-///import 'BartoszBatruch.dart';
+import 'BartoszBatruch.dart';
 import 'KrzysztofGieresz.dart';
 
 void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
     home: FirstRoute(),
+
     debugShowCheckedModeBanner: false,
   ));
 }
@@ -46,7 +47,7 @@ class FirstRoute extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const DrugaStrona()),
+                MaterialPageRoute(builder: (context) => const DrugaStrona(title: 'Motywy')),
               );
             },
             child: const Text('Motyw'),
@@ -72,7 +73,7 @@ class FirstRoute extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const TrzeciaStrona()),
+                  MaterialPageRoute(builder: (context) => const CzwartaStrona()),
                 );
               },
               child: const Text('Przelicznik jednostek'),

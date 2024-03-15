@@ -16,6 +16,7 @@ class PierwszaStrona extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: LanguageChanger(child: Door()),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

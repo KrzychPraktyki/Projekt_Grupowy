@@ -1,16 +1,30 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(MaterialApp(
+    title: 'Unit Converter',
+    theme: ThemeData(
+      primarySwatch: Colors.blue,
+    ),
+    home: CzwartaStrona(),
+  ));
+}
+
 class CzwartaStrona extends StatelessWidget {
-  const CzwartaStrona({super.key});
+  const CzwartaStrona({Key? key});
 
+  @override
+  Widget build(BuildContext context) {
+    return UnitConverter();
+  }
+}
 
-
-  class UnitConverter extends StatefulWidget {
+class UnitConverter extends StatefulWidget {
   @override
   _UnitConverterState createState() => _UnitConverterState();
-  }
+}
 
-  class _UnitConverterState extends State<UnitConverter> {
+class _UnitConverterState extends State<UnitConverter> {
   final TextEditingController _inputController = TextEditingController();
   double? _result;
   String? _selectedInputUnit;
@@ -20,207 +34,197 @@ class CzwartaStrona extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
-  appBar: AppBar(
-  title: Text('Unit Converter'),
-  ),
-  body: Padding(
-  padding: const EdgeInsets.all(20.0),
-  child: Column(
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: [
-  DropdownButtonFormField<String>(
-  value: _selectedInputUnit,
-  items: _inputUnits.map((unit) {
-  return DropdownMenuItem<String>(
-  value: unit,
-  child: Text(unit),
-  );
-  }).toList(),
-  onChanged: (String? newValue) {
-  setState(() {
-  _selectedInputUnit = newValue;
-  });
-  },
-  decoration: InputDecoration(
-  labelText: 'Select Input Unit',
-  ),
-  ),
-  TextField(
-  controller: _inputController,
-  keyboardType: TextInputType.number,
-  decoration: InputDecoration(
-  labelText: 'Enter Value',
-  ),
-  ),
-  DropdownButtonFormField<String>(
-  value: _selectedOutputUnit,
-  items: _outputUnits.map((unit) {
-  return DropdownMenuItem<String>(
-  value: unit,
-  child: Text(unit),
-  );
-  }).toList(),
-  onChanged: (String? newValue) {
-  setState(() {
-  _selectedOutputUnit = newValue;
-  });
-  },
-  decoration: InputDecoration(
-  labelText: 'Select Output Unit',
-  ),
-  ),
-  ElevatedButton(
-  onPressed: () {
-  try {
-  setState(() {
-  _result = convert(_inputController.text, _selectedInputUnit!, _selectedOutputUnit!);
-  });
-  } catch (e) {
-  showDialog(
-  context: context,
-  builder: (context) => AlertDialog(
-  title: Text('Error'),
-  content: Text(e.toString()),
-  actions: [
-  TextButton(
-  onPressed: () {
-  Navigator.of(context).pop();
-  },
-  child: Text('OK'),
-  ),
-  ],
-  ),
-  );
-  }
-  },
-  child: Text('Convert'),
-  ),
-  SizedBox(height: 20),
-  if (_result != null)
-  Text('Result: $_result')
-  ],
-  ),
-  ),
-  );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Unit Converter'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            DropdownButtonFormField<String>(
+              value: _selectedInputUnit,
+              items: _inputUnits.map((unit) {
+                return DropdownMenuItem<String>(
+                  value: unit,
+                  child: Text(unit),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  _selectedInputUnit = newValue;
+                });
+              },
+              decoration: InputDecoration(
+                labelText: 'Select Input Unit',
+              ),
+            ),
+            TextField(
+              controller: _inputController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: 'Enter Value',
+              ),
+            ),
+            DropdownButtonFormField<String>(
+              value: _selectedOutputUnit,
+              items: _outputUnits.map((unit) {
+                return DropdownMenuItem<String>(
+                  value: unit,
+                  child: Text(unit),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  _selectedOutputUnit = newValue;
+                });
+              },
+              decoration: InputDecoration(
+                labelText: 'Select Output Unit',
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                try {
+                  setState(() {
+                    _result = convert(_inputController.text, _selectedInputUnit!, _selectedOutputUnit!);
+                  });
+                } catch (e) {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text('Error'),
+                      content: Text(e.toString()),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('OK'),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+              },
+              child: Text('Convert'),
+            ),
+            SizedBox(height: 20),
+            if (_result != null)
+              Text('Result: $_result')
+          ],
+        ),
+      ),
+    );
   }
 
   @override
   void initState() {
-  super.initState();
-  _inputUnits.addAll(['Meter', 'Kilometer', 'Centimeter', 'Gram', 'Kilogram', 'Second', 'Minute', 'Hour', 'Celsius']);
-  _outputUnits.addAll(['Meter', 'Kilometer', 'Centimeter', 'Gram', 'Kilogram', 'Second', 'Minute', 'Hour', 'Celsius']);
-  _selectedInputUnit = _inputUnits.first;
-  _selectedOutputUnit = _outputUnits.first;
+    super.initState();
+    _inputUnits.addAll(['Meter', 'Kilometer', 'Centimeter', 'Gram', 'Kilogram', 'Second', 'Minute', 'Hour', 'Celsius']);
+    _outputUnits.addAll(['Meter', 'Kilometer', 'Centimeter', 'Gram', 'Kilogram', 'Second', 'Minute', 'Hour', 'Celsius']);
+    _selectedInputUnit = _inputUnits.isNotEmpty ? _inputUnits.first : null;
+    _selectedOutputUnit = _outputUnits.isNotEmpty ? _outputUnits.first : null;
   }
 
   double convert(String input, String inputUnit, String outputUnit) {
-  double value = double.parse(input);
-  double result = 0.0;
+    double value = double.tryParse(input) ?? 0.0;
+    double result = 0.0;
 
+    if (!areUnitsCompatible(inputUnit, outputUnit)) {
+      throw Exception('Incompatible units for conversion: $inputUnit to $outputUnit');
+    }
 
-  if (!areUnitsCompatible(inputUnit, outputUnit)) {
-  throw Exception('Incompatible units for conversion: $inputUnit to $outputUnit');
-  }
+    if (inputUnit == outputUnit) {
+      result = value;
+    } else {
+      if (isMetric(inputUnit) && isMetric(outputUnit)) {
+        result = value * getMetricConversionFactor(inputUnit) / getMetricConversionFactor(outputUnit);
+      }
+      else if (isImperial(inputUnit) && isImperial(outputUnit)) {
+        result = value * getImperialConversionFactor(inputUnit) / getImperialConversionFactor(outputUnit);
+      }
+      else if (isMetric(inputUnit) && isImperial(outputUnit)) {
+        result = value * getMetricToImperialConversionFactor(inputUnit, outputUnit);
+      }
+      else if (isImperial(inputUnit) && isMetric(outputUnit)) {
+        result = value / getMetricToImperialConversionFactor(outputUnit, inputUnit);
+      }
+    }
 
-  if (inputUnit == outputUnit) {
-  result = value;
-  } else {
-
-  if (isMetric(inputUnit) && isMetric(outputUnit)) {
-  result = value * getMetricConversionFactor(inputUnit) / getMetricConversionFactor(outputUnit);
-  }
-
-  else if (isImperial(inputUnit) && isImperial(outputUnit)) {
-  result = value * getImperialConversionFactor(inputUnit) / getImperialConversionFactor(outputUnit);
-  }
-
-  else if (isMetric(inputUnit) && isImperial(outputUnit)) {
-  result = value * getMetricToImperialConversionFactor(inputUnit, outputUnit);
-  }
-
-  else if (isImperial(inputUnit) && isMetric(outputUnit)) {
-  result = value / getMetricToImperialConversionFactor(outputUnit, inputUnit);
-  }
-  }
-
-  return result;
+    return result;
   }
 
   bool areUnitsCompatible(String unit1, String unit2) {
+    List<List<String>> incompatibleUnits = [
+      ['Meter', 'Gram'],
+    ];
 
-  List<List<String>> incompatibleUnits = [
-  ['Meter', 'Gram'],
+    for (var pair in incompatibleUnits) {
+      if (pair.contains(unit1) && pair.contains(unit2)) {
+        return false;
+      }
+    }
 
-  ];
-
-
-  for (var pair in incompatibleUnits) {
-  if (pair.contains(unit1) && pair.contains(unit2)) {
-  return false;
-  }
-  }
-
-  return true;
+    return true;
   }
 
   bool isMetric(String unit) {
-  return ['Meter', 'Kilometer', 'Centimeter', 'Gram', 'Kilogram', 'Second', 'Minute', 'Hour', 'Celsius'].contains(unit);
+    return ['Meter', 'Kilometer', 'Centimeter', 'Gram', 'Kilogram', 'Second', 'Minute', 'Hour', 'Celsius'].contains(unit);
   }
 
   bool isImperial(String unit) {
-  return ['Foot', 'Mile', 'Inch', 'Ounce', 'Pound', 'Fahrenheit'].contains(unit);
+    return ['Foot', 'Mile', 'Inch', 'Ounce', 'Pound', 'Fahrenheit'].contains(unit);
   }
 
   double getMetricConversionFactor(String unit) {
-  switch (unit) {
-  case 'Meter':
-  return 1.0;
-  case 'Kilometer':
-  return 1000.0;
-  case 'Centimeter':
-  return 0.01;
-  case 'Gram':
-  return 1.0;
-  case 'Kilogram':
-  return 1000.0;
-  case 'Second':
-  return 1.0;
-  case 'Minute':
-  return 60.0;
-  case 'Hour':
-  return 3600.0;
-  case 'Celsius':
-  return 1.0;
-  default:
-  throw Exception('Unknown metric unit: $unit');
-  }
+    switch (unit) {
+      case 'Meter':
+        return 1.0;
+      case 'Kilometer':
+        return 1000.0;
+      case 'Centimeter':
+        return 0.01;
+      case 'Gram':
+        return 1.0;
+      case 'Kilogram':
+        return 1000.0;
+      case 'Second':
+        return 1.0;
+      case 'Minute':
+        return 60.0;
+      case 'Hour':
+        return 3600.0;
+      case 'Celsius':
+        return 1.0;
+      default:
+        throw Exception('Unknown metric unit: $unit');
+    }
   }
 
   double getImperialConversionFactor(String unit) {
-  switch (unit) {
-  case 'Foot':
-  return 0.3048;
-  case 'Mile':
-  return 1609.34;
-  case 'Inch':
-  return 0.0254;
-  case 'Ounce':
-  return 28.3495;
-  case 'Pound':
-  return 453.592;
-  case 'Fahrenheit':
-  return 1.0;
-  default:
-  throw Exception('Unknown imperial unit: $unit');
-  }
+    switch (unit) {
+      case 'Foot':
+        return 0.3048;
+      case 'Mile':
+        return 1609.34;
+      case 'Inch':
+        return 0.0254;
+      case 'Ounce':
+        return 28.3495;
+      case 'Pound':
+        return 453.592;
+      case 'Fahrenheit':
+        return 1.0;
+      default:
+        throw Exception('Unknown imperial unit: $unit');
+    }
   }
 
   double getMetricToImperialConversionFactor(String metricUnit, String imperialUnit) {
-
-  double baseValue = metricUnit == 'Celsius' ? 1.0 : getMetricConversionFactor(metricUnit);
-
-  double imperialValue = baseValue * getImperialConversionFactor(imperialUnit);
-  return imperialValue;
+    double baseValue = metricUnit == 'Celsius' ? 1.0 : getMetricConversionFactor(metricUnit);
+    double imperialValue = baseValue * getImperialConversionFactor(imperialUnit);
+    return imperialValue;
   }
-  }
+}

@@ -9,8 +9,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_colorpicker: 1.0.3
+  material_color_generator: 1.1.0
+  palette_generator: 0.3.3+3
+  provider: 6.0.3
   shared_preferences: ^2.0.0
-
+assets:
+  -images/
 dev_dependencies:
   flutter_test:
     sdk: flutter
