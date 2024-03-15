@@ -22,6 +22,7 @@ class PierwszaStrona extends StatelessWidget {
 }
 
 
+
 class Door extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

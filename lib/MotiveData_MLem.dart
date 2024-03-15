@@ -25,6 +25,7 @@ class AppTheme extends ChangeNotifier {
     notifyListeners();
   }
 
+
   _initiateprefs() async {
     _prefs ??= await SharedPreferences.getInstance();
   }

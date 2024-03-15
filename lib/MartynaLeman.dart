@@ -23,6 +23,7 @@ class _MyAppState extends State<DrugaStrona> {
   List<PaletteColor> colors = [];
   late int _currentindex;
 
+
   @override
   void initState() {
     super.initState();
