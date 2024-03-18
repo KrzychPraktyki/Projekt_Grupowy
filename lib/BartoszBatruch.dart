@@ -169,9 +169,165 @@ class _UnitConverterState extends State<UnitConverter> {
       }
 
       return true;
-    } else if (unit1 == 'Meter' || unit2 == 'Meter') {
+    } else if (unit1 == 'Kilometer' || unit2 == 'Kilometer') {
       List<List<String>> incompatibleUnits = [
-        ['Meter', 'Gram', 'Kilogram', 'Pound', 'Ounce', 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius'],
+        ['Kilometer', 'Gram', 'Kilogram', 'Pound', 'Ounce', 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Centimeter' || unit2 == 'Centimeter') {
+      List<List<String>> incompatibleUnits = [
+        ['Centimeter', 'Gram', 'Kilogram', 'Pound', 'Ounce', 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Mile' || unit2 == 'Mile') {
+      List<List<String>> incompatibleUnits = [
+        ['Mile', 'Gram', 'Kilogram', 'Pound', 'Ounce', 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Inch' || unit2 == 'Inch') {
+      List<List<String>> incompatibleUnits = [
+        ['Inch', 'Gram', 'Kilogram', 'Pound', 'Ounce', 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Foot' || unit2 == 'Foot') {
+      List<List<String>> incompatibleUnits = [
+        ['Foot', 'Gram', 'Kilogram', 'Pound', 'Ounce', 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Gram' || unit2 == 'Gram') {
+      List<List<String>> incompatibleUnits = [
+        ['Gram', 'Kilometer', 'Meter', 'Centimeter', 'Mile', 'Inch', 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius', 'Foot'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Kilogram' || unit2 == 'Kilogram') {
+      List<List<String>> incompatibleUnits = [
+        ['Kilogram', 'Kilometer', 'Meter', 'Centimeter', 'Mile', 'Inch', 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius', 'Foot'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Ounce' || unit2 == 'Ounce') {
+      List<List<String>> incompatibleUnits = [
+        ['Ounce', 'Kilometer', 'Meter', 'Centimeter', 'Mile', 'Inch' 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius', 'Foot'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Pound' || unit2 == 'Pound') {
+      List<List<String>> incompatibleUnits = [
+        ['Pound', 'Kilometer', 'Meter', 'Centimeter', 'Mile', 'Inch', 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius', 'Foot'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Second' || unit2 == 'Second') {
+      List<List<String>> incompatibleUnits = [
+        ['Second', 'Kilometer', 'Meter', 'Centimeter', 'Mile', 'Inch', 'Gram', 'Kilogram', 'Ounce', 'Pound', 'Fahrenheit', 'Celsius', 'Foot'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Minute' || unit2 == 'Minute') {
+      List<List<String>> incompatibleUnits = [
+        ['Minute', 'Kilometer', 'Meter', 'Centimeter', 'Mile', 'Inch', 'Gram', 'Kilogram', 'Ounce', 'Pound', 'Fahrenheit', 'Celsius', 'Foot'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Hour' || unit2 == 'Hour') {
+      List<List<String>> incompatibleUnits = [
+        ['Hour', 'Kilometer', 'Meter', 'Centimeter', 'Mile', 'Inch', 'Gram', 'Kilogram', 'Ounce', 'Pound', 'Fahrenheit', 'Celsius', 'Foot'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Celsius' || unit2 == 'Celsius') {
+      List<List<String>> incompatibleUnits = [
+        ['Celsius', 'Kilometer', 'Meter', 'Centimeter', 'Mile', 'Inch', 'Gram', 'Kilogram', 'Ounce', 'Pound', 'Second', 'Minute', 'Hour', 'Foot'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else if (unit1 == 'Fahrenheit' || unit2 == 'Fahrenheit') {
+      List<List<String>> incompatibleUnits = [
+        ['Fahrenheit', 'Kilometer', 'Meter', 'Centimeter', 'Mile', 'Inch', 'Gram', 'Kilogram', 'Ounce', 'Pound', 'Second', 'Minute', 'Hour', 'Foot'],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -182,7 +338,6 @@ class _UnitConverterState extends State<UnitConverter> {
 
       return true;
     } else {
-
       return true;
     }
   }
