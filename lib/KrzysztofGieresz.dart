@@ -40,6 +40,8 @@ class _CalorieTrackerState extends State<CalorieTracker> {
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style =
+    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 30));
     return Scaffold(
       appBar: AppBar(
         title: const Row(
@@ -90,6 +92,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                 ),
                 const SizedBox(width:10),
                 ElevatedButton(
+                  style: style,
                   onPressed: () {
                     String name = _nameController.text;
                     int calories = int.tryParse(_caloriesController.text) ?? 0;
