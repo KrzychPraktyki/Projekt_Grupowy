@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/main.dart';
 
-
 final TextEditingController _nameController = TextEditingController();
+final TextEditingController _passController = TextEditingController();
 
 void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
     home: Login(),
-
     debugShowCheckedModeBanner: false,
   ));
 }
@@ -16,24 +15,23 @@ void main() {
 class Login extends StatelessWidget {
   const Login({super.key});
 
-
-
-@override
-Widget build(BuildContext context) {
-  final ButtonStyle style =
-  ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 30));
-  return Scaffold(
-    appBar: AppBar(
-      toolbarHeight: 100,
-      title: const Text('Strona Główna'),
-    ),
-    body: Center(
-        child: Column(
-
+  @override
+  Widget build(BuildContext context) {
+    final ButtonStyle style = ElevatedButton.styleFrom(
+      textStyle: const TextStyle(fontSize: 30),
+    );
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Logowanie'),
+      ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-
-              Expanded(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 100),
                 child: TextField(
                   controller: _nameController,
                   decoration: const InputDecoration(
@@ -41,18 +39,16 @@ Widget build(BuildContext context) {
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
-
-              Expanded(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 100),
                 child: TextField(
-                  controller: _nameController,
+                  controller: _passController,
                   decoration: const InputDecoration(
                     labelText: 'Hasło',
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
-
+              SizedBox(height: 35,),
               ElevatedButton(
                 style: style,
                 onPressed: () {
@@ -63,12 +59,10 @@ Widget build(BuildContext context) {
                 },
                 child: const Text('Zaloguj'),
               ),
-
-
-
-            ]
-        )
-    ),
-  );
-}
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
