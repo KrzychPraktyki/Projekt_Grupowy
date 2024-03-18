@@ -51,7 +51,7 @@ class FirstRoute extends StatelessWidget {
               );
             },
 
-              child: const Text('Task Manager'),
+              child: const Text('Menedżer zadań'),
             ),
             const SizedBox(
               height: 20.0,
