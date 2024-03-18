@@ -108,7 +108,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
             ),
           ),
           const SizedBox(height: 20),
-          Text('Wszystkie Kalorie: $_totalCalories',),
+          Text('Wszystkie Kalorie: $_totalCalories',style: const TextStyle(fontSize: 20)),
           const SizedBox(height: 30),
         ],
       ),
