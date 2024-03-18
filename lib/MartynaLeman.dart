@@ -34,7 +34,10 @@ class _MyAppState extends State<DrugaStrona> {
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style =
+    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 30));
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Motyw',
       theme: _themes[_themeIndex],
       home: Scaffold(
@@ -70,7 +73,9 @@ class _MyAppState extends State<DrugaStrona> {
                 groupValue: _themeIndex,
                 onChanged: _handleThemeChange,
               ),
-              ElevatedButton(onPressed: () {
+              ElevatedButton(
+                style: style,
+                onPressed: () {
                 Navigator.pop(context);
               }, child: const Text('back!'))
             ],
