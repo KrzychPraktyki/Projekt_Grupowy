@@ -27,16 +27,7 @@ class _LanguageChangerState extends State<LanguageChanger> {
       'swedish': 'Swedish',
       'polish': 'Polish',
     },
-    'es': {
-      'app_title': 'Cambiador de Idioma',
-      'english': 'Inglés',
-      'spanish': 'Español',
-      'russian': 'Ruso',
-      'chinese': 'Chino',
-      'german': 'Alemán',
-      'swedish': 'Sueco',
-      'polish': 'Polaco',
-    },
+
     'ru': {
       'app_title': 'Смена языка',
       'english': 'Английский',
@@ -47,16 +38,7 @@ class _LanguageChangerState extends State<LanguageChanger> {
       'swedish': 'Шведский',
       'polish': 'Польский',
     },
-    'zh': {
-      'app_title': '语言切换器',
-      'english': '英语',
-      'spanish': '西班牙语',
-      'russian': '俄语',
-      'chinese': '中文',
-      'german': '德语',
-      'swedish': '瑞典语',
-      'polish': '波兰语',
-    },
+
     'de': {
       'app_title': 'Sprachwechsler',
       'english': 'Englisch',
@@ -67,16 +49,7 @@ class _LanguageChangerState extends State<LanguageChanger> {
       'swedish': 'Schwedisch',
       'polish': 'Polnisch',
     },
-    'sv': {
-      'app_title': 'Språkbyte',
-      'english': 'Engelska',
-      'spanish': 'Spanska',
-      'russian': 'Ryska',
-      'chinese': 'Kinesiska',
-      'german': 'Tyska',
-      'swedish': 'Svenska',
-      'polish': 'Polska',
-    },
+
     'pl': {
       'app_title': 'Zmiana języka',
       'english': 'Angielski',
@@ -128,36 +101,24 @@ class _LanguageChangerState extends State<LanguageChanger> {
                   ? _translations[_currentLanguage]!['English']
                   : 'English') ?? 'English'),
             ),
-            ElevatedButton(
-              onPressed: () => _changeLanguage('es'),
-              child: Text((_translations[_currentLanguage] != null
-                  ? _translations[_currentLanguage]!['spanish']
-                  : 'Spanish') ?? 'Spanish'),
-            ),
+            const SizedBox(
+              height: 20.0,),
             ElevatedButton(
               onPressed: () => _changeLanguage('ru'),
               child: Text((_translations[_currentLanguage] != null
                   ? _translations[_currentLanguage]!['russian']
                   : 'Russian') ?? 'Russian'),
             ),
-            ElevatedButton(
-              onPressed: () => _changeLanguage('zh'),
-              child: Text((_translations[_currentLanguage] != null
-                  ? _translations[_currentLanguage]!['chinese']
-                  : 'Chinese') ?? 'Chinese'),
-            ),
+            const SizedBox(
+              height: 20.0,),
             ElevatedButton(
               onPressed: () => _changeLanguage('de'),
               child: Text((_translations[_currentLanguage] != null
                   ? _translations[_currentLanguage]!['german']
                   : 'German') ?? 'German'),
             ),
-            ElevatedButton(
-              onPressed: () => _changeLanguage('sv'),
-              child: Text((_translations[_currentLanguage] != null
-                  ? _translations[_currentLanguage]!['swedish']
-                  : 'Swedish') ?? 'Swedish'),
-            ),
+            const SizedBox(
+              height: 20.0,),
             ElevatedButton(
               onPressed: () => _changeLanguage('pl'),
               child: Text((_translations[_currentLanguage] != null

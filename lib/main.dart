@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '1_ArturZaborowski.dart';
-import 'MartynaLeman.dart';
 import 'Danylo Kochurov.dart';
 import 'BartoszBatruch.dart';
 import 'KrzysztofGieresz.dart';
+import 'ustawienia.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -21,7 +20,7 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(color:Colors.orange,fontSize: 30));
+    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 30));
     return Scaffold(
       appBar: AppBar(
         title: const Text('Strona Główna'),
@@ -35,10 +34,10 @@ class FirstRoute extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const PierwszaStrona()),
+                MaterialPageRoute(builder: (context) => const Ustawienia()),
               );
             },
-            child: const Text('Język'),
+            child: const Text('Ustawienia'),
           ),
             const SizedBox(
               height: 20.0,
@@ -48,22 +47,10 @@ class FirstRoute extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const DrugaStrona(title: 'Motywy')),
+                MaterialPageRoute(builder: (context) => const TrzeciaStrona()),
               );
             },
-            child: const Text('Motyw'),
-          ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            ElevatedButton(
-              style: style,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const TrzeciaStrona()),
-                );
-              },
+
               child: const Text('Task Manager'),
             ),
             const SizedBox(
@@ -87,7 +74,7 @@ class FirstRoute extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CalorieTracker()),
+                  MaterialPageRoute(builder: (context) => const CalorieTracker()),
 
                 );
               },
