@@ -122,8 +122,8 @@ class _UnitConverterState extends State<UnitConverter> {
   @override
   void initState() {
     super.initState();
-    _inputUnits.addAll(['Meter', 'Kilometer', 'Centimeter', 'Gram', 'Kilogram', 'Second', 'Minute', 'Hour', 'Celsius']);
-    _outputUnits.addAll(['Meter', 'Kilometer', 'Centimeter', 'Gram', 'Kilogram', 'Second', 'Minute', 'Hour', 'Celsius']);
+    _inputUnits.addAll(['Meter', 'Kilometer', 'Centimeter', 'Gram', 'Kilogram', 'Second', 'Minute', 'Hour', 'Celsius', 'Foot', 'Mile', 'Inch', 'Ounce', 'Pound', 'Fahrenheit']);
+    _outputUnits.addAll(['Meter', 'Kilometer', 'Centimeter', 'Gram', 'Kilogram', 'Second', 'Minute', 'Hour', 'Celsius', 'Foot', 'Mile', 'Inch', 'Ounce', 'Pound', 'Fahrenheit']);
     _selectedInputUnit = _inputUnits.isNotEmpty ? _inputUnits.first : null;
     _selectedOutputUnit = _outputUnits.isNotEmpty ? _outputUnits.first : null;
   }
@@ -146,10 +146,10 @@ class _UnitConverterState extends State<UnitConverter> {
         result = value * getImperialConversionFactor(inputUnit) / getImperialConversionFactor(outputUnit);
       }
       else if (isMetric(inputUnit) && isImperial(outputUnit)) {
-        result = value * getMetricToImperialConversionFactor(inputUnit, outputUnit);
+        result = value / getMetricToImperialConversionFactor(inputUnit, outputUnit);
       }
       else if (isImperial(inputUnit) && isMetric(outputUnit)) {
-        result = value / getMetricToImperialConversionFactor(outputUnit, inputUnit);
+        result = value * getMetricToImperialConversionFactor(outputUnit, inputUnit);
       }
     }
 
@@ -157,18 +157,36 @@ class _UnitConverterState extends State<UnitConverter> {
   }
 
   bool areUnitsCompatible(String unit1, String unit2) {
-    List<List<String>> incompatibleUnits = [
-      ['Meter', 'Gram'],
-    ];
+    if (unit1 == 'Meter' || unit2 == 'Meter') {
+      List<List<String>> incompatibleUnits = [
+        ['Meter', 'Gram', 'Kilogram', 'Pound', 'Ounce', 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius'],
+      ];
 
-    for (var pair in incompatibleUnits) {
-      if (pair.contains(unit1) && pair.contains(unit2)) {
-        return false;
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
       }
-    }
 
-    return true;
+      return true;
+    } else if (unit1 == 'Meter' || unit2 == 'Meter') {
+      List<List<String>> incompatibleUnits = [
+        ['Meter', 'Gram', 'Kilogram', 'Pound', 'Ounce', 'Minute', 'Hour', 'Second', 'Fahrenheit', 'Celsius'],
+      ];
+
+      for (var pair in incompatibleUnits) {
+        if (pair.contains(unit1) && pair.contains(unit2)) {
+          return false;
+        }
+      }
+
+      return true;
+    } else {
+
+      return true;
+    }
   }
+
 
   bool isMetric(String unit) {
     return ['Meter', 'Kilometer', 'Centimeter', 'Gram', 'Kilogram', 'Second', 'Minute', 'Hour', 'Celsius'].contains(unit);
