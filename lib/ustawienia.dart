@@ -34,7 +34,7 @@ class Ustawienia extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const DrugaStrona(title: 'Motywy')),
+                      MaterialPageRoute(builder: (context) => const DrugaStrona()),
                     );
                   },
                   child: const Text('Motyw'),
