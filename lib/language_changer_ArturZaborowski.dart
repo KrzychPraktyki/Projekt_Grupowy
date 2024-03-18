@@ -83,8 +83,7 @@ class _LanguageChangerState extends State<LanguageChanger> {
   @override
 
   Widget build(BuildContext context) {
-    final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 30));    
+
     return Scaffold(
       appBar: AppBar(
         title: Text((_translations[_currentLanguage] != null
@@ -97,7 +96,6 @@ class _LanguageChangerState extends State<LanguageChanger> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              style: style,
               onPressed: () => _changeLanguage('en'),
               child: Text((_translations[_currentLanguage] != null
                   ? _translations[_currentLanguage]!['English']
@@ -106,7 +104,6 @@ class _LanguageChangerState extends State<LanguageChanger> {
             const SizedBox(
               height: 20.0,),
             ElevatedButton(
-              style: style,
               onPressed: () => _changeLanguage('ru'),
               child: Text((_translations[_currentLanguage] != null
                   ? _translations[_currentLanguage]!['russian']
@@ -115,7 +112,6 @@ class _LanguageChangerState extends State<LanguageChanger> {
             const SizedBox(
               height: 20.0,),
             ElevatedButton(
-              style: style,
               onPressed: () => _changeLanguage('de'),
               child: Text((_translations[_currentLanguage] != null
                   ? _translations[_currentLanguage]!['german']
@@ -124,7 +120,6 @@ class _LanguageChangerState extends State<LanguageChanger> {
             const SizedBox(
               height: 20.0,),
             ElevatedButton(
-              style: style,
               onPressed: () => _changeLanguage('pl'),
               child: Text((_translations[_currentLanguage] != null
                   ? _translations[_currentLanguage]!['polish']

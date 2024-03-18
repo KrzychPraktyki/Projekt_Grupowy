@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/main.dart';
 
-
-void main() => runApp(const DrugaStrona());
 
 class DrugaStrona extends StatefulWidget {
-  const DrugaStrona({Key? key}) : super(key: key);
+  const DrugaStrona({super.key});
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -34,8 +31,6 @@ class _MyAppState extends State<DrugaStrona> {
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 30));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Motyw',
@@ -73,11 +68,6 @@ class _MyAppState extends State<DrugaStrona> {
                 groupValue: _themeIndex,
                 onChanged: _handleThemeChange,
               ),
-              ElevatedButton(
-                style: style,
-                onPressed: () {
-                Navigator.pop(context);
-              }, child: const Text('back!'))
             ],
           ),
         ),
