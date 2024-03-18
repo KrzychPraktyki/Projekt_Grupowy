@@ -48,7 +48,7 @@ class Login extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 35,),
+              const SizedBox(height: 35,),
               ElevatedButton(
                 style: style,
                 onPressed: () {
