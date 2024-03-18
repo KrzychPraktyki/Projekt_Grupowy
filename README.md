@@ -12,7 +12,6 @@ KrzysztofGieresz.dart - Krzysztof Gieresz </br>
 
 
 MartynaLeman.dart - Martyna Leman </br>
-MotiveData_MLEM.dart - Martyna Leman </br>
 
 
 Danylo Kochurov.dart - Danylo Kochurov </br>
