@@ -65,7 +65,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
               },
             ),
           ),
-          const Divider(height: 1),
+
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
