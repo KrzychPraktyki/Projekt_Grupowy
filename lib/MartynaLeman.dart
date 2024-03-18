@@ -12,20 +12,15 @@ class _MyAppState extends State<DrugaStrona> {
   int _themeIndex = 0;
   final List<ThemeData> _themes = [
     ThemeData(
+        brightness: Brightness.light,
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.blue.shade100
+
     ),
     ThemeData(
-        primarySwatch: Colors.red,
-        scaffoldBackgroundColor: Colors.red.shade100
-    ),
-    ThemeData(
-        primarySwatch: Colors.green,
-        scaffoldBackgroundColor: Colors.green.shade100
-    ),
-    ThemeData(
+      brightness: Brightness.dark,
         primarySwatch: Colors.purple,
-        scaffoldBackgroundColor: Colors.purple.shade100
+        scaffoldBackgroundColor: Colors.purple.shade800
     ),
   ];
 
@@ -45,26 +40,14 @@ class _MyAppState extends State<DrugaStrona> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               RadioListTile(
-                title: const Text('Motyw niebieski'),
+                title: const Text('Motyw jasny-niebieski'),
                 value: 0,
                 groupValue: _themeIndex,
                 onChanged: _handleThemeChange,
               ),
               RadioListTile(
-                title: const Text('Motyw czewony'),
+                title: const Text('Motyw ciemny-fioletowy'),
                 value: 1,
-                groupValue: _themeIndex,
-                onChanged: _handleThemeChange,
-              ),
-              RadioListTile(
-                title: const Text('Motyw zielony'),
-                value: 2,
-                groupValue: _themeIndex,
-                onChanged: _handleThemeChange,
-              ),
-              RadioListTile(
-                title: const Text('Motyw fioletowy'),
-                value: 3,
                 groupValue: _themeIndex,
                 onChanged: _handleThemeChange,
               ),
