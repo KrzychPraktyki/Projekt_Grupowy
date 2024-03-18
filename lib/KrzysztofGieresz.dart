@@ -5,25 +5,24 @@ class PiataStrona extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-
     );
   }
 }
 
-
-
 class CalorieTracker extends StatefulWidget {
+  const CalorieTracker({super.key});
+
   @override
   _CalorieTrackerState createState() => _CalorieTrackerState();
 }
 
 class _CalorieTrackerState extends State<CalorieTracker> {
-  List<FoodItem> _foodItems = [];
+  final List<FoodItem> _foodItems = [];
   int _totalCalories = 0;
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _caloriesController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _caloriesController = TextEditingController();
 
   void _addItem(String name, int calories) {
     setState(() {
@@ -59,14 +58,14 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                   title: Text(_foodItems[index].name),
                   subtitle: Text('${_foodItems[index].calories} calories'),
                   trailing: IconButton(
-                    icon: Icon(Icons.close),
+                    icon: const Icon(Icons.close),
                     onPressed: () => _removeItem(index),
                   ),
                 );
               },
             ),
           ),
-          Divider(height: 1),
+          const Divider(height: 1),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -74,22 +73,22 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                 Expanded(
                   child: TextField(
                     controller: _nameController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Nazwa',
                     ),
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: TextField(
                     controller: _caloriesController,
                     keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Kalorie',
                     ),
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width:10),
                 ElevatedButton(
                   onPressed: () {
                     String name = _nameController.text;
@@ -100,14 +99,14 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                       _caloriesController.clear();
                     }
                   },
-                  child: Text('Dodaj'),
+                  child: const Text('Dodaj'),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 10),
-          Text('Wszystkie Kalorie: $_totalCalories'),
-          SizedBox(height: 10),
+          const SizedBox(height: 20),
+          Text('Wszystkie Kalorie: $_totalCalories',),
+          const SizedBox(height: 30),
         ],
       ),
     );
