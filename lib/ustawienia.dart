@@ -11,7 +11,7 @@ class Ustawienia extends StatelessWidget {
     ElevatedButton.styleFrom(textStyle: const TextStyle(color:Colors.orange,fontSize: 30));
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Strona Główna'),
+        title: const Text('Ustawienia'),
       ),
       body: Center(
           child: Column(
@@ -50,4 +50,3 @@ class Ustawienia extends StatelessWidget {
     );
   }
 }
-
