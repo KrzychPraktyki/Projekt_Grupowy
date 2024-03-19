@@ -1,24 +1,74 @@
 import 'package:flutter/material.dart';
-class ProbabilityCalc extends StatelessWidget {
-  const ProbabilityCalc({super.key});
+
+class ProbabilityCalculator extends StatefulWidget {
+  const ProbabilityCalculator({Key? key}) : super(key: key);
+
+  @override
+  _ProbabilityCalculatorState createState() => _ProbabilityCalculatorState();
+}
+
+class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
+  TextEditingController eventController = TextEditingController();
+  TextEditingController sampleSpaceController = TextEditingController();
+  String result = '';
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 18));
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Kalkulator prawdopodobieństwa'),
+        title: const Text('Kalkulator Prawdopodobieństwa'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          style: style,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('back!'),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            TextField(
+              controller: eventController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: 'Liczba korzystnych zdarzeń',
+              ),
+            ),
+            const SizedBox(height: 20.0),
+            TextField(
+              controller: sampleSpaceController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: 'Liczba wszystkich możliwych zdarzeń',
+              ),
+            ),
+            const SizedBox(height: 20.0),
+            ElevatedButton(
+              onPressed: () {
+                calculateProbability();
+              },
+              child: const Text('Oblicz'),
+            ),
+            const SizedBox(height: 20.0),
+            Text(
+              'Wynik: $result',
+              style: TextStyle(fontSize: 18.0),
+            ),
+          ],
         ),
       ),
     );
+  }
+
+  void calculateProbability() {
+    int event = int.tryParse(eventController.text) ?? 0;
+    int sampleSpace = int.tryParse(sampleSpaceController.text) ?? 0;
+
+    if (sampleSpace != 0) {
+      double probability = event / sampleSpace;
+      setState(() {
+        result = probability.toStringAsFixed(4);
+      });
+    } else {
+      setState(() {
+        result = 'Nieprawidłowe dane';
+      });
+    }
   }
 }
