@@ -105,7 +105,7 @@ class _NumberConverterState extends State<NumberConverter> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Number Converter'),
+        title: Text('Systemy Liczb'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -114,28 +114,28 @@ class _NumberConverterState extends State<NumberConverter> {
           children: [
             TextField(
               controller: _binaryController,
-              decoration: InputDecoration(labelText: 'Binary'),
+              decoration: InputDecoration(labelText: 'System Binarny'),
               keyboardType: TextInputType.number,
               onChanged: _convertFromBinary,
             ),
             SizedBox(height: 10),
             TextField(
               controller: _decimalController,
-              decoration: InputDecoration(labelText: 'Decimal'),
+              decoration: InputDecoration(labelText: 'System Decymalny'),
               keyboardType: TextInputType.number,
               onChanged: _convertFromDecimal,
             ),
             SizedBox(height: 10),
             TextField(
               controller: _hexController,
-              decoration: InputDecoration(labelText: 'Hex'),
+              decoration: InputDecoration(labelText: 'System Szesnastkowy'),
               keyboardType: TextInputType.text,
               onChanged: _convertFromHex,
             ),
             SizedBox(height: 10),
             TextField(
               controller: _octalController,
-              decoration: InputDecoration(labelText: 'Octal'),
+              decoration: InputDecoration(labelText: 'System Ósemkowy'),
               keyboardType: TextInputType.number,
               onChanged: _convertFromOctal,
             ),
