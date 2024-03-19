@@ -6,6 +6,7 @@ import 'BartoszBatruch.dart';
 import 'KrzysztofGieresz.dart';
 import 'ustawienia.dart';
 import 'systemyliczb_ArturZaborowski.dart';
+import 'probability_arturzaborowski.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -31,8 +32,8 @@ class FirstRoute extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
-                width: 350,
-                height: 100,
+                width: 370,
+                height: 90,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -47,8 +48,8 @@ class FirstRoute extends StatelessWidget {
                 height: 20.0,
               ),
               SizedBox(
-                width: 350,
-                height: 100,
+                width: 370,
+                height: 90,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -64,8 +65,8 @@ class FirstRoute extends StatelessWidget {
                 height: 20.0,
               ),
               SizedBox(
-                width: 350,
-                height: 100,
+                width: 370,
+                height: 90,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -81,8 +82,8 @@ class FirstRoute extends StatelessWidget {
                 height: 20.0,
               ),
               SizedBox(
-                width: 350,
-                height: 100,
+                width: 370,
+                height: 90,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -97,8 +98,8 @@ class FirstRoute extends StatelessWidget {
                 height: 20.0,
               ),
               SizedBox(
-                width: 350,
-                height: 100,
+                width: 370,
+                height: 90,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -108,6 +109,23 @@ class FirstRoute extends StatelessWidget {
                     );
                   },
                   child: const Text('Kalkulator kalorii', style: TextStyle(fontSize: 22.0)),
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              SizedBox(
+                width: 370,
+                height: 90,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ProbabilityCalc()),
+
+                    );
+                  },
+                  child: const Text('Kalkulator prawdopodobieńśtwa', style: TextStyle(fontSize: 22.0)),
                 ),
               ),
 

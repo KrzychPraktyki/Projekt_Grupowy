@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'MartynaLeman.dart';
-import '1_ArturZaborowski.dart';
+import 'Zmiana_Języka_BartoszBatruch.dart';
 
 class Ustawienia extends StatelessWidget {
   const Ustawienia({super.key});
@@ -18,8 +18,8 @@ class Ustawienia extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
               SizedBox(
-              width: 350,
-              height: 100,
+              width: 370,
+              height: 90,
               child: ElevatedButton(
                   style: style,
                   onPressed: () {
@@ -35,8 +35,8 @@ class Ustawienia extends StatelessWidget {
                   height: 20.0,
                 ),
                 SizedBox(
-                  width: 350,
-                  height: 100,
+                  width: 370,
+                  height: 90,
                   child: ElevatedButton(
                     style: style,
                     onPressed: () {
