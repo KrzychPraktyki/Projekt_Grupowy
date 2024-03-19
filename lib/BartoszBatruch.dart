@@ -126,8 +126,6 @@ class _UnitConverterState extends State<UnitConverter> {
               ),
               ],
             ),
-            SizedBox(height: 50),
-
             if (_result != null)
               Container (
                 decoration: BoxDecoration (border: Border.all(color: Colors.deepPurple)),
