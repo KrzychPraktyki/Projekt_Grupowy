@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/main.dart';
 
 class TrzeciaStrona extends StatelessWidget {
   const TrzeciaStrona({Key?key}) :super(key: key);
@@ -30,7 +31,9 @@ var counter = 0;
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
+      appBar:AppBar(
+        actions: [IconButton(onPressed:(){Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstRoute()));} , icon: Icon(Icons.arrow_back))],
+        centerTitle: true,
         title: Text('Menadzer Zadan'),
       ),
       body:Column(children: [
@@ -91,3 +94,5 @@ var counter = 0;
 
 
 }
+
+
