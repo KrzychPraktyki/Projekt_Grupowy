@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'language_changer_ArturZaborowski.dart';
 
 void main() {
   runApp(ZmianaJezyka());
@@ -7,32 +6,101 @@ void main() {
 
 class ZmianaJezyka extends StatelessWidget {
   const ZmianaJezyka({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Wybierz Język',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: LanguageChanger(child: Door()),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-
-
-class Door extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Door Page'),
+      appBar: AppBar (
+        title: const Text('Wybierz Język'),
       ),
-      body: Center(
-        child: Text('This is the Door Page'),
-      ),
+      body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget> [
+        SizedBox(
+          height: 20.0,
+        ),
+        Center(
+        child: Row (
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget> [
+            SizedBox(
+              width: 300,
+              height: 80,
+              child: ElevatedButton(
+                onPressed: () {
+
+                },
+                child: Text('Engish'),
+              ),
+            ),
+          ],
+        ),
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
+        Center(
+        child: Row (
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget> [
+            SizedBox(
+              width: 300,
+              height: 80,
+              child: ElevatedButton(
+                onPressed: () {
+
+                },
+                child: Text('Polish(Polski)'),
+              ),
+            ),
+          ],
+        ),
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
+        Center (
+        child: Row (
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget> [
+            SizedBox(
+              width: 300,
+              height: 80,
+              child: ElevatedButton(
+                onPressed: () {
+
+                },
+                child: Text('German(Deutsch)'),
+              ),
+            ),
+          ],
+        ),
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
+        Center (
+        child: Row (
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget> [
+            SizedBox(
+              width: 300,
+              height: 80,
+              child: ElevatedButton(
+                onPressed: () {
+
+                },
+                child: Text('Russian(Русский)'),
+              ),
+            ),
+          ],
+        ),
+        ),
+      ],
+      )
+
     );
   }
 }
+
+
+
