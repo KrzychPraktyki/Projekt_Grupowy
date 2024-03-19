@@ -1,5 +1,4 @@
 ///    login.dart jest teraz plikiem głównym , który powinien być plikiem uruchamiającym
-
 import 'package:flutter/material.dart';
 import 'Danylo Kochurov.dart';
 import 'BartoszBatruch.dart';
@@ -121,7 +120,7 @@ class FirstRoute extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const ProbabilityCalc()),
+                      MaterialPageRoute(builder: (context) => const ProbabilityCalculator()),
 
                     );
                   },
