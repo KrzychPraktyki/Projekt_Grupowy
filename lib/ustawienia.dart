@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '1_ArturZaborowski.dart';
 import 'MartynaLeman.dart';
 
 class Ustawienia extends StatelessWidget {
@@ -8,7 +7,7 @@ class Ustawienia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(color:Colors.orange,fontSize: 30));
+    ElevatedButton.styleFrom(textStyle: const TextStyle(color:Colors.orange,fontSize: 25));
     return Scaffold(
       appBar: AppBar(
         title: const Text('Ustawienia'),
@@ -17,18 +16,6 @@ class Ustawienia extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                ElevatedButton(
-                  style: style,
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const PierwszaStrona()),
-                    );
-                  },
-                  child: const Text('Język'),
-                ),
-          const SizedBox(
-              height: 20.0,),
                 ElevatedButton(
                   style: style,
                   onPressed: () {

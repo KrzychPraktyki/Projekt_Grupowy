@@ -18,7 +18,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style = ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 30),
+      textStyle: const TextStyle(fontSize: 25),
     );
     return Scaffold(
       appBar: AppBar(

@@ -3,6 +3,7 @@ import 'Danylo Kochurov.dart';
 import 'BartoszBatruch.dart';
 import 'KrzysztofGieresz.dart';
 import 'ustawienia.dart';
+import 'systemyliczb_ArturZaborowski.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -20,7 +21,7 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 30));
+    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 25));
     return Scaffold(
       appBar: AppBar(
         title: const Text('Strona Główna'),
@@ -61,6 +62,20 @@ class FirstRoute extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
+                  MaterialPageRoute(builder: (context) => const DrugaStrona()),
+                );
+              },
+
+              child: const Text('Systemy Liczbowe'),
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            ElevatedButton(
+              style: style,
+              onPressed: () {
+                Navigator.push(
+                  context,
                   MaterialPageRoute(builder: (context) => const CzwartaStrona()),
                 );
               },
@@ -78,7 +93,7 @@ class FirstRoute extends StatelessWidget {
 
                 );
               },
-              child: const Text('kalkulator kalorii'),
+              child: const Text('Kalkulator kalorii'),
             ),
 
             ]
