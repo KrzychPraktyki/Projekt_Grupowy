@@ -1,11 +1,8 @@
-/////    login.dart jest teraz plikiem głównym , który powinien być plikiem uruchamiającym
-
 import 'package:flutter/material.dart';
 import 'Danylo Kochurov.dart';
 import 'BartoszBatruch.dart';
 import 'KrzysztofGieresz.dart';
 import 'ustawienia.dart';
-import 'systemyliczb_ArturZaborowski.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -22,8 +19,6 @@ class FirstRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 25));
     return Scaffold(
       appBar: AppBar(
         title: const Text('Strona Główna'),
@@ -32,21 +27,26 @@ class FirstRoute extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-          ElevatedButton(
-            style: style,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Ustawienia()),
-              );
-            },
-            child: const Text('Ustawienia'),
-          ),
+            SizedBox(
+              width: 350,
+              height: 100,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Ustawienia()),
+                  );
+                },
+                child: const Text('Ustawienia', style: TextStyle(fontSize: 30.0)),
+              ),
+            ),
             const SizedBox(
               height: 20.0,
             ),
-          ElevatedButton(
-            style: style,
+          SizedBox(
+            width: 350,
+            height: 100,
+            child: ElevatedButton(
             onPressed: () {
               Navigator.push(
                 context,
@@ -54,40 +54,32 @@ class FirstRoute extends StatelessWidget {
               );
             },
 
-              child: const Text('Menedżer zadań'),
+              child: const Text('Task Manager', style: TextStyle(fontSize: 30.0)),
             ),
+          ),
             const SizedBox(
               height: 20.0,
             ),
-            ElevatedButton(
-              style: style,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const DrugaStrona()),
-                );
-              },
-
-              child: const Text('Systemy Liczbowe'),
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            ElevatedButton(
-              style: style,
+          SizedBox(
+            width: 350,
+            height: 100,
+            child: ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const CzwartaStrona()),
                 );
               },
-              child: const Text('Przelicznik jednostek'),
+              child: const Text('Przelicznik jednostek', style: TextStyle(fontSize: 30.0)),
             ),
+          ),
             const SizedBox(
               height: 20.0,
             ),
-            ElevatedButton(
-              style: style,
+          SizedBox(
+            width: 350,
+            height: 100,
+            child: ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -95,9 +87,11 @@ class FirstRoute extends StatelessWidget {
 
                 );
               },
-              child: const Text('Kalkulator kalorii'),
+              child: const Text('kalkulator kalorii', style: TextStyle(fontSize: 30.0)),
             ),
-            ]
+          ),
+
+            ],
         )
       ),
     );
