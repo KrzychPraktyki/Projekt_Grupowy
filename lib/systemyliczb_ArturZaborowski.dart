@@ -142,7 +142,7 @@ class _NumberConverterState extends State<NumberConverter> {
             SizedBox(height: 10),
             TextField(
               controller: _base20Controller,
-              decoration: InputDecoration(labelText: 'Base 20'),
+              decoration: InputDecoration(labelText: 'System Dwudziestkowy'),
               keyboardType: TextInputType.text,
               onChanged: _convertFromBase20,
             ),
