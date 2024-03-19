@@ -14,8 +14,8 @@ ustawienia.dart -> Krzysztof Gieresz </br>
 KrzysztofGieresz.dart -> Krzysztof Gieresz </br>
 
 
-MartynaLeman.dart - Martyna Leman </br>
+MartynaLeman.dart -> Martyna Leman </br>
 
 
-Danylo Kochurov.dart - Danylo Kochurov </br>
+Danylo Kochurov.dart -> Danylo Kochurov </br>
 
