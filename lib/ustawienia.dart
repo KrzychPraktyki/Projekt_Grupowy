@@ -33,6 +33,20 @@ class Ustawienia extends StatelessWidget {
                 const SizedBox(
                   height: 20.0,
                 ),
+                SizedBox(
+                  width: 350,
+                  height: 100,
+                  child: ElevatedButton(
+                    style: style,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const DrugaStrona()),
+                      );
+                    },
+                    child: const Text('Język'),
+                  ),
+                ),
 
 
               ]
