@@ -95,7 +95,6 @@ class FirstRoute extends StatelessWidget {
               },
               child: const Text('Kalkulator kalorii'),
             ),
-
             ]
         )
       ),

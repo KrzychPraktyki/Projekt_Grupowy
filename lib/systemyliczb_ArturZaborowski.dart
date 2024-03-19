@@ -22,4 +22,3 @@ class DrugaStrona extends StatelessWidget {
     );
   }
 }
-
