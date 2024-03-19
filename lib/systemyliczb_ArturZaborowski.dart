@@ -1,34 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-class Systemyliczbowe_ArturZaborowski extends StatelessWidget {
-  const Systemyliczbowe_ArturZaborowski({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final ButtonStyle style = ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 18),
-    );
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Systemy Liczbowe'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          style: style,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => NumberConverter()),
-            );
-          },
-          child: const Text('Przejdź do kalkulatora'),
-        ),
-      ),
-    );
-  }
-}
-
 class NumberConverter extends StatefulWidget {
   @override
   _NumberConverterState createState() => _NumberConverterState();
