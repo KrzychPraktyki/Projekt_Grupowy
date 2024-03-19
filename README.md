@@ -1,8 +1,10 @@
 -->   login.dart jest teraz plikiem głównym   <--
 
-1_ArturZaborowski.dart - Artur Zaborowski </br>
-language_changer_ArturZaborowski.dart - Artur Zaborowski </br>
+systemyliczb_ArturZaborowski - Artur Zaborowski </br>
 
+
+1_ArturZaborowski.dart - Artur Zaborowski -----> (przejmuje) Bartosz Batruch</br>    
+language_changer_ArturZaborowski.dart - Artur Zaborowski -----> (przejmuje) Bartosz Batruch</br>    
 
 BartoszBatruch.dart - Bartosz Batruch </br>
 
