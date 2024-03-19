@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,6 +35,8 @@ class _UnitConverterState extends State<UnitConverter> {
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style =
+    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 23));
     return Scaffold(
       appBar: AppBar(
         title: Text('Przelicznik jednostek'),
@@ -48,7 +51,7 @@ class _UnitConverterState extends State<UnitConverter> {
               items: _inputUnits.map((unit) {
                 return DropdownMenuItem<String>(
                   value: unit,
-                  child: Text(unit),
+                  child: Text(unit, style: TextStyle(fontSize: 20.0)),
                 );
               }).toList(),
               onChanged: (String? newValue) {
@@ -58,6 +61,7 @@ class _UnitConverterState extends State<UnitConverter> {
               },
               decoration: InputDecoration(
                 labelText: 'Wybierz jednostkę wejściową',
+                labelStyle: TextStyle(fontSize: 25.0)
               ),
             ),
             TextField(
@@ -65,6 +69,7 @@ class _UnitConverterState extends State<UnitConverter> {
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Wpisz wartość',
+                labelStyle: TextStyle(fontSize: 20.0)
               ),
             ),
             DropdownButtonFormField<String>(
@@ -72,7 +77,7 @@ class _UnitConverterState extends State<UnitConverter> {
               items: _outputUnits.map((unit) {
                 return DropdownMenuItem<String>(
                   value: unit,
-                  child: Text(unit),
+                  child: Text(unit, style: TextStyle(fontSize: 20.0)),
                 );
               }).toList(),
               onChanged: (String? newValue) {
@@ -82,37 +87,54 @@ class _UnitConverterState extends State<UnitConverter> {
               },
               decoration: InputDecoration(
                 labelText: 'Wybierz jednostkę wyjściową',
+                labelStyle: TextStyle(fontSize: 25.0)
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                try {
-                  setState(() {
-                    _result = convert(_inputController.text, _selectedInputUnit!, _selectedOutputUnit!);
-                  });
-                } catch (e) {
-                  showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: Text('Błąd'),
-                      content: Text(e.toString()),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: Text('OK'),
+            Column (
+              children: <Widget> [
+              Container (
+                margin: EdgeInsets.all(60.0),
+              child: Center (
+                child: ElevatedButton (
+                  style: style,
+                  onPressed: () {
+                    try {
+                      setState(() {
+                        _result = convert(_inputController.text, _selectedInputUnit!, _selectedOutputUnit!);
+                      });
+                    } catch (e) {
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: Text('Błąd'),
+                          content: Text(e.toString()),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text('OK'),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  );
-                }
-              },
-              child: Text('Conwertuj'),
+                      );
+                    }
+                  },
+                  child: Text('Konwertuj'),
+                ),
+              ),
+              ),
+              ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 50),
+
             if (_result != null)
-              Text('Result: $_result')
+              Container (
+                decoration: BoxDecoration (border: Border.all(color: Colors.deepPurple)),
+                child: Center (
+                    child: Text ('Result: $_result', style: (TextStyle(fontSize: 30.0)))
+                ),
+              ),
           ],
         ),
       ),
