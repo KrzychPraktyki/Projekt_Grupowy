@@ -16,7 +16,10 @@ class Ustawienia extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                ElevatedButton(
+              SizedBox(
+              width: 350,
+              height: 100,
+              child: ElevatedButton(
                   style: style,
                   onPressed: () {
                     Navigator.push(
@@ -26,6 +29,7 @@ class Ustawienia extends StatelessWidget {
                   },
                   child: const Text('Motyw'),
                 ),
+              ),
                 const SizedBox(
                   height: 20.0,
                 ),
