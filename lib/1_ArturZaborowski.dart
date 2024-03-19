@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'language_changer_ArturZaborowski.dart';
 
 void main() {
-  runApp(PierwszaStrona());
+  runApp(ZmianaJezyka());
 }
 
-class PierwszaStrona extends StatelessWidget {
-  const PierwszaStrona({Key? key}) : super(key: key);
+class ZmianaJezyka extends StatelessWidget {
+  const ZmianaJezyka({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

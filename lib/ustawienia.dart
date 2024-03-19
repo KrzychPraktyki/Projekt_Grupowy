@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'MartynaLeman.dart';
+import '1_ArturZaborowski.dart';
 
 class Ustawienia extends StatelessWidget {
   const Ustawienia({super.key});
@@ -41,7 +42,7 @@ class Ustawienia extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const DrugaStrona()),
+                        MaterialPageRoute(builder: (context) => const ZmianaJezyka()),
                       );
                     },
                     child: const Text('Język'),
