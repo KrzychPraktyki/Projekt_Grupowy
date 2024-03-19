@@ -1,3 +1,5 @@
+/////    login.dart jest teraz plikiem głównym , który powinien być plikiem uruchamiającym
+
 import 'package:flutter/material.dart';
 import 'Danylo Kochurov.dart';
 import 'BartoszBatruch.dart';
