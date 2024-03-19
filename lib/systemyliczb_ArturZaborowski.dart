@@ -9,7 +9,7 @@ class PierwszaStrona extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Systemy liczb'),
       ),
-      body: Center(
+      body: const Center(
 
       ),
     );
