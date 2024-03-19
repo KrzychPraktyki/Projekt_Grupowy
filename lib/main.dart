@@ -70,7 +70,7 @@ class FirstRoute extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const PierwszaStrona()),
+                      MaterialPageRoute(builder: (context) => const Systemyliczbowe_ArturZaborowski()),
                     );
                   },
 
