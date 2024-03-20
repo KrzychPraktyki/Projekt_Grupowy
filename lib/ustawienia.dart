@@ -12,7 +12,7 @@ class Ustawienia extends StatelessWidget {
     ElevatedButton.styleFrom(textStyle: const TextStyle(color:Colors.orange,fontSize: 25));
     return Scaffold(
       appBar: AppBar(
-        title: const Text(AppLocalization.getTransaltedValue('Ustawienia')),
+        //title: const Text(AppLocalization.getTransaltedValue('Ustawienia')),
       ),
       body: Center(
           child: Column(
@@ -29,7 +29,7 @@ class Ustawienia extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const DrugaStrona()),
                     );
                   },
-                  child: const Text(AppLocalization.getTransaltedValue('Motyw')),
+                  child: const Text('Motyw'),
                 ),
               ),
                 const SizedBox(
@@ -46,7 +46,7 @@ class Ustawienia extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const ZmianaJezyka()),
                       );
                     },
-                    child: const Text(AppLocalization.getTransaltedValue('Język')),
+                    child: const Text('Język'),
                   ),
                 ),
 

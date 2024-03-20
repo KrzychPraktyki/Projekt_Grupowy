@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'language.dart';
 
 class ProbabilityCalculator extends StatefulWidget {
   const ProbabilityCalculator({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Kalkulator Prawdopodobieństwa'),
+        title: Text(AppLocalization.getTranslatedValue('Kalkulator Prawdopodobieństwa')),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -27,7 +28,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
               controller: eventController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: 'Liczba korzystnych zdarzeń',
+                labelText: AppLocalization.getTranslatedValue('Liczba korzystnych zdarzeń'),
               ),
             ),
             const SizedBox(height: 20.0),
@@ -35,7 +36,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
               controller: sampleSpaceController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: 'Liczba wszystkich możliwych zdarzeń',
+                labelText: AppLocalization.getTranslatedValue('Liczba wszystkich możliwych zdarzeń'),
               ),
             ),
             const SizedBox(height: 20.0),
@@ -43,12 +44,11 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
               onPressed: () {
                 calculateProbability();
               },
-              child: const Text('Oblicz'),
+              child: Text(AppLocalization.getTranslatedValue('Oblicz')),
             ),
             const SizedBox(height: 20.0),
-            Text(
-              'Wynik: $result',
-              style: TextStyle(fontSize: 18.0),
+            Text(AppLocalization.getTranslatedValue('Wynik'),style: TextStyle(fontSize: 18.0)),
+            Text(': $result',style: TextStyle(fontSize: 18.0),
             ),
           ],
         ),
@@ -67,7 +67,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
       });
     } else {
       setState(() {
-        result = 'Nieprawidłowe dane';
+        result = AppLocalization.getTranslatedValue('Nieprawidłowe dane');
       });
     }
   }

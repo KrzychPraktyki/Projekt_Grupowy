@@ -25,7 +25,7 @@ class FirstRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(AppLocalization.getTranslatedValue('Strona Główna')),
+        title: Text(AppLocalization.getTranslatedValue('Strona Główna')),
       ),
       body: Center(
           child: Column(
@@ -41,7 +41,7 @@ class FirstRoute extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const Ustawienia()),
                     );
                   },
-                  child: const Text(AppLocalization.getTranslatedValue('Ustawienia'), style: TextStyle(fontSize: 22.0)),
+                  child: Text(AppLocalization.getTranslatedValue('Ustawienia'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
               const SizedBox(
@@ -58,7 +58,7 @@ class FirstRoute extends StatelessWidget {
                     );
                   },
 
-                  child: const Text(AppLocalization.getTranslatedValue('Menedżer zadań'), style: TextStyle(fontSize: 22.0)),
+                  child: Text(AppLocalization.getTranslatedValue('Menedżer zadań'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
               const SizedBox(
@@ -75,7 +75,7 @@ class FirstRoute extends StatelessWidget {
                     );
                   },
 
-                  child: const Text(AppLocalization.getTranslatedValue('Systemy Liczb'), style: TextStyle(fontSize: 22.0)),
+                  child: Text(AppLocalization.getTranslatedValue('Systemy Liczb'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
               const SizedBox(
@@ -91,7 +91,7 @@ class FirstRoute extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const CzwartaStrona()),
                     );
                   },
-                  child: const Text(AppLocalization.getTranslatedValue('Przelicznik jednostek'), style: TextStyle(fontSize: 22.0)),
+                  child: Text(AppLocalization.getTranslatedValue('Przelicznik jednostek'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
               const SizedBox(
@@ -108,7 +108,7 @@ class FirstRoute extends StatelessWidget {
 
                     );
                   },
-                  child: const Text(AppLocalization.getTranslatedValue('Kalkulator kalorii'), style: TextStyle(fontSize: 22.0)),
+                  child:Text(AppLocalization.getTranslatedValue('Kalkulator kalorii'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
               const SizedBox(
@@ -125,7 +125,7 @@ class FirstRoute extends StatelessWidget {
 
                     );
                   },
-                  child: const Text(AppLocalization.getTranslatedValue('Kalkulator prawdopodobieńśtwa'), style: TextStyle(fontSize: 22.0)),
+                  child: Text(AppLocalization.getTranslatedValue('Kalkulator prawdopodobieńśtwa'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
 

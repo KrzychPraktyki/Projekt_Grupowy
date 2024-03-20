@@ -23,7 +23,7 @@ class Login extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(
-        title: const Text(AppLocalization.getTransaltedValue('Logowanie')),
+        title: Text(AppLocalization.getTranslatedValue('Logowanie')),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -58,7 +58,7 @@ class Login extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const FirstRoute()),
                   );
                 },
-                child: const Text(AppLocalization.getTransaltedValue('Zaloguj')),
+                child: Text(AppLocalization.getTranslatedValue('Zaloguj')),
               ),
             ],
           ),

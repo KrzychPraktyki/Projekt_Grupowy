@@ -45,9 +45,9 @@ class _CalorieTrackerState extends State<CalorieTracker> {
     ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 18));
     return Scaffold(
       appBar: AppBar(
-        title: const Row(
+        title: Row(
           children: [
-            Text(AppLocalization.getTransaltedValue('Kalkulator Kalorii')),
+            Text(AppLocalization.getTranslatedValue('Kalkulator Kalorii')),
           ],
         ),
       ),
@@ -103,13 +103,13 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                       _caloriesController.clear();
                     }
                   },
-                  child: const Text(AppLocalization.getTransaltedValue('Dodaj')),
+                  child: Text(AppLocalization.getTranslatedValue('Dodaj')),
                 ),
               ],
             ),
           ),
           const SizedBox(height: 20),
-          Text(AppLocalization.getTransaltedValue('Wszystkie Kalorie: $_totalCalories',style: const TextStyle(fontSize: 20))),
+          Text(AppLocalization.getTranslatedValue('Wszystkie Kalorie: $_totalCalories')),
           const SizedBox(height: 30),
         ],
       ),
