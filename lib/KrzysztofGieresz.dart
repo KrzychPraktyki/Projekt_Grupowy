@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'language.dart';
 
 class PiataStrona extends StatelessWidget {
   const PiataStrona({super.key});
