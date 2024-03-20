@@ -47,7 +47,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
       appBar: AppBar(
         title: const Row(
           children: [
-            Text('Kalkulator Kalorii'),
+            Text(AppLocalization.getTransaltedValue('Kalkulator Kalorii')),
           ],
         ),
       ),
@@ -103,13 +103,13 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                       _caloriesController.clear();
                     }
                   },
-                  child: const Text('Dodaj'),
+                  child: const Text(AppLocalization.getTransaltedValue('Dodaj')),
                 ),
               ],
             ),
           ),
           const SizedBox(height: 20),
-          Text('Wszystkie Kalorie: $_totalCalories',style: const TextStyle(fontSize: 20)),
+          Text(AppLocalization.getTransaltedValue('Wszystkie Kalorie: $_totalCalories',style: const TextStyle(fontSize: 20))),
           const SizedBox(height: 30),
         ],
       ),
