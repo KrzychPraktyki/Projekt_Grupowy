@@ -123,44 +123,46 @@ class _NumberConverterState extends State<NumberConverter> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextField(
-              controller: _binaryController,
-              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Binarny')),
-              keyboardType: TextInputType.number,
-              onChanged: _convertFromBinary,
-            ),
+            buildTextField(_binaryController, 'System Binarny'),
             SizedBox(height: 10),
-            TextField(
-              controller: _decimalController,
-              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Decymalny')),
-              keyboardType: TextInputType.number,
-              onChanged: _convertFromDecimal,
-            ),
+            buildTextField(_decimalController, 'System Decymalny'),
             SizedBox(height: 10),
-            TextField(
-              controller: _hexController,
-              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Szesnastkowy')),
-              keyboardType: TextInputType.text,
-              onChanged: _convertFromHex,
-            ),
+            buildTextField(_hexController, 'System Szesnastkowy'),
             SizedBox(height: 10),
-            TextField(
-              controller: _octalController,
-              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Ósemkowy')),
-              keyboardType: TextInputType.number,
-              onChanged: _convertFromOctal,
-            ),
+            buildTextField(_octalController, 'System Ósemkowy'),
             SizedBox(height: 10),
-            TextField(
-              controller: _base20Controller,
-              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Dwudziestkowy')),
-              keyboardType: TextInputType.text,
-              onChanged: _convertFromBase20,
-            ),
+            buildTextField(_base20Controller, 'System Dwudziestkowy'),
           ],
         ),
       ),
     ));
 
+  }
+
+  Widget buildTextField(TextEditingController controller, String labelText) {
+    return TextFormField(
+      controller: controller,
+      decoration: InputDecoration(
+        labelText: AppLocalization.getTranslatedValue(labelText),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
+      ),
+      keyboardType: TextInputType.text,
+      onChanged: (value) {
+        if (labelText == 'System Binarny') {
+          _convertFromBinary(value);
+        } else if (labelText == 'System Decymalny') {
+          _convertFromDecimal(value);
+        } else if (labelText == 'System Szesnastkowy') {
+          _convertFromHex(value);
+        } else if (labelText == 'System Ósemkowy') {
+          _convertFromOctal(value);
+        } else if (labelText == 'System Dwudziestkowy') {
+          _convertFromBase20(value);
+        }
+      },
+    );
   }
 }

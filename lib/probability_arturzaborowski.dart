@@ -34,19 +34,25 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextField(
+            TextFormField(
               controller: eventController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: AppLocalization.getTranslatedValue('Liczba korzystnych zdarzeń'),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
               ),
             ),
             const SizedBox(height: 20.0),
-            TextField(
+            TextFormField(
               controller: sampleSpaceController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: AppLocalization.getTranslatedValue('Liczba wszystkich możliwych zdarzeń'),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
               ),
             ),
             const SizedBox(height: 20.0),
@@ -55,10 +61,21 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
                 calculateProbability();
               },
               child: Text(AppLocalization.getTranslatedValue('Oblicz')),
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
             ),
             const SizedBox(height: 20.0),
-            Text(AppLocalization.getTranslatedValue('Wynik'),style: TextStyle(fontSize: 18.0)),
-            Text(': $result',style: TextStyle(fontSize: 18.0),
+            Text(
+              AppLocalization.getTranslatedValue('Wynik'),
+              style: TextStyle(fontSize: 18.0),
+            ),
+            SizedBox(height: 8),
+            Text(
+              ' ' + (result.isEmpty ? '' : '$result%'),
+              style: TextStyle(fontSize: 24.0),
             ),
           ],
         ),
@@ -72,9 +89,13 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
     int sampleSpace = int.tryParse(sampleSpaceController.text) ?? 0;
 
     if (sampleSpace != 0) {
-      double probability = event / sampleSpace;
+      double probability = (event / sampleSpace) * 100; 
       setState(() {
-        result = probability.toStringAsFixed(4);
+        if (probability % 1 == 0) {
+          result = probability.round().toString(); 
+        } else {
+          result = probability.toStringAsFixed(2); 
+        }
       });
     } else {
       setState(() {
