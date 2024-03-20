@@ -6,6 +6,7 @@ import 'KrzysztofGieresz.dart';
 import 'ustawienia.dart';
 import 'systemyliczb_ArturZaborowski.dart';
 import 'probability_arturzaborowski.dart';
+import 'language.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -24,7 +25,7 @@ class FirstRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Strona Główna'),
+        title: const Text(AppLocalization.getTranslatedValue('Strona Główna')),
       ),
       body: Center(
           child: Column(
@@ -40,7 +41,7 @@ class FirstRoute extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const Ustawienia()),
                     );
                   },
-                  child: const Text('Ustawienia', style: TextStyle(fontSize: 22.0)),
+                  child: const Text(AppLocalization.getTranslatedValue('Ustawienia'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
               const SizedBox(
@@ -57,7 +58,7 @@ class FirstRoute extends StatelessWidget {
                     );
                   },
 
-                  child: const Text('Menedżer zadań', style: TextStyle(fontSize: 22.0)),
+                  child: const Text(AppLocalization.getTranslatedValue('Menedżer zadań'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
               const SizedBox(
@@ -74,7 +75,7 @@ class FirstRoute extends StatelessWidget {
                     );
                   },
 
-                  child: const Text('Systemy Liczb', style: TextStyle(fontSize: 22.0)),
+                  child: const Text(AppLocalization.getTranslatedValue('Systemy Liczb'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
               const SizedBox(
@@ -90,7 +91,7 @@ class FirstRoute extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const CzwartaStrona()),
                     );
                   },
-                  child: const Text('Przelicznik jednostek', style: TextStyle(fontSize: 22.0)),
+                  child: const Text(AppLocalization.getTranslatedValue('Przelicznik jednostek'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
               const SizedBox(
@@ -107,7 +108,7 @@ class FirstRoute extends StatelessWidget {
 
                     );
                   },
-                  child: const Text('Kalkulator kalorii', style: TextStyle(fontSize: 22.0)),
+                  child: const Text(AppLocalization.getTranslatedValue('Kalkulator kalorii'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
               const SizedBox(
@@ -124,7 +125,7 @@ class FirstRoute extends StatelessWidget {
 
                     );
                   },
-                  child: const Text('Kalkulator prawdopodobieńśtwa', style: TextStyle(fontSize: 22.0)),
+                  child: const Text(AppLocalization.getTranslatedValue('Kalkulator prawdopodobieńśtwa'), style: TextStyle(fontSize: 22.0)),
                 ),
               ),
 
