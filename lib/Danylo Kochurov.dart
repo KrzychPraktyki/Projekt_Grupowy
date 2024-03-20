@@ -82,8 +82,10 @@ class _TaskManager extends State<TaskManager> {
         floatingActionButton:Row(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.center,children: [
           FloatingActionButton(
             onPressed: (){setState((){if(counter==0){null;} else{counter--;};print(counter);});}, child: Icon(Icons.remove),),
+          SizedBox(width: 10,),
           FloatingActionButton(
             onPressed: (){setState((){counter=0;print(counter);});}, child: Icon(Icons.restart_alt),),
+          SizedBox(width: 10,),
           FloatingActionButton(
             onPressed: (){setState((){counter++;print(counter);});}, child: Icon(Icons.add),),
         ],),
