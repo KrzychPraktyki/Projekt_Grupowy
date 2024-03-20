@@ -20,6 +20,9 @@ class AppLocalization {
         "Zaloguj" "Anmeldung" "Авторизоваться" : 'Login',
         "Motyw" "Thema" "Тема" : 'Theme',
         "Język" "Zunge" "Язык" : 'Language',
+        "Nazwa" "Name" "Имя" : 'Name',
+        "Dodaj" "Hinzufügen" "Добавлять" : 'Add',
+        "Wszystkie Kalorie" "Alle Kalorien" "Все Калории" : 'All Calories',
       },
       'pl': {
         "Main Page" "Heim" "Дом" : 'Strona Główna',
@@ -35,6 +38,9 @@ class AppLocalization {
         "Login" "Anmeldung" "Авторизоваться" : 'Zaloguj',
         "Theme" "Thema" "Тема" : 'Motyw',
         "Language" "Zunge" "Язык" : 'Język',
+        "Name" "Name" "Имя" : 'Nazwa',
+        "Add" "Hinzufügen" "Добавлять" : 'Dodaj',
+        "All Calories" "Alle Kalorien" "Все Калории" : 'Wszystkie Kalorie',
       },
       'de': {
         "Main Page" "Strona Główna" "Дом" : 'Heim',
@@ -50,6 +56,9 @@ class AppLocalization {
         "Login" "Zaloguj" "Авторизоваться" : 'Anmeldung',
         "Theme" "Motyw" "Тема" : 'Thema',
         "Language" "Język" "Язык" : 'Zunge',
+        "Name" "Nazwa" "Имя" : 'Name',
+        "Add" "Hinzufügen" "Добавлять" : 'Dodaj',
+        "All Calories" "Alle Kalorien" "Все Калории" : 'Wszystkie Kalorie',
       },
       'ru' : {
         "Main Page" "Heim" "Strona Główna" : 'Дом',
@@ -65,6 +74,9 @@ class AppLocalization {
         "Login" "Anmeldung" "Zaloguj" : 'Авторизоваться',
         "Theme" "Thema" "Motyw" : 'Тема',
         "Language" "Zunge" "Język" : 'Язык',
+        "Name" "Name" "Имя" : 'Nazwa',
+        "Add" "Hinzufügen" "Добавлять" : 'Dodaj',
+        "All Calories" "Alle Kalorien" "Все Калории" : 'Wszystkie Kalorie',
       }
     };
 
