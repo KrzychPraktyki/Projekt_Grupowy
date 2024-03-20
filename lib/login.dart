@@ -7,7 +7,7 @@ final TextEditingController _nameController = TextEditingController();
 final TextEditingController _passController = TextEditingController();
 
 void main() {
-  runApp( MaterialApp(
+  runApp(MaterialApp(
     title: 'Navigation Basics',
     theme: Themeslist().themeses[themeIndex],
     home: Login(),
@@ -16,7 +16,7 @@ void main() {
 }
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  const Login({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,24 +34,31 @@ class Login extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 100),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextField(
                   controller: _nameController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Nazwa Użytkownika',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
                   ),
                 ),
               ),
+              SizedBox(height: 20,),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 100),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextField(
                   controller: _passController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Hasło',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(height: 35,),
+              SizedBox(height: 35,),
               ElevatedButton(
                 style: style,
                 onPressed: () {
@@ -69,4 +76,3 @@ class Login extends StatelessWidget {
     );
   }
 }
-
