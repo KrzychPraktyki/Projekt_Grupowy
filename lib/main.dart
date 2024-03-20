@@ -29,6 +29,12 @@ class FirstRoute extends StatelessWidget {
         theme: Themeslist().themeses[themeIndex],
         home:Scaffold(
           appBar: AppBar(
+            leading: IconButton(
+              icon: Icon(Icons.logout),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
             title: Text(AppLocalization.getTranslatedValue('Strona Główna')),
           ),
           body: Center(
