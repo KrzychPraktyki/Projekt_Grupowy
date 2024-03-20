@@ -12,7 +12,7 @@ class ZmianaJezyka extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar (
-        title: const Text('Wybierz Język'),
+        title: const Text(AppLocalization.getTranslatedValue('Wybierz Język')),
       ),
       body: Column(
       mainAxisAlignment: MainAxisAlignment.center,
