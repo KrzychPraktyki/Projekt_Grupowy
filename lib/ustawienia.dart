@@ -54,10 +54,6 @@ class Ustawienia extends StatelessWidget {
               ]
           )
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
     );
   }
 }
