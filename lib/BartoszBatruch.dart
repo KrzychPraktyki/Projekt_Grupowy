@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'language.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -39,7 +40,7 @@ class _UnitConverterState extends State<UnitConverter> {
     ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 23));
     return Scaffold(
       appBar: AppBar(
-        title: Text('Przelicznik jednostek'),
+        title: Text(AppLocalization.getTranslatedValue('Przelicznik jednostek')),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -106,21 +107,21 @@ class _UnitConverterState extends State<UnitConverter> {
                       showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                          title: Text('Błąd'),
+                          title: Text(AppLocalization.getTranslatedValue('Błąd')),
                           content: Text(e.toString()),
                           actions: [
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: Text('OK'),
+                              child: Text(AppLocalization.getTranslatedValue('OK')),
                             ),
                           ],
                         ),
                       );
                     }
                   },
-                  child: Text('Konwertuj'),
+                  child: Text(AppLocalization.getTranslatedValue('Konwertuj')),
                 ),
               ),
               ),
