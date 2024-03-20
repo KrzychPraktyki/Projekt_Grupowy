@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'MartynaLeman.dart';
 import 'Zmiana_Języka_BartoszBatruch.dart';
+import 'language.dart';
 
 class Ustawienia extends StatelessWidget {
   const Ustawienia({super.key});
