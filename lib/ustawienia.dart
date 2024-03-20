@@ -5,6 +5,7 @@ import 'language.dart';
 
 class Ustawienia extends StatelessWidget {
   const Ustawienia({super.key});
+  int _update = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +50,19 @@ class Ustawienia extends StatelessWidget {
                     child: const Text('Język'),
                   ),
                 ),
-
-
+                cons SizedBox (
+                  height: 20.0,
+                ),
+                SizedBox (
+                  width: 370,
+                  height: 90,
+                  child: ElevatedButton(
+                    style: style,
+                    onPressed: () {
+                      _incrementCounter,
+                    }
+                  )
+                )
               ]
           )
       ),
