@@ -1,40 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/main.dart';
 
 class TrzeciaStrona extends StatelessWidget {
-  const TrzeciaStrona({Key?key}) :super(key: key);
+  const TrzeciaStrona({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TaskManager(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Trzecia Strona'),
+        ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TaskManager(),
+                ),
+              );
+            },
+            child: const Text('Go to Task Manager'),
+          ),
+        ),
+      ),
     );
   }
 }
+
 class TaskManager extends StatefulWidget {
+  const TaskManager({Key? key}) : super(key: key);
+
   @override
   _TaskManager createState() => _TaskManager();
-
 }
 
 class _TaskManager extends State<TaskManager> {
-bool? isCheked1 = false;
-bool? isCheked2 = false;
-bool? isCheked3 = false;
-bool? isCheked4 = false;
-bool? isCheked5 = false;
-bool? isCheked6 = false;
-var counter = 0;
+  bool? isCheked1 = false;
+  bool? isCheked2 = false;
+  bool? isCheked3 = false;
+  bool? isCheked4 = false;
+  bool? isCheked5 = false;
+  bool? isCheked6 = false;
+  var counter = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar:AppBar(
-        actions: [IconButton(onPressed:(){Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstRoute()));} , icon: Icon(Icons.arrow_back))],
-        centerTitle: true,
-        title: Text('Menadzer Zadan'),
+      appBar: AppBar(
+        title: const Text('Menadzer Zadan'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
       ),
       body:Column(children: [
         Row(
@@ -94,5 +116,3 @@ var counter = 0;
 
 
 }
-
-
