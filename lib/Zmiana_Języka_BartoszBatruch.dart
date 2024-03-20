@@ -6,13 +6,15 @@ void main() {
   runApp(ZmianaJezyka());
 }
 
+
+
 class ZmianaJezyka extends StatelessWidget {
   const ZmianaJezyka({Key? key}) : super(key: key);
-  @override
+    @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar (
-        title: const Text(AppLocalization.getTranslatedValue('Wybierz Język')),
+        title: Text(AppLocalization.getTranslatedValue('Wybierz Język')),
       ),
       body: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +33,7 @@ class ZmianaJezyka extends StatelessWidget {
                 onPressed: () {
                   AppLocalization.changeLanguage('en');
                 },
-                child: Text('Engish'),
+                child: Text('English'),
               ),
             ),
           ],
@@ -98,8 +100,7 @@ class ZmianaJezyka extends StatelessWidget {
         ),
         ),
       ],
-      )
-
+      ),
     );
   }
 }
