@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'language.dart';
+import 'MartynaLeman.dart';
 
 class ProbabilityCalculator extends StatefulWidget {
   const ProbabilityCalculator({Key? key}) : super(key: key);
@@ -15,8 +16,17 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: Themeslist().themeses[themeIndex],
+    home:Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
         title: Text(AppLocalization.getTranslatedValue('Kalkulator Prawdopodobieństwa')),
       ),
       body: Padding(
@@ -53,7 +63,8 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
           ],
         ),
       ),
-    );
+    ));
+
   }
 
   void calculateProbability() {

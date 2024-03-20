@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/main.dart';
 import 'language.dart';
+import 'MartynaLeman.dart';
 
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _passController = TextEditingController();
 
 void main() {
-  runApp(const MaterialApp(
+  runApp( MaterialApp(
     title: 'Navigation Basics',
+    theme: Themeslist().themeses[themeIndex],
     home: Login(),
     debugShowCheckedModeBanner: false,
   ));

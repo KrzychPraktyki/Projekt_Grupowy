@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'language.dart';
+import 'MartynaLeman.dart';
 
 class NumberConverter extends StatefulWidget {
   @override
@@ -104,8 +105,17 @@ class _NumberConverterState extends State<NumberConverter> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: Themeslist().themeses[themeIndex],
+    home:Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
         title: Text(AppLocalization.getTranslatedValue('Systemy Liczb')),
       ),
       body: Padding(
@@ -150,6 +160,7 @@ class _NumberConverterState extends State<NumberConverter> {
           ],
         ),
       ),
-    );
+    ));
+
   }
 }
