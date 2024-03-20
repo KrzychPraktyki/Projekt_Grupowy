@@ -14,6 +14,11 @@ class AppLocalization {
         "Przelicznik jednostek" "Einheitenumwandler" "Конвертер" : 'Unit Conventer',
         "Kalkulator Kalorii" "Kalorienrechner" "Калькулятор Калорий" : 'Calorie Calculator',
         "Kalkulator Prawdopodobieństwa" "Wahrscheinlichkeitsrechner" "Калькулятор Вероятности" : 'Propability Calculator',
+        "Logowanie" "Anmeldung" "Авторизоваться" : 'Log in',
+        "Nazwa użytkownika" "Nutzername" "Имя Пользователя" : 'Username',
+        "Hasło" "Passwort" "Пароль" : 'Password',
+        "Zaloguj" "Anmeldung" "Авторизоваться" : 'Login',
+        "" "" "" : '',
       },
       'pl': {
         "Main Page" "Heim" "Дом" : 'Strona Główna',
@@ -23,6 +28,13 @@ class AppLocalization {
         "Unit Conventer" "Einheitenumwandler" "Конвертер" : 'Przelicznik jednostek',
         "Calorie Calculator" "Kalorienrechner" "Калькулятор Калорий" : 'Kalkulator Kalorii',
         "Propability Calculator" "Wahrscheinlichkeitsrechner" "Калькулятор Вероятности" : 'Kalkulator Prawdopodobieństwa',
+        "Log in" "Anmeldung" "Авторизоваться" : 'Logowanie',
+        "Username" "Nutzername" "Имя Пользователя" : 'Nazwa użytkownika',
+        "Password" "Passwort" "Пароль" : 'Hasło',
+        "Login" "Anmeldung" "Авторизоваться" : 'Zaloguj',
+        "Settings" "Einstellungen" "Настройки" : 'Ustawienia',
+        "Theme" "Thema" "Тема" : 'Motyw',
+        "Language" "Zunge" "Язык" : 'Język',
       },
       'de': {
         "Main Page" "Strona Główna" "Дом" : 'Heim',
@@ -32,6 +44,13 @@ class AppLocalization {
         "Unit Conventer" "Przelicznik jednostek" "Конвертер" : 'Einheitenumwandler',
         "Calorie Calculator" "Kalkulator Kalorii" "Калькулятор Калорий" : 'Kalorienrechner',
         "Propability Calculator" "Kalkulator Prawdopodobieństwa" "Калькулятор Вероятности" : 'Wahrscheinlichkeitsrechner',
+        "Log in" "Logowanie" "Авторизоваться" : 'Anmeldung',
+        "Username" "Nazwa użytkownika" "Имя Пользователя" : 'Nutzername',
+        "Password" "Hasło" "Пароль" : 'Passwort',
+        "Login" "Zaloguj" "Авторизоваться" : 'Anmeldung',
+        "Settings" "Ustawienia" "Настройки" : 'Einstellungen',
+        "Theme" "Motyw" "Тема" : 'Thema',
+        "Language" "Język" "Язык" : 'Zunge',
       },
       'ru' : {
         "Main Page" "Heim" "Strona Główna" : 'Дом',
@@ -41,6 +60,13 @@ class AppLocalization {
         "Unit Conventer" "Einheitenumwandler" "Przelicznik jednostek" : 'Конвертер',
         "Calorie Calculator" "Kalorienrechner" "Kalkulator Kalorii" : 'Калькулятор Калорий',
         "Propability Calculator" "Wahrscheinlichkeitsrechner" "Kalkulator Prawdopodobieństwa" : 'Калькулятор Вероятности',
+        "Log in" "Anmeldung" "Logowanie" : 'Авторизоваться',
+        "Username" "Nutzername" "Nazwa użytkownika" : 'Имя Пользователя',
+        "Password" "Passwort" "Hasło" : 'Пароль',
+        "Login" "Anmeldung" "Zaloguj" : 'Авторизоваться',
+        "Settings" "Einstellungen" "Ustawienia" : 'Настройки',
+        "Theme" "Thema" "Motyw" : 'Тема',
+        "Language" "Zunge" "Język" : 'Язык',
       }
     };
 
