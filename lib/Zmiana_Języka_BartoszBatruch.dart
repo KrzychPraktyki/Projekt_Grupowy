@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'language.dart';
+
 
 void main() {
   runApp(ZmianaJezyka());
@@ -27,7 +29,7 @@ class ZmianaJezyka extends StatelessWidget {
               height: 80,
               child: ElevatedButton(
                 onPressed: () {
-
+                  AppLocalization.changeLanguage('en');
                 },
                 child: Text('Engish'),
               ),
@@ -47,7 +49,7 @@ class ZmianaJezyka extends StatelessWidget {
               height: 80,
               child: ElevatedButton(
                 onPressed: () {
-
+                  AppLocalization.changeLanguage('pl');
                 },
                 child: Text('Polish(Polski)'),
               ),
@@ -67,7 +69,7 @@ class ZmianaJezyka extends StatelessWidget {
               height: 80,
               child: ElevatedButton(
                 onPressed: () {
-
+                  AppLocalization.changeLanguage('de');
                 },
                 child: Text('German(Deutsch)'),
               ),
@@ -87,7 +89,7 @@ class ZmianaJezyka extends StatelessWidget {
               height: 80,
               child: ElevatedButton(
                 onPressed: () {
-
+                  AppLocalization.changeLanguage('ru');
                 },
                 child: Text('Russian(Русский)'),
               ),
