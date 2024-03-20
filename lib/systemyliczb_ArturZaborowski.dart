@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'language.dart';
+import 'MartynaLeman.dart';
 
 class NumberConverter extends StatefulWidget {
   @override
@@ -104,52 +105,64 @@ class _NumberConverterState extends State<NumberConverter> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalization.getTranslatedValue('Systemy Liczb')),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            TextField(
-              controller: _binaryController,
-              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Binarny')),
-              keyboardType: TextInputType.number,
-              onChanged: _convertFromBinary,
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: Themeslist().themeses[themeIndex],
+        home:Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
             ),
-            SizedBox(height: 10),
-            TextField(
-              controller: _decimalController,
-              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Decymalny')),
-              keyboardType: TextInputType.number,
-              onChanged: _convertFromDecimal,
+            title: Text(AppLocalization.getTranslatedValue('Systemy Liczb')),
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                buildTextField(_binaryController, 'System Binarny'),
+                SizedBox(height: 10),
+                buildTextField(_decimalController, 'System Decymalny'),
+                SizedBox(height: 10),
+                buildTextField(_hexController, 'System Szesnastkowy'),
+                SizedBox(height: 10),
+                buildTextField(_octalController, 'System Ósemkowy'),
+                SizedBox(height: 10),
+                buildTextField(_base20Controller, 'System Dwudziestkowy'),
+              ],
             ),
-            SizedBox(height: 10),
-            TextField(
-              controller: _hexController,
-              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Szesnastkowy')),
-              keyboardType: TextInputType.text,
-              onChanged: _convertFromHex,
-            ),
-            SizedBox(height: 10),
-            TextField(
-              controller: _octalController,
-              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Ósemkowy')),
-              keyboardType: TextInputType.number,
-              onChanged: _convertFromOctal,
-            ),
-            SizedBox(height: 10),
-            TextField(
-              controller: _base20Controller,
-              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Dwudziestkowy')),
-              keyboardType: TextInputType.text,
-              onChanged: _convertFromBase20,
-            ),
-          ],
+          ),
+        ));
+
+  }
+
+  Widget buildTextField(TextEditingController controller, String labelText) {
+    return TextFormField(
+      controller: controller,
+      decoration: InputDecoration(
+        labelText: AppLocalization.getTranslatedValue(labelText),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
         ),
+        contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
       ),
+      keyboardType: TextInputType.text,
+      onChanged: (value) {
+        if (labelText == 'System Binarny') {
+          _convertFromBinary(value);
+        } else if (labelText == 'System Decymalny') {
+          _convertFromDecimal(value);
+        } else if (labelText == 'System Szesnastkowy') {
+          _convertFromHex(value);
+        } else if (labelText == 'System Ósemkowy') {
+          _convertFromOctal(value);
+        } else if (labelText == 'System Dwudziestkowy') {
+          _convertFromBase20(value);
+        }
+      },
     );
   }
 }

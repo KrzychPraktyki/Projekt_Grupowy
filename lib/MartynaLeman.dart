@@ -9,38 +9,38 @@ class DrugaStrona extends StatefulWidget {
 }
 int themeIndex = 0;
 class Themeslist{
-   List<ThemeData> themeses = [
-     ThemeData(
-         brightness: Brightness.light,
-         primarySwatch: Colors.blue,
-         scaffoldBackgroundColor: Colors.blue.shade100
-     ),
-     ThemeData(
-         brightness: Brightness.light,
-         primarySwatch: Colors.pink,
-         scaffoldBackgroundColor: Colors.pink.shade100
-     ),
-     ThemeData(
-         brightness: Brightness.light,
-         primarySwatch: Colors.grey,
-         scaffoldBackgroundColor: Colors.grey.shade100
-     ),
-     ThemeData(
-         brightness: Brightness.dark,
-         primarySwatch: Colors.purple,
-         scaffoldBackgroundColor: Colors.purple.shade800
-     ),
-     ThemeData(
-         brightness: Brightness.dark,
-         primarySwatch: Colors.blue,
-         scaffoldBackgroundColor: Colors.blue.shade900
-     ),
-     ThemeData(
-         brightness: Brightness.dark,
-         primarySwatch: Colors.grey,
-         scaffoldBackgroundColor: Colors.grey.shade900
-     ),
-   ];
+  List<ThemeData> themeses = [
+    ThemeData(
+        brightness: Brightness.light,
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.blue.shade100
+    ),
+    ThemeData(
+        brightness: Brightness.light,
+        primarySwatch: Colors.pink,
+        scaffoldBackgroundColor: Colors.pink.shade100
+    ),
+    ThemeData(
+        brightness: Brightness.light,
+        primarySwatch: Colors.grey,
+        scaffoldBackgroundColor: Colors.grey.shade100
+    ),
+    ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.purple,
+        scaffoldBackgroundColor: Colors.purple.shade800
+    ),
+    ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.blue.shade900
+    ),
+    ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.grey,
+        scaffoldBackgroundColor: Colors.grey.shade900
+    ),
+  ];
 }
 
 
@@ -60,7 +60,7 @@ class _MyAppState extends State<DrugaStrona> {
         ),
         body: Center(
           child: Column(
-            
+
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               RadioListTile(
@@ -112,4 +112,3 @@ class _MyAppState extends State<DrugaStrona> {
     });
   }
 }
-

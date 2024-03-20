@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'language.dart';
+import 'MartynaLeman.dart';
 
 class PiataStrona extends StatelessWidget {
   const PiataStrona({super.key});
@@ -43,77 +44,87 @@ class _CalorieTrackerState extends State<CalorieTracker> {
   Widget build(BuildContext context) {
     final ButtonStyle style =
     ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 18));
-    return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Text(AppLocalization.getTranslatedValue('Kalkulator Kalorii')),
-          ],
-        ),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: _foodItems.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(_foodItems[index].name),
-                  subtitle: Text('${_foodItems[index].calories} calories'),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.close),
-                    onPressed: () => _removeItem(index),
-                  ),
-                );
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: Themeslist().themeses[themeIndex],
+        home:Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.of(context).pop();
               },
             ),
-          ),
-
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
+            title: Row(
               children: [
-                Expanded(
-                  child: TextField(
-                    controller: _nameController,
-                    decoration: const InputDecoration(
-                      labelText: 'Nazwa',
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: TextField(
-                    controller: _caloriesController,
-                    keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                      labelText: 'Kalorie',
-                    ),
-                  ),
-                ),
-                const SizedBox(width:10),
-                ElevatedButton(
-                  style: style,
-                  onPressed: () {
-                    String name = _nameController.text;
-                    int calories = int.tryParse(_caloriesController.text) ?? 0;
-                    if (name.isNotEmpty && calories > 0) {
-                      _addItem(name, calories);
-                      _nameController.clear();
-                      _caloriesController.clear();
-                    }
-                  },
-                  child: Text(AppLocalization.getTranslatedValue('Dodaj')),
-                ),
+                Text(AppLocalization.getTranslatedValue('Kalkulator Kalorii')),
               ],
             ),
           ),
-          const SizedBox(height: 20),
-          Text(AppLocalization.getTranslatedValue('Wszystkie Kalorie: $_totalCalories')),
-          const SizedBox(height: 30),
-        ],
-      ),
-    );
+          body: Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: _foodItems.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text(_foodItems[index].name),
+                      subtitle: Text('${_foodItems[index].calories} calories'),
+                      trailing: IconButton(
+                        icon: const Icon(Icons.close),
+                        onPressed: () => _removeItem(index),
+                      ),
+                    );
+                  },
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: _nameController,
+                        decoration: const InputDecoration(
+                          labelText: 'Nazwa',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: TextField(
+                        controller: _caloriesController,
+                        keyboardType: TextInputType.number,
+                        decoration: const InputDecoration(
+                          labelText: 'Kalorie',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width:10),
+                    ElevatedButton(
+                      style: style,
+                      onPressed: () {
+                        String name = _nameController.text;
+                        int calories = int.tryParse(_caloriesController.text) ?? 0;
+                        if (name.isNotEmpty && calories > 0) {
+                          _addItem(name, calories);
+                          _nameController.clear();
+                          _caloriesController.clear();
+                        }
+                      },
+                      child: Text(AppLocalization.getTranslatedValue('Dodaj')),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              Text(AppLocalization.getTranslatedValue('Wszystkie Kalorie: $_totalCalories')),
+              const SizedBox(height: 30),
+            ],
+          ),
+        ));
+
   }
 }
 

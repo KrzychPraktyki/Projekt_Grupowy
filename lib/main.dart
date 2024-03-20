@@ -7,6 +7,7 @@ import 'ustawienia.dart';
 import 'systemyliczb_ArturZaborowski.dart';
 import 'probability_arturzaborowski.dart';
 import 'language.dart';
+import 'MartynaLeman.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -23,115 +24,125 @@ class FirstRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalization.getTranslatedValue('Strona Główna')),
-      ),
-      body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(
-                width: 370,
-                height: 90,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Ustawienia()),
-                    );
-                  },
-                  child: Text(AppLocalization.getTranslatedValue('Ustawienia'), style: TextStyle(fontSize: 22.0)),
-                ),
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              SizedBox(
-                width: 370,
-                height: 90,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const TaskManager()),
-                    );
-                  },
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: Themeslist().themeses[themeIndex],
+        home:Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+              icon: Icon(Icons.logout),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            title: Text(AppLocalization.getTranslatedValue('Strona Główna')),
+          ),
+          body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(
+                    width: 370,
+                    height: 90,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Ustawienia()),
+                        );
+                      },
+                      child: Text(AppLocalization.getTranslatedValue('Ustawienia'), style: TextStyle(fontSize: 18.0)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  SizedBox(
+                    width: 370,
+                    height: 90,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const TaskManager()),
+                        );
+                      },
 
-                  child: Text(AppLocalization.getTranslatedValue('Menedżer zadań'), style: TextStyle(fontSize: 22.0)),
-                ),
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              SizedBox(
-                width: 370,
-                height: 90,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => NumberConverter()),
-                    );
-                  },
+                      child: Text(AppLocalization.getTranslatedValue('Menedżer zadań'), style: TextStyle(fontSize: 18.0)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  SizedBox(
+                    width: 370,
+                    height: 90,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => NumberConverter()),
+                        );
+                      },
 
-                  child: Text(AppLocalization.getTranslatedValue('Systemy Liczb'), style: TextStyle(fontSize: 22.0)),
-                ),
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              SizedBox(
-                width: 370,
-                height: 90,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const CzwartaStrona()),
-                    );
-                  },
-                  child: Text(AppLocalization.getTranslatedValue('Przelicznik jednostek'), style: TextStyle(fontSize: 22.0)),
-                ),
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              SizedBox(
-                width: 370,
-                height: 90,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const CalorieTracker()),
+                      child: Text(AppLocalization.getTranslatedValue('Systemy Liczb'), style: TextStyle(fontSize: 18.0)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  SizedBox(
+                    width: 370,
+                    height: 90,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const CzwartaStrona()),
+                        );
+                      },
+                      child: Text(AppLocalization.getTranslatedValue('Przelicznik jednostek'), style: TextStyle(fontSize: 18.0)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  SizedBox(
+                    width: 370,
+                    height: 90,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const CalorieTracker()),
 
-                    );
-                  },
-                  child:Text(AppLocalization.getTranslatedValue('Kalkulator kalorii'), style: TextStyle(fontSize: 22.0)),
-                ),
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              SizedBox(
-                width: 370,
-                height: 90,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const ProbabilityCalculator()),
+                        );
+                      },
+                      child:Text(AppLocalization.getTranslatedValue('Kalkulator kalorii'), style: TextStyle(fontSize: 18.0)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  SizedBox(
+                    width: 370,
+                    height: 90,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ProbabilityCalculator()),
 
-                    );
-                  },
-                  child: Text(AppLocalization.getTranslatedValue('Kalkulator prawdopodobieńśtwa'), style: TextStyle(fontSize: 22.0)),
-                ),
-              ),
+                        );
+                      },
+                      child: Text(AppLocalization.getTranslatedValue('Kalkulator prawdopodobieńśtwa'), style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center ,),
+                    ),
+                  ),
 
-            ],
-          )
-      ),
-    );
+                ],
+              )
+          ),
+        ));
+
   }
 }
