@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'language.dart';
 
 class NumberConverter extends StatefulWidget {
   @override
@@ -105,7 +106,7 @@ class _NumberConverterState extends State<NumberConverter> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Systemy Liczb'),
+        title: Text(AppLocalization.getTranslatedValue('Systemy Liczb')),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -114,35 +115,35 @@ class _NumberConverterState extends State<NumberConverter> {
           children: [
             TextField(
               controller: _binaryController,
-              decoration: InputDecoration(labelText: 'System Binarny'),
+              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Binarny')),
               keyboardType: TextInputType.number,
               onChanged: _convertFromBinary,
             ),
             SizedBox(height: 10),
             TextField(
               controller: _decimalController,
-              decoration: InputDecoration(labelText: 'System Decymalny'),
+              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Decymalny')),
               keyboardType: TextInputType.number,
               onChanged: _convertFromDecimal,
             ),
             SizedBox(height: 10),
             TextField(
               controller: _hexController,
-              decoration: InputDecoration(labelText: 'System Szesnastkowy'),
+              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Szesnastkowy')),
               keyboardType: TextInputType.text,
               onChanged: _convertFromHex,
             ),
             SizedBox(height: 10),
             TextField(
               controller: _octalController,
-              decoration: InputDecoration(labelText: 'System Ósemkowy'),
+              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Ósemkowy')),
               keyboardType: TextInputType.number,
               onChanged: _convertFromOctal,
             ),
             SizedBox(height: 10),
             TextField(
               controller: _base20Controller,
-              decoration: InputDecoration(labelText: 'System Dwudziestkowy'),
+              decoration: InputDecoration(labelText: AppLocalization.getTranslatedValue('System Dwudziestkowy')),
               keyboardType: TextInputType.text,
               onChanged: _convertFromBase20,
             ),
