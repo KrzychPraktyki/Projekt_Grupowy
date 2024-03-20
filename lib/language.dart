@@ -18,7 +18,9 @@ class AppLocalization {
         "Nazwa użytkownika" "Nutzername" "Имя Пользователя" : 'Username',
         "Hasło" "Passwort" "Пароль" : 'Password',
         "Zaloguj" "Anmeldung" "Авторизоваться" : 'Login',
-        "" "" "" : '',
+        "Ustawienia" "Einstellungen" "Настройки" : 'Settings',
+        "Motyw" "Thema" "Тема" : 'Theme',
+        "Język" "Zunge" "Язык" : 'Language',
       },
       'pl': {
         "Main Page" "Heim" "Дом" : 'Strona Główna',
