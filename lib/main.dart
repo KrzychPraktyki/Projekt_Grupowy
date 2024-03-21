@@ -140,7 +140,7 @@ class FirstRoute extends StatelessWidget {
 
                         );
                       },
-                      child: Text(AppLocalization.getTranslatedValue('Kalkulator prawdopodobieńśtwa'), style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center ,),
+                      child: Text(AppLocalization.getTranslatedValue('Kalkulator prawdopodobieńśtwa'), style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center),
                     ),
                   ),
 
