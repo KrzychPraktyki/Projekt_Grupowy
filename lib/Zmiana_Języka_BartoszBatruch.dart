@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'language.dart';
 import 'MartynaLeman.dart';
@@ -21,6 +20,12 @@ class ZmianaJezyka extends StatelessWidget {
       appBar: AppBar (
 
         title: Text(AppLocalization.getTranslatedValue('Wybierz Język')),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
       ),
 
       body: Column(
