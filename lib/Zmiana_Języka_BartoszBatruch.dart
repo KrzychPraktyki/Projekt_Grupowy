@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/main.dart';
+import 'package:untitled/ustawienia.dart';
 import 'language.dart';
-import 'login.dart';
+import 'MartynaLeman.dart';
 
 
 class MyApp extends StatelessWidget {
@@ -11,9 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
+      theme: Themeslist().themeses[themeIndex],
       home: const MyHomePage(title: 'Zmiana Języka'),
     );
   }
@@ -29,11 +29,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
+
     });
   }
 
@@ -42,6 +42,15 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Ustawienia()),
+            );
+          },
+        ),
         title: Text(widget.title),
       ),
       body: Center(
@@ -49,46 +58,68 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('$_counter', style: TextStyle(color: Colors.white)),
+
               Container(
+                width: 370,
+                height: 90,
                 child: ElevatedButton(
                   onPressed: () {
                     AppLocalization.changeLanguage('en');
                   },
-                  child: Text('Logowanie'),
+                  child: Text(AppLocalization.getTranslatedValue('Angielski'), style: TextStyle(fontSize: 18.0)),
                 ),
               ),
+              const SizedBox(
+                height: 20.0,
+              ),
               Container(
+                width: 370,
+                height: 90,
                 child: ElevatedButton(
                   onPressed: () {
                     AppLocalization.changeLanguage('pl');
                   },
-                  child: Text('Login'),
+                  child: Text(AppLocalization.getTranslatedValue('Polski'), style: TextStyle(fontSize: 18.0)),
                 ),
               ),
+              const SizedBox(
+                height: 20.0,
+              ),
               Container(
+                width: 370,
+                height: 90,
                 child: ElevatedButton(
                   onPressed: () {
                     AppLocalization.changeLanguage('de');
                   },
-                  child: Text('Niemiecki(Deutsch)'),
+                  child: Text(AppLocalization.getTranslatedValue('Niemiecki'), style: TextStyle(fontSize: 18.0)),
                 ),
               ),
+              const SizedBox(
+                height: 20.0,
+              ),
               Container(
+                width: 370,
+                height: 90,
                 child: ElevatedButton(
                   onPressed: () {
                     AppLocalization.changeLanguage('ru');
                   },
-                  child: Text('Rosyjski()'),
+                  child: Text(AppLocalization.getTranslatedValue('Rosyjski'), style: TextStyle(fontSize: 18.0)),
                 ),
               ),
+              const SizedBox(
+                height: 100.0,
+              ),
               Container(
+                width: 370,
+                height: 90,
                 child: ElevatedButton(
                   onPressed: () {
                     _incrementCounter;
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Login()),
+                      MaterialPageRoute(builder: (context) => const FirstRoute()),
                     );
                   },
                   child: Text(AppLocalization.getTranslatedValue('Zastosuj')),
