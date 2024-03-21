@@ -58,11 +58,10 @@ class _MyAppState extends State<DrugaStrona> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Motyw'),
-          leading: IconButton(onPressed:(){Navigator.of(context).pop();} ,icon: Icon(Icons.arrow_back),),
+          leading: IconButton(onPressed:(){Navigator.of(context).pop();} ,icon: const Icon(Icons.arrow_back),),
         ),
         body: Center(
           child: Column(
-
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               RadioListTile(
@@ -114,13 +113,11 @@ class _MyAppState extends State<DrugaStrona> {
                       MaterialPageRoute(builder: (context) => const Login()),
                     );
                   },
-                  child: Text(AppLocalization.getTranslatedValue('Zastosuj'), style: TextStyle(fontSize: 18.0)),
+                  child: Text(AppLocalization.getTranslatedValue('Zastosuj'), style: const TextStyle(fontSize: 18.0)),
                 ),
               ),
             ],
-
           ),
-
         ),
       ),
     );

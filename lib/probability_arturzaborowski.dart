@@ -17,9 +17,12 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
         debugShowCheckedModeBanner: false,
         theme: Themeslist().themeses[themeIndex],
         home:Scaffold(
+
+
           appBar: AppBar(
             leading: IconButton(
               icon: Icon(Icons.arrow_back),

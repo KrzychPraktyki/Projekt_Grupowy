@@ -105,10 +105,12 @@ class _NumberConverterState extends State<NumberConverter> {
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: Themeslist().themeses[themeIndex],
         home:Scaffold(
+          resizeToAvoidBottomInset: false,
           appBar: AppBar(
             leading: IconButton(
               icon: Icon(Icons.arrow_back),
