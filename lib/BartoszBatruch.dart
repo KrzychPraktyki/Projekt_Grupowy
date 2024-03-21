@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'language.dart';
-import 'MartynaLeman.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -39,125 +38,158 @@ class _UnitConverterState extends State<UnitConverter> {
   Widget build(BuildContext context) {
     final ButtonStyle style =
     ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 23));
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: Themeslist().themeses[themeIndex],
-        home:Scaffold(
-          appBar: AppBar(
-            title: Text(AppLocalization.getTranslatedValue('Przelicznik jednostek')),
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                Navigator.of(context).pop();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+            AppLocalization.getTranslatedValue('Przelicznik jednostek')),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            DropdownButtonFormField<String>(
+              value: _selectedInputUnit,
+              items: _inputUnits.map((unit) {
+                return DropdownMenuItem<String>(
+                  value: unit,
+                  child: Text(unit, style: TextStyle(fontSize: 20.0)),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  _selectedInputUnit = newValue;
+                });
               },
+              decoration: InputDecoration(
+                  labelText: 'Wybierz jednostkę wejściową',
+                  labelStyle: TextStyle(fontSize: 25.0),
+              ),
             ),
-          ),
-          body: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                DropdownButtonFormField<String>(
-                  value: _selectedInputUnit,
-                  items: _inputUnits.map((unit) {
-                    return DropdownMenuItem<String>(
-                      value: unit,
-                      child: Text(unit, style: TextStyle(fontSize: 20.0)),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      _selectedInputUnit = newValue;
-                    });
-                  },
-                  decoration: InputDecoration(
-                      labelText: 'Wybierz jednostkę wejściową',
-                      labelStyle: TextStyle(fontSize: 25.0)
-                  ),
-                ),
-                TextField(
-                  controller: _inputController,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                      labelText: 'Wpisz wartość',
-                      labelStyle: TextStyle(fontSize: 20.0)
-                  ),
-                ),
-                DropdownButtonFormField<String>(
-                  value: _selectedOutputUnit,
-                  items: _outputUnits.map((unit) {
-                    return DropdownMenuItem<String>(
-                      value: unit,
-                      child: Text(unit, style: TextStyle(fontSize: 20.0)),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      _selectedOutputUnit = newValue;
-                    });
-                  },
-                  decoration: InputDecoration(
-                      labelText: 'Wybierz jednostkę wyjściową',
-                      labelStyle: TextStyle(fontSize: 25.0)
-                  ),
-                ),
-                Column (
-                  children: <Widget> [
-                    Container (
-                      margin: EdgeInsets.all(60.0),
-                      child: Center (
-                        child: ElevatedButton (
-                          style: style,
-                          onPressed: () {
-                            try {
-                              setState(() {
-                                _result = convert(_inputController.text, _selectedInputUnit!, _selectedOutputUnit!);
-                              });
-                            } catch (e) {
-                              showDialog(
-                                context: context,
-                                builder: (context) => AlertDialog(
-                                  title: Text(AppLocalization.getTranslatedValue('Błąd')),
+            TextField(
+              controller: _inputController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                  labelText: 'Wpisz wartość',
+                  labelStyle: TextStyle(fontSize: 20.0),
+              ),
+            ),
+            DropdownButtonFormField<String>(
+              value: _selectedOutputUnit,
+              items: _outputUnits.map((unit) {
+                return DropdownMenuItem<String>(
+                  value: unit,
+                  child: Text(unit, style: TextStyle(fontSize: 20.0)),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  _selectedOutputUnit = newValue;
+                });
+              },
+              decoration: InputDecoration(
+                  labelText: 'Wybierz jednostkę wyjściową',
+                  labelStyle: TextStyle(fontSize: 25.0),
+              ),
+            ),
+            Column(
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.all(30.0),
+                  child: Center(
+                    child: ElevatedButton(
+                      style: style,
+                      onPressed: () {
+                        try {
+                          setState(() {
+                            _result = convert(
+                                _inputController.text, _selectedInputUnit!,
+                                _selectedOutputUnit!);
+                          });
+                        } catch (e) {
+                          showDialog(
+                            context: context,
+                            builder: (context) =>
+                                AlertDialog(
+                                  title: Text(
+                                      AppLocalization.getTranslatedValue(
+                                          'Błąd')),
                                   content: Text(e.toString()),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text(AppLocalization.getTranslatedValue('OK')),
+                                      child: Text(
+                                          AppLocalization.getTranslatedValue(
+                                              'OK')),
                                     ),
                                   ],
                                 ),
-                              );
-                            }
-                          },
-                          child: Text(AppLocalization.getTranslatedValue('Konwertuj')),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 50),
-
-                if (_result != null)
-                  Container (
-                    decoration: BoxDecoration (border: Border.all(color: Colors.deepPurple)),
-                    child: Center (
-                        child: Text ('Result: $_result', style: (TextStyle(fontSize: 30.0)))
+                          );
+                        }
+                      },
+                      child: Text(
+                          AppLocalization.getTranslatedValue('Konwertuj')),
                     ),
                   ),
+                ),
               ],
             ),
-          ),
-        ));
+            SizedBox(height: 20),
 
+            if (_result != null)
+              Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.deepPurple)),
+                child: Center(
+                    child: Text(
+                        'Result: $_result', style: (TextStyle(fontSize: 30.0))),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
   void initState() {
     super.initState();
-    _inputUnits.addAll(['Metr', 'Kilometr', 'Centymetr', 'Gram', 'Kilogram', 'Sekunda', 'Minuta', 'Godzina', 'Celsiusz', 'Stopa', 'Mila', 'Cal', 'Uncja', 'Funt', 'Kelwin']);
-    _outputUnits.addAll(['Metr', 'Kilometr', 'Centymetr', 'Gram', 'Kilogram', 'Sekunda', 'Minuta', 'Godzina', 'Celsiusz', 'Stopa', 'Mila', 'Cal', 'Uncja', 'Funt', 'Kelwin']);
+    _inputUnits.addAll([
+      'Metr',
+      'Kilometr',
+      'Centymetr',
+      'Gram',
+      'Kilogram',
+      'Sekunda',
+      'Minuta',
+      'Godzina',
+      'Celsiusz',
+      'Stopa',
+      'Mila',
+      'Cal',
+      'Uncja',
+      'Funt',
+      'Kelwin'
+    ]);
+    _outputUnits.addAll([
+      'Metr',
+      'Kilometr',
+      'Centymetr',
+      'Gram',
+      'Kilogram',
+      'Sekunda',
+      'Minuta',
+      'Godzina',
+      'Celsiusz',
+      'Stopa',
+      'Mila',
+      'Cal',
+      'Uncja',
+      'Funt',
+      'Kelwin'
+    ]);
     _selectedInputUnit = _inputUnits.isNotEmpty ? _inputUnits.first : null;
     _selectedOutputUnit = _outputUnits.isNotEmpty ? _outputUnits.first : null;
   }
@@ -167,23 +199,28 @@ class _UnitConverterState extends State<UnitConverter> {
     double result = 0.0;
 
     if (!areUnitsCompatible(inputUnit, outputUnit)) {
-      throw Exception('Niewłaściwe jednostki do zamiany: $inputUnit na $outputUnit');
+      throw Exception(
+          'Niewłaściwe jednostki do zamiany: $inputUnit na $outputUnit');
     }
 
     if (inputUnit == outputUnit) {
       result = value;
     } else {
       if (isMetric(inputUnit) && isMetric(outputUnit)) {
-        result = value * getMetricConversionFactor(inputUnit) / getMetricConversionFactor(outputUnit);
+        result = value * getMetricConversionFactor(inputUnit) /
+            getMetricConversionFactor(outputUnit);
       }
       else if (isImperial(inputUnit) && isImperial(outputUnit)) {
-        result = value * getImperialConversionFactor(inputUnit) / getImperialConversionFactor(outputUnit);
+        result = value * getImperialConversionFactor(inputUnit) /
+            getImperialConversionFactor(outputUnit);
       }
       else if (isMetric(inputUnit) && isImperial(outputUnit)) {
-        result = value / getMetricToImperialConversionFactor(inputUnit, outputUnit);
+        result =
+            value / getMetricToImperialConversionFactor(inputUnit, outputUnit);
       }
       else if (isImperial(inputUnit) && isMetric(outputUnit)) {
-        result = value * getMetricToImperialConversionFactor(outputUnit, inputUnit);
+        result =
+            value * getMetricToImperialConversionFactor(outputUnit, inputUnit);
       }
     }
 
@@ -193,7 +230,18 @@ class _UnitConverterState extends State<UnitConverter> {
   bool areUnitsCompatible(String unit1, String unit2) {
     if (unit1 == 'Metr' || unit2 == 'Metr') {
       List<List<String>> incompatibleUnits = [
-        ['Metr', 'Gram', 'Kilogram', 'Funt', 'Uncja', 'Minuta', 'Godzina', 'Sekunda', 'Kelwin', 'Celsiusz'],
+        [
+          'Metr',
+          'Gram',
+          'Kilogram',
+          'Funt',
+          'Uncja',
+          'Minuta',
+          'Godzina',
+          'Sekunda',
+          'Kelwin',
+          'Celsiusz'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -205,7 +253,18 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Kilometr' || unit2 == 'Kilometr') {
       List<List<String>> incompatibleUnits = [
-        ['Kilometr', 'Gram', 'Kilogram', 'Funt', 'Uncja', 'Minuta', 'Godzina', 'Sekunda', 'Kelwin', 'Celsiusz'],
+        [
+          'Kilometr',
+          'Gram',
+          'Kilogram',
+          'Funt',
+          'Uncja',
+          'Minuta',
+          'Godzina',
+          'Sekunda',
+          'Kelwin',
+          'Celsiusz'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -217,7 +276,18 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Centymetr' || unit2 == 'Centymetr') {
       List<List<String>> incompatibleUnits = [
-        ['Centymetr', 'Gram', 'Kilogram', 'Funt', 'Uncja', 'Minuta', 'Godzina', 'Sekunda', 'Kelwin', 'Celsiusz'],
+        [
+          'Centymetr',
+          'Gram',
+          'Kilogram',
+          'Funt',
+          'Uncja',
+          'Minuta',
+          'Godzina',
+          'Sekunda',
+          'Kelwin',
+          'Celsiusz'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -229,7 +299,18 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Mila' || unit2 == 'Mila') {
       List<List<String>> incompatibleUnits = [
-        ['Mila', 'Gram', 'Kilogram', 'Funt', 'Uncja', 'Minuta', 'Godzina', 'Sekunda', 'Kelwin', 'Celsiusz'],
+        [
+          'Mila',
+          'Gram',
+          'Kilogram',
+          'Funt',
+          'Uncja',
+          'Minuta',
+          'Godzina',
+          'Sekunda',
+          'Kelwin',
+          'Celsiusz'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -241,7 +322,18 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Cal' || unit2 == 'Cal') {
       List<List<String>> incompatibleUnits = [
-        ['Cal', 'Gram', 'Kilogram', 'Funt', 'Uncja', 'Minuta', 'Godzina', 'Sekunda', 'Kelwin', 'Celsiusz'],
+        [
+          'Cal',
+          'Gram',
+          'Kilogram',
+          'Funt',
+          'Uncja',
+          'Minuta',
+          'Godzina',
+          'Sekunda',
+          'Kelwin',
+          'Celsiusz'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -253,7 +345,18 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Stopa' || unit2 == 'Stopa') {
       List<List<String>> incompatibleUnits = [
-        ['Stopa', 'Gram', 'Kilogram', 'Funt', 'Uncja', 'Minuta', 'Godzina', 'Sekunda', 'Kelwin', 'Celsiusz'],
+        [
+          'Stopa',
+          'Gram',
+          'Kilogram',
+          'Funt',
+          'Uncja',
+          'Minuta',
+          'Godzina',
+          'Sekunda',
+          'Kelwin',
+          'Celsiusz'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -265,7 +368,21 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Gram' || unit2 == 'Gram') {
       List<List<String>> incompatibleUnits = [
-        ['Gram', 'Kilometr', 'Metr', 'Centymetr', 'Mila', 'Cal', 'Minuta', 'Godzina', 'Sekunda', 'Kelwin', 'Celsiusz', 'Stopa'],      ];
+        [
+          'Gram',
+          'Kilometr',
+          'Metr',
+          'Centymetr',
+          'Mila',
+          'Cal',
+          'Minuta',
+          'Godzina',
+          'Sekunda',
+          'Kelwin',
+          'Celsiusz',
+          'Stopa'
+        ],
+      ];
 
       for (var pair in incompatibleUnits) {
         if (pair.contains(unit1) && pair.contains(unit2)) {
@@ -276,7 +393,20 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Kilogram' || unit2 == 'Kilogram') {
       List<List<String>> incompatibleUnits = [
-        ['Kilogram', 'Kilometr', 'Metr', 'Centymetr', 'Mila', 'Cal', 'Minuta', 'Godzina', 'Sekunda', 'Kelwin', 'Celsiusz', 'Foot'],
+        [
+          'Kilogram',
+          'Kilometr',
+          'Metr',
+          'Centymetr',
+          'Mila',
+          'Cal',
+          'Minuta',
+          'Godzina',
+          'Sekunda',
+          'Kelwin',
+          'Celsiusz',
+          'Foot'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -288,7 +418,20 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Uncja' || unit2 == 'Uncja') {
       List<List<String>> incompatibleUnits = [
-        ['Uncja', 'Kilometr', 'Metr', 'Centymetr', 'Mila', 'Cal', 'Minuta', 'Godzina', 'Sekunda', 'Fahrenheit', 'Celsius', 'Foot'],
+        [
+          'Uncja',
+          'Kilometr',
+          'Metr',
+          'Centymetr',
+          'Mila',
+          'Cal',
+          'Minuta',
+          'Godzina',
+          'Sekunda',
+          'Fahrenheit',
+          'Celsius',
+          'Foot'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -300,7 +443,20 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Funt' || unit2 == 'Funt') {
       List<List<String>> incompatibleUnits = [
-        ['Funt', 'Kilometr', 'Metr', 'Centymetr', 'Mila', 'Cal', 'Minuta', 'Godzina', 'Sekunda', 'Kelwin', 'Celsiusz', 'Stopa'],
+        [
+          'Funt',
+          'Kilometr',
+          'Metr',
+          'Centymetr',
+          'Mila',
+          'Cal',
+          'Minuta',
+          'Godzina',
+          'Sekunda',
+          'Kelwin',
+          'Celsiusz',
+          'Stopa'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -312,7 +468,21 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Sekunda' || unit2 == 'Sekunda') {
       List<List<String>> incompatibleUnits = [
-        ['Sekunda', 'Kilometr', 'Metr', 'Centymetr', 'Mila', 'Cal', 'Gram', 'Kilogram', 'Uncja', 'Funt', 'Kelwin', 'Celsiusz', 'Stopa'],
+        [
+          'Sekunda',
+          'Kilometr',
+          'Metr',
+          'Centymetr',
+          'Mila',
+          'Cal',
+          'Gram',
+          'Kilogram',
+          'Uncja',
+          'Funt',
+          'Kelwin',
+          'Celsiusz',
+          'Stopa'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -324,7 +494,21 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Minuta' || unit2 == 'Minuta') {
       List<List<String>> incompatibleUnits = [
-        ['Minuta', 'Kilometr', 'Metr', 'Centimetr', 'Mila', 'Cal', 'Gram', 'Kilogram', 'Uncja', 'Funt', 'Kelwin', 'Celsiusz', 'Stopa'],
+        [
+          'Minuta',
+          'Kilometr',
+          'Metr',
+          'Centimetr',
+          'Mila',
+          'Cal',
+          'Gram',
+          'Kilogram',
+          'Uncja',
+          'Funt',
+          'Kelwin',
+          'Celsiusz',
+          'Stopa'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -336,7 +520,21 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Godzina' || unit2 == 'Godzina') {
       List<List<String>> incompatibleUnits = [
-        ['Godizna', 'Kilometr', 'Metr', 'Centymetr', 'Mila', 'Cal', 'Gram', 'Kilogram', 'Uncja', 'Funt', 'Kelwin', 'Celsiusz', 'Stopa'],
+        [
+          'Godizna',
+          'Kilometr',
+          'Metr',
+          'Centymetr',
+          'Mila',
+          'Cal',
+          'Gram',
+          'Kilogram',
+          'Uncja',
+          'Funt',
+          'Kelwin',
+          'Celsiusz',
+          'Stopa'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -348,7 +546,22 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Celsiusz' || unit2 == 'Celsiusz') {
       List<List<String>> incompatibleUnits = [
-        ['Celsiusz', 'Kilometr', 'Metr', 'Centymetr', 'Mila', 'Cal', 'Gram', 'Kilogram', 'Uncja', 'Funt', 'Sekunda', 'Minuta', 'Godzina', 'Stopa'],
+        [
+          'Celsiusz',
+          'Kilometr',
+          'Metr',
+          'Centymetr',
+          'Mila',
+          'Cal',
+          'Gram',
+          'Kilogram',
+          'Uncja',
+          'Funt',
+          'Sekunda',
+          'Minuta',
+          'Godzina',
+          'Stopa'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -360,7 +573,22 @@ class _UnitConverterState extends State<UnitConverter> {
       return true;
     } else if (unit1 == 'Kelwin' || unit2 == 'Kelvin') {
       List<List<String>> incompatibleUnits = [
-        ['Kelvin', 'Kilometr', 'Metr', 'Centymetr', 'Mila', 'Cal', 'Gram', 'Kilogram', 'Uncja', 'Funt', 'Sekunda', 'Minuta', 'Godzina', 'Stopa'],
+        [
+          'Kelvin',
+          'Kilometr',
+          'Metr',
+          'Centymetr',
+          'Mila',
+          'Cal',
+          'Gram',
+          'Kilogram',
+          'Uncja',
+          'Funt',
+          'Sekunda',
+          'Minuta',
+          'Godzina',
+          'Stopa'
+        ],
       ];
 
       for (var pair in incompatibleUnits) {
@@ -377,7 +605,17 @@ class _UnitConverterState extends State<UnitConverter> {
 
 
   bool isMetric(String unit) {
-    return ['Metr', 'Kilometr', 'Centymetr', 'Gram', 'Kilogram', 'Sekunda', 'Minuta', 'Godzina', 'Celsiusz'].contains(unit);
+    return [
+      'Metr',
+      'Kilometr',
+      'Centymetr',
+      'Gram',
+      'Kilogram',
+      'Sekunda',
+      'Minuta',
+      'Godzina',
+      'Celsiusz'
+    ].contains(unit);
   }
 
   bool isImperial(String unit) {
