@@ -40,7 +40,7 @@ class FirstRoute extends StatelessWidget {
                 );
               },
             ),
-            title: Text(AppLocalization.getTranslatedValue('Strona Główna')),
+            title: Text(AppLocalization.getTranslatedValue('Main Page')),
           ),
           body: Center(
               child: Column(
@@ -56,7 +56,7 @@ class FirstRoute extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => const Ustawienia()),
                         );
                       },
-                      child: Text(AppLocalization.getTranslatedValue('Ustawienia'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Settings'), style: TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -73,7 +73,7 @@ class FirstRoute extends StatelessWidget {
                         );
                       },
 
-                      child: Text(AppLocalization.getTranslatedValue('Menedżer zadań'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Task Manager'), style: TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -90,7 +90,7 @@ class FirstRoute extends StatelessWidget {
                         );
                       },
 
-                      child: Text(AppLocalization.getTranslatedValue('Systemy Liczb'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Number Systems'), style: TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(

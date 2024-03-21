@@ -58,7 +58,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
             ),
             title: Row(
               children: [
-                Text(AppLocalization.getTranslatedValue('Kalkulator Kalorii')),
+                Text(AppLocalization.getTranslatedValue('Calorie Calculator')),
               ],
             ),
           ),
@@ -88,7 +88,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                       child: TextField(
                         controller: _nameController,
                         decoration: const InputDecoration(
-                          labelText: 'Nazwa',
+                          labelText: 'Name',
                         ),
                       ),
                     ),
@@ -98,7 +98,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                         controller: _caloriesController,
                         keyboardType: TextInputType.number,
                         decoration: const InputDecoration(
-                          labelText: 'Kalorie',
+                          labelText: 'Calorie',
                         ),
                       ),
                     ),
@@ -114,13 +114,13 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                           _caloriesController.clear();
                         }
                       },
-                      child: Text(AppLocalization.getTranslatedValue('Dodaj')),
+                      child: Text(AppLocalization.getTranslatedValue('Add')),
                     ),
                   ],
                 ),
               ),
               const SizedBox(height: 20),
-              Text(AppLocalization.getTranslatedValue('Wszystkie Kalorie: $_totalCalories')),
+              Text(AppLocalization.getTranslatedValue('All Calories: $_totalCalories')),
               const SizedBox(height: 30),
             ],
           ),

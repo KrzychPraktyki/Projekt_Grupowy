@@ -27,7 +27,7 @@ class Ustawienia extends StatelessWidget {
                 );
               },
             ),
-            title: Text(AppLocalization.getTranslatedValue('Ustawienia')),
+            title: Text(AppLocalization.getTranslatedValue('Settings')),
           ),
           body: Center(
               child: Column(
@@ -44,7 +44,7 @@ class Ustawienia extends StatelessWidget {
                             MaterialPageRoute(builder: (context) => const DrugaStrona()),
                           );
                         },
-                        child: Text(AppLocalization.getTranslatedValue('Motyw'), style: TextStyle(fontSize: 18.0)),
+                        child: Text(AppLocalization.getTranslatedValue('Motive'), style: TextStyle(fontSize: 18.0)),
                       ),
                     ),
                     const SizedBox(
@@ -61,7 +61,7 @@ class Ustawienia extends StatelessWidget {
                             MaterialPageRoute(builder: (context) => MyApp()),
                           );
                         },
-                        child: Text(AppLocalization.getTranslatedValue('Język'), style: TextStyle(fontSize: 18.0)),
+                        child: Text(AppLocalization.getTranslatedValue('Language'), style: TextStyle(fontSize: 18.0)),
                       ),
                     ),
                     const SizedBox (
