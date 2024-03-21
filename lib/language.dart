@@ -1,7 +1,5 @@
-
-
 class AppLocalization {
-  static String currentLanguage = 'en'; // Default language
+  static String currentLanguage = 'pl'; // Default language
 
   static String getTranslatedValue(String key) {
     // Map your keys to localized strings for each language
