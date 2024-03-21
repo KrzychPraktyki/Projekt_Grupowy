@@ -75,7 +75,6 @@ class Login extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const FirstRoute()),
                       );
                     } else {
-                      // Dodaj komunikat lub działanie, jeśli pola są puste
                       showDialog(
                         context: context,
                         builder: (BuildContext context) {
