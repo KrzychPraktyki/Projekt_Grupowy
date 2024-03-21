@@ -13,6 +13,7 @@ import 'MartynaLeman.dart';
 void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
+
     home: FirstRoute(),
 
     debugShowCheckedModeBanner: false,
@@ -31,7 +32,7 @@ class FirstRoute extends StatelessWidget {
         home:Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
-            leading: IconButton(
+            actions: [ IconButton(
               icon: Icon(Icons.logout),
               onPressed: () {
                 Navigator.push(
@@ -39,7 +40,7 @@ class FirstRoute extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Login()),
                 );
               },
-            ),
+            ),],
             title: Text(AppLocalization.getTranslatedValue('Strona Główna')),
           ),
           body: Center(
