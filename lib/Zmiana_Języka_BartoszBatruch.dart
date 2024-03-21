@@ -1,119 +1,112 @@
 import 'package:flutter/material.dart';
 import 'language.dart';
-import 'MartynaLeman.dart';
-
+import 'login.dart';
 
 void main() {
-  runApp(const ZmianaJezyka());
+  runApp(const MyApp());
 }
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-
-class ZmianaJezyka extends StatelessWidget {
-  const ZmianaJezyka({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: Themeslist().themeses[themeIndex],
-      home:Scaffold(
-      appBar: AppBar (
-
-        title: Text(AppLocalization.getTranslatedValue('Wybierz Język')),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
+      title: 'App',
+      theme: ThemeData(
+        useMaterial3: true,
       ),
-
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget> [
-          const SizedBox(
-            height: 20.0,
-          ),
-          Center(
-            child: Row (
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget> [
-                SizedBox(
-                  width: 300,
-                  height: 80,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      AppLocalization.changeLanguage('en');
-                    },
-                    child: const Text('English'),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          Center(
-            child: Row (
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget> [
-                SizedBox(
-                  width: 300,
-                  height: 80,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      AppLocalization.changeLanguage('pl');
-                    },
-                    child: const Text('Polish(Polski)'),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          Center (
-            child: Row (
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget> [
-                SizedBox(
-                  width: 300,
-                  height: 80,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      AppLocalization.changeLanguage('de');
-                    },
-                    child: const Text('German(Deutsch)'),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          Center (
-            child: Row (
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget> [
-                SizedBox(
-                  width: 300,
-                  height: 80,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      AppLocalization.changeLanguage('ru');
-                    },
-                    child: const Text('Russian(Русский)'),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    ),
+      home: const MyHomePage(title: 'Zmiana Języka'),
     );
   }
 }
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('$_counter', style: TextStyle(color: Colors.white)),
+              Container(
+                child: ElevatedButton(
+                  onPressed: () {
+                    AppLocalization.changeLanguage('en');
+                  },
+                  child: Text ('Logowanie'),
+                ),
+              ),
+              Container(
+                child: ElevatedButton(
+                  onPressed: () {
+                    AppLocalization.changeLanguage('pl');
+                  },
+                  child: Text ('Login'),
+                ),
+              ),
+              Container(
+                child: ElevatedButton(
+                  onPressed: () {
+                    AppLocalization.changeLanguage('de');
+                  },
+                  child: Text ('Niemiecki(Deutsch)'),
+                ),
+              ),
+              Container(
+                child: ElevatedButton(
+                  onPressed: () {
+                    AppLocalization.changeLanguage('ru');
+                  },
+                  child: Text ('Rosyjski()'),
+                ),
+              ),
+              Container(
+                child: ElevatedButton (
+                  onPressed: () {
+                    _incrementCounter;
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Login()),
+                    );
+                    onChange: () {
+                      _handleLanguageChanger(),
+                    };
+                  },
+                  child: Text(AppLocalization.getTranslatedValue('Zastosuj')),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+  void _handleLanguageChanger(int? value) {
+    setState(() {
+      themeIndex = value!;
+    });
+}
+
