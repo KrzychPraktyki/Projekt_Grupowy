@@ -1,26 +1,32 @@
 
 import 'package:flutter/material.dart';
 import 'language.dart';
+import 'MartynaLeman.dart';
 
 
 void main() {
-  runApp(ZmianaJezyka());
+  runApp(const ZmianaJezyka());
 }
 
 
 
 class ZmianaJezyka extends StatelessWidget {
-  const ZmianaJezyka({Key? key}) : super(key: key);
+  const ZmianaJezyka({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: Themeslist().themeses[themeIndex],
+      home:Scaffold(
       appBar: AppBar (
+
         title: Text(AppLocalization.getTranslatedValue('Wybierz Język')),
       ),
+
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget> [
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           Center(
@@ -34,13 +40,13 @@ class ZmianaJezyka extends StatelessWidget {
                     onPressed: () {
                       AppLocalization.changeLanguage('en');
                     },
-                    child: Text('English'),
+                    child: const Text('English'),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           Center(
@@ -54,13 +60,13 @@ class ZmianaJezyka extends StatelessWidget {
                     onPressed: () {
                       AppLocalization.changeLanguage('pl');
                     },
-                    child: Text('Polish(Polski)'),
+                    child: const Text('Polish(Polski)'),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           Center (
@@ -74,13 +80,13 @@ class ZmianaJezyka extends StatelessWidget {
                     onPressed: () {
                       AppLocalization.changeLanguage('de');
                     },
-                    child: Text('German(Deutsch)'),
+                    child: const Text('German(Deutsch)'),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           Center (
@@ -94,7 +100,7 @@ class ZmianaJezyka extends StatelessWidget {
                     onPressed: () {
                       AppLocalization.changeLanguage('ru');
                     },
-                    child: Text('Russian(Русский)'),
+                    child: const Text('Russian(Русский)'),
                   ),
                 ),
               ],
@@ -102,6 +108,7 @@ class ZmianaJezyka extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
