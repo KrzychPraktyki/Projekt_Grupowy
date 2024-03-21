@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/main.dart';
 import 'language.dart';
-import 'login.dart';
+
 
 
 class DrugaStrona extends StatefulWidget {
@@ -110,7 +111,7 @@ class _MyAppState extends State<DrugaStrona> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Login()),
+                      MaterialPageRoute(builder: (context) => const FirstRoute()),
                     );
                   },
                   child: Text(AppLocalization.getTranslatedValue('Zastosuj'), style: const TextStyle(fontSize: 18.0)),

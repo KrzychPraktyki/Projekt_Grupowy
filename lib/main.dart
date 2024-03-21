@@ -1,5 +1,6 @@
 ///    login.dart jest teraz plikiem głównym , który powinien być plikiem uruchamiającym
 import 'package:flutter/material.dart';
+import 'package:untitled/login.dart';
 import 'Danylo Kochurov.dart';
 import 'BartoszBatruch.dart';
 import 'KrzysztofGieresz.dart';
@@ -32,7 +33,10 @@ class FirstRoute extends StatelessWidget {
             leading: IconButton(
               icon: Icon(Icons.logout),
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
               },
             ),
             title: Text(AppLocalization.getTranslatedValue('Strona Główna')),

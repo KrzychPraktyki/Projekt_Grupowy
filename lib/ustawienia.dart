@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'MartynaLeman.dart';
+import 'language.dart';
 import 'Zmiana_Języka_BartoszBatruch.dart';
 
 
@@ -22,7 +23,7 @@ class Ustawienia extends StatelessWidget {
                 Navigator.of(context).pop();
               },
             ),
-            //title: const Text(AppLocalization.getTransaltedValue('Ustawienia')),
+            title: Text(AppLocalization.getTranslatedValue('Ustawienia')),
           ),
           body: Center(
               child: Column(
@@ -53,7 +54,7 @@ class Ustawienia extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const ZmianaJezyka()),
+                            MaterialPageRoute(builder: (context) => MyApp()),
                           );
                         },
                         child: const Text('Język'),

@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'language.dart';
 import 'login.dart';
 
-void main() {
-  runApp(const MyApp());
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,6 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
       ),
@@ -56,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     AppLocalization.changeLanguage('en');
                   },
-                  child: Text ('Logowanie'),
+                  child: Text('Logowanie'),
                 ),
               ),
               Container(
@@ -64,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     AppLocalization.changeLanguage('pl');
                   },
-                  child: Text ('Login'),
+                  child: Text('Login'),
                 ),
               ),
               Container(
@@ -72,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     AppLocalization.changeLanguage('de');
                   },
-                  child: Text ('Niemiecki(Deutsch)'),
+                  child: Text('Niemiecki(Deutsch)'),
                 ),
               ),
               Container(
@@ -80,20 +78,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     AppLocalization.changeLanguage('ru');
                   },
-                  child: Text ('Rosyjski()'),
+                  child: Text('Rosyjski()'),
                 ),
               ),
               Container(
-                child: ElevatedButton (
+                child: ElevatedButton(
                   onPressed: () {
                     _incrementCounter;
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const Login()),
                     );
-                    onChange: () {
-                      _handleLanguageChanger(),
-                    };
                   },
                   child: Text(AppLocalization.getTranslatedValue('Zastosuj')),
                 ),
@@ -104,9 +99,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-  void _handleLanguageChanger(int? value) {
-    setState(() {
-      themeIndex = value!;
-    });
 }
-
