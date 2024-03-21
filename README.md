@@ -6,6 +6,7 @@ probability_arturzaborowski.dart -> Artur Zaborowski </br>
    
 Zmiana_Języka_BartoszBatruch.dart -> Bartosz Batruch </br>
 BartoszBatruch.dart -> Bartosz Batruch </br>
+language.dart -> Bartosz Batruch </br>
 
 
 login.dart -> Krzysztof Gieresz </br>

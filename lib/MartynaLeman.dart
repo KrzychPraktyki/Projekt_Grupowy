@@ -35,8 +35,8 @@ class Themeslist{
     ),
     ThemeData(
         brightness: Brightness.dark,
-        primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.blue.shade900
+        primarySwatch: Colors.lightBlue,
+        scaffoldBackgroundColor: Colors.lightBlue.shade900
     ),
     ThemeData(
         brightness: Brightness.dark,

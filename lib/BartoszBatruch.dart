@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'language.dart';
-
+import 'MartynaLeman.dart';
 void main() {
   runApp(MaterialApp(
     title: 'Unit Converter',
-    theme: ThemeData(
-      primarySwatch: Colors.blue,
-    ),
+    debugShowCheckedModeBanner: false,
+    theme: Themeslist().themeses[themeIndex],
     home: CzwartaStrona(),
   ));
 }
@@ -38,8 +37,17 @@ class _UnitConverterState extends State<UnitConverter> {
   Widget build(BuildContext context) {
     final ButtonStyle style =
     ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 23));
-    return Scaffold(
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: Themeslist().themeses[themeIndex],
+        home:Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
         title: Text(
             AppLocalization.getTranslatedValue('Przelicznik jednostek')),
       ),
@@ -150,6 +158,7 @@ class _UnitConverterState extends State<UnitConverter> {
           ],
         ),
       ),
+        )
     );
   }
 
