@@ -122,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => const FirstRoute()),
                     );
                   },
-                  child: Text(AppLocalization.getTranslatedValue('Zastosuj')),
+                  child: Text(AppLocalization.getTranslatedValue('Zastosuj'), style: TextStyle(fontSize: 18.0)),
                 ),
               ),
             ],
