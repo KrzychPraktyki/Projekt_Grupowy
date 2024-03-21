@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'language.dart';
+import 'login.dart';
 
 
 class DrugaStrona extends StatefulWidget {
@@ -99,8 +101,26 @@ class _MyAppState extends State<DrugaStrona> {
                 groupValue: themeIndex,
                 onChanged: _handleThemeChange,
               ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              SizedBox(
+                width: 370,
+                height: 90,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Login()),
+                    );
+                  },
+                  child: Text(AppLocalization.getTranslatedValue('Zastosuj'), style: TextStyle(fontSize: 18.0)),
+                ),
+              ),
             ],
+
           ),
+
         ),
       ),
     );

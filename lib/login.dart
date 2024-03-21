@@ -10,7 +10,7 @@ void main() {
   runApp(MaterialApp(
     title: 'Navigation Basics',
     theme: Themeslist().themeses[themeIndex],
-    home: Login(),
+    home: const Login(),
     debugShowCheckedModeBanner: false,
   ));
 }
