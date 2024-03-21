@@ -23,7 +23,10 @@ class Login extends StatelessWidget {
     final ButtonStyle style = ElevatedButton.styleFrom(
       textStyle: const TextStyle(fontSize: 25),
     );
-    return Scaffold(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: Themeslist().themeses[themeIndex],
+    home:Scaffold(
       appBar: AppBar(
         title: Text(AppLocalization.getTranslatedValue('Logowanie')),
       ),
@@ -73,6 +76,7 @@ class Login extends StatelessWidget {
           ),
         ),
       ),
+    ),
     );
   }
 }
