@@ -27,6 +27,7 @@ class Login extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: Themeslist().themeses[themeIndex],
     home:Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text(AppLocalization.getTranslatedValue('Logowanie')),
       ),

@@ -48,6 +48,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
         debugShowCheckedModeBanner: false,
         theme: Themeslist().themeses[themeIndex],
         home:Scaffold(
+          resizeToAvoidBottomInset: false,
           appBar: AppBar(
             leading: IconButton(
               icon: Icon(Icons.arrow_back),

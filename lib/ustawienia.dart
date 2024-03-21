@@ -16,6 +16,7 @@ class Ustawienia extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: Themeslist().themeses[themeIndex],
         home:Scaffold(
+          resizeToAvoidBottomInset: false,
           appBar: AppBar(
             leading: IconButton(
               icon: Icon(Icons.arrow_back),

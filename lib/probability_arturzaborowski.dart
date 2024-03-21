@@ -21,6 +21,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
         debugShowCheckedModeBanner: false,
         theme: Themeslist().themeses[themeIndex],
         home:Scaffold(
+          resizeToAvoidBottomInset: false,
 
 
           appBar: AppBar(

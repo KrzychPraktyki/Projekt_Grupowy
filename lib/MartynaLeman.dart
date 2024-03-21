@@ -57,6 +57,7 @@ class _MyAppState extends State<DrugaStrona> {
       title: 'Motyw',
       theme: Themeslist().themeses[themeIndex],
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: const Text('Motyw'),
           leading: IconButton(onPressed:(){Navigator.of(context).pop();} ,icon: const Icon(Icons.arrow_back),),
