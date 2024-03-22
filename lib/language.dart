@@ -37,6 +37,12 @@ class AppLocalization {
         "Polish(Polski)" : 'Polish(Polski)',
         "German(Deutsch)" : 'German(Deutsch)',
         "Russian(Русский)" : 'Russian(Русский)',
+        "Light-blue Theme" : 'Light-blue Theme',
+        "Light-pink Theme" : 'Light-pink Theme',
+        "Light Theme" : 'Light Theme',
+        "Dark-purple Theme" : 'Dark-purple Theme',
+        "Dark-blue Theme" : 'Dark-blue Theme',
+        "Dark Theme" : 'Dark Theme',
       },
       'pl': {
         "Main Page"  : 'Strona Główna',
@@ -72,6 +78,12 @@ class AppLocalization {
         "Polish(Polski)" : 'Polski',
         "German(Deutsch)" : 'Niemiecki(Deutsch)',
         "Russian(Русский)" : 'Rosyjski(Русский)',
+        "Light-blue Theme" : 'Jasnoniebieski Motyw',
+        "Light-pink Theme" : 'Jasnoróżowy Motyw',
+        "Light Theme" : 'Jasny Motyw',
+        "Dark-purple Theme" : 'Ciemnofioletowy Motyw',
+        "Dark-blue Theme" : 'Ciemnoniebieski Motyw',
+        "Dark Theme" : 'Ciemny Motyw',
       },
       'de': {
         "Main Page"  : 'Heim',
@@ -107,6 +119,12 @@ class AppLocalization {
         "Polish(Polski)" : 'Polieren(Polski)',
         "German(Deutsch)" : 'Deutsch',
         "Russian(Русский)" : 'Russisch(Русский)',
+        "Light-blue Theme" : 'Hellblaues Motiv',
+        "Light-pink Theme" : 'Helles Motiv - Rosa',
+        "Light Theme" : 'Lichtthema',
+        "Dark-purple Theme" : 'Motiv Dunkelviolett',
+        "Dark-blue Theme" : 'Dunkelblaues Thema',
+        "Dark Theme" : 'Dunkles Motiv',
       },
       'ru' : {
         "Main Page"  : 'Дом',
@@ -142,6 +160,12 @@ class AppLocalization {
         "Polish(Polski)" : 'Польский(Polski)',
         "German(Deutsch)" : 'Немецкий(Deutsch)',
         "Russian(Русский)" : 'Русский',
+        "Light-blue Theme" : 'Светло-голубой мотив',
+        "Light-pink Theme" : 'Светло-розовый мотив',
+        "Light Theme" : 'Светлый мотив',
+        "Dark-purple Theme" : 'Темно-фиолетовый мотив',
+        "Dark-blue Theme" : 'Темно-синий мотив',
+        "Dark Theme" : 'Темная тема',
       }
     };
 
