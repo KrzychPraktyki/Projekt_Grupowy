@@ -31,6 +31,10 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Total Number of Possible Outcomes',
         "Calculate" : 'Calculate',
         "Result:" : 'Result:',
+        "English(English)" : 'English(English)',
+        "Polish(Polski)" : 'Polish(Polski)',
+        "German(Deutsch)" : 'German(Deutsch)',
+        "Russian(Русский)" : 'Russian(Русский)',
       },
       'pl': {
         "Main Page"  : 'Strona Główna',
@@ -59,6 +63,10 @@ class AppLocalization {
         "Total Number of Possible Outcomes"  : 'Liczba wszystkich możliwych zdarzeń',
         "Calculate"  : 'Oblicz',
         "Result:"  : 'Wynik:',
+        "English(English)" : 'Angielski(English)',
+        "Polish(Polish)" : 'Polski(Polski)',
+        "German(Deutsch)" : 'Niemiecki(Deutsch)',
+        "Russian(Русский)" : 'Rosyjski(Русский)',
       },
       'de': {
         "Main Page"  : 'Heim',
@@ -87,6 +95,10 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Gesamtzahl der möglichen Ereignisse',
         "Calculate"  : 'Berechnen',
         "Result:"  : 'Ergebnis:',
+        "English(English)" : 'Englisch(English)',
+        "Polish(Polish)" : 'Polieren(Polski)',
+        "German(Deutsch)" : 'Deutsch(Deutsch)',
+        "Russian(Русский)" : 'Russisch(Русский)',
       },
       'ru' : {
         "Main Page"  : 'Дом',
@@ -115,6 +127,10 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Общее количество возможных исходов',
         "Calculate"  : 'Рассчитать',
         "Result:"  : 'Результат:',
+        "English(English)" : 'Английский(English)',
+        "Polish(Polish)" : 'Польский(Polski)',
+        "German(Deutsch)" : 'Немецкий(Deutsch)',
+        "Russian(Русский)" : 'Русский(Русский)',
       }
     };
 
