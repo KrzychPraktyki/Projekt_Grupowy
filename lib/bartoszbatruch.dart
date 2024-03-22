@@ -52,7 +52,7 @@ class _UnitConverterState extends State<UnitConverter> {
           },
         ),
         title: Text(
-            AppLocalization.getTranslatedValue('Przelicznik jednostek')),
+            AppLocalization.getTranslatedValue('Unit Conventer')),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -86,7 +86,7 @@ class _UnitConverterState extends State<UnitConverter> {
                 });
               },
               decoration: InputDecoration(
-                  labelText: 'Wybierz jednostkę wejściową',
+                  labelText: AppLocalization.getTranslatedValue('Select Input Unit'),
                   labelStyle: TextStyle(fontSize: 25.0),
               ),
             ),
@@ -94,7 +94,7 @@ class _UnitConverterState extends State<UnitConverter> {
               controller: _inputController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                  labelText: 'Wpisz wartość',
+                  labelText: AppLocalization.getTranslatedValue('Enter a Value'),
                   labelStyle: TextStyle(fontSize: 20.0),
               ),
             ),
@@ -112,7 +112,7 @@ class _UnitConverterState extends State<UnitConverter> {
                 });
               },
               decoration: InputDecoration(
-                  labelText: 'Wybierz jednostkę wyjściową',
+                  labelText: AppLocalization.getTranslatedValue('Select Output Unit'),
                   labelStyle: TextStyle(fontSize: 25.0),
               ),
             ),
@@ -136,8 +136,7 @@ class _UnitConverterState extends State<UnitConverter> {
                             builder: (context) =>
                                 AlertDialog(
                                   title: Text(
-                                      AppLocalization.getTranslatedValue(
-                                          'Błąd')),
+                                      AppLocalization.getTranslatedValue('Error')),
                                   content: Text(e.toString()),
                                   actions: [
                                     TextButton(
@@ -145,8 +144,7 @@ class _UnitConverterState extends State<UnitConverter> {
                                         Navigator.of(context).pop();
                                       },
                                       child: Text(
-                                          AppLocalization.getTranslatedValue(
-                                              'OK')),
+                                          AppLocalization.getTranslatedValue('OK')),
                                     ),
                                   ],
                                 ),
@@ -154,7 +152,7 @@ class _UnitConverterState extends State<UnitConverter> {
                         }
                       },
                       child: Text(
-                          AppLocalization.getTranslatedValue('Konwertuj')),
+                          AppLocalization.getTranslatedValue('Convert')),
                     ),
                   ),
                 ),
