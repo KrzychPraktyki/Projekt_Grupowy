@@ -70,6 +70,7 @@ class _UnitConverterState extends State<UnitConverter> {
               onChanged: (String? newValue) {
                 setState(() {
                   _selectedInputUnit = newValue;
+                  _selectedOutputUnit = null;
                   if(distanceUnits.contains(newValue)){
                     _outputUnits = distanceUnits;
                     }
