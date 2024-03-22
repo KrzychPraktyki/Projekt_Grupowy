@@ -118,22 +118,22 @@ class _NumberConverterState extends State<NumberConverter> {
                 Navigator.of(context).pop();
               },
             ),
-            title: Text(AppLocalization.getTranslatedValue('Systemy Liczb')),
+            title: Text(AppLocalization.getTranslatedValue('Number Systems')),
           ),
           body: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                buildTextField(_binaryController, 'System Binarny'),
+                buildTextField(_binaryController, 'Binary System'),
                 SizedBox(height: 10),
-                buildTextField(_decimalController, 'System Decymalny'),
+                buildTextField(_decimalController, 'Decimal System'),
                 SizedBox(height: 10),
-                buildTextField(_hexController, 'System Szesnastkowy'),
+                buildTextField(_hexController, 'Hexadecimal System'),
                 SizedBox(height: 10),
-                buildTextField(_octalController, 'System Ósemkowy'),
+                buildTextField(_octalController, 'Octal System'),
                 SizedBox(height: 10),
-                buildTextField(_base20Controller, 'System Dwudziestkowy'),
+                buildTextField(_base20Controller, 'Base-20 System'),
               ],
             ),
           ),
