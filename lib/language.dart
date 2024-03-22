@@ -1,5 +1,5 @@
 class AppLocalization {
-  static String defaultLanguage = 'pl';
+  static String defaultLanguage = 'en';
 
   static String getTranslatedValue(String key) {
     Map<String, Map<String, String>> localizedStrings = {
@@ -20,6 +20,7 @@ class AppLocalization {
         "Apply" : 'Apply',
         "Name" : 'Name',
         "Add" : 'Add',
+        "Calorie" : 'Calorie',
         "All Calories" : 'All Calories',
         "Binary System" : 'Binary System',
         "Octal System" : 'Octal System',
@@ -30,8 +31,9 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Total Number of Possible Outcomes',
         "Calculate" : 'Calculate',
         "Result:" : 'Result:',
+        "Incorrect data" : 'Incorrect data',
         "Language Changer" : 'Language Changer',
-        "English(English)" : 'English(English)',
+        "English(English)" : 'English',
         "Polish(Polski)" : 'Polish(Polski)',
         "German(Deutsch)" : 'German(Deutsch)',
         "Russian(Русский)" : 'Russian(Русский)',
@@ -53,6 +55,7 @@ class AppLocalization {
         "Apply"  : 'Zastosuj',
         "Name"  : 'Nazwa',
         "Add"  : 'Dodaj',
+        "Calorie" : 'Kalorie',
         "All Calories"  : 'Wszystkie Kalorie',
         "Binary System"  : 'System Binarny',
         "Octal System"  : 'System Ósemkowy',
@@ -63,9 +66,10 @@ class AppLocalization {
         "Total Number of Possible Outcomes"  : 'Liczba wszystkich możliwych zdarzeń',
         "Calculate"  : 'Oblicz',
         "Result:"  : 'Wynik:',
+        "Incorrect data" : 'Nieprawidłowe dane',
         "Language Changer" : 'Zmiana Języka',
         "English(English)" : 'Angielski(English)',
-        "Polish(Polish)" : 'Polski(Polski)',
+        "Polish(Polski)" : 'Polski',
         "German(Deutsch)" : 'Niemiecki(Deutsch)',
         "Russian(Русский)" : 'Rosyjski(Русский)',
       },
@@ -86,6 +90,7 @@ class AppLocalization {
         "Apply"  : 'Anwenden',
         "Name"  : 'Name',
         "Add"  : 'Hinzufügen',
+        "Calorie" : 'Kalorien',
         "All Calories"  : 'Alle Kalorien',
         "Binary System"  : 'Binärsystem',
         "Octal System"  : 'Oktalsystem',
@@ -96,10 +101,11 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Gesamtzahl der möglichen Ereignisse',
         "Calculate"  : 'Berechnen',
         "Result:"  : 'Ergebnis:',
+        "Incorrect data" : 'Falsche Daten',
         "Language Changer" : 'Sprachwechsler',
         "English(English)" : 'Englisch(English)',
-        "Polish(Polish)" : 'Polieren(Polski)',
-        "German(Deutsch)" : 'Deutsch(Deutsch)',
+        "Polish(Polski)" : 'Polieren(Polski)',
+        "German(Deutsch)" : 'Deutsch',
         "Russian(Русский)" : 'Russisch(Русский)',
       },
       'ru' : {
@@ -119,6 +125,7 @@ class AppLocalization {
         "Apply"  : 'Применять',
         "Name"  : 'Имя',
         "Add"  : 'Добавлять',
+        "Calorie" : 'Калорийность',
         "All Calories"  : 'Все Калории',
         "Binary System"  : 'Бинарная Система',
         "Octal System" : 'Восьмеричная Cистема',
@@ -129,11 +136,12 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Общее количество возможных исходов',
         "Calculate"  : 'Рассчитать',
         "Result:"  : 'Результат:',
+        "Incorrect data" : 'Неверные данные',
         "Language Changer" : 'Смена Языка',
         "English(English)" : 'Английский(English)',
-        "Polish(Polish)" : 'Польский(Polski)',
+        "Polish(Polski)" : 'Польский(Polski)',
         "German(Deutsch)" : 'Немецкий(Deutsch)',
-        "Russian(Русский)" : 'Русский(Русский)',
+        "Russian(Русский)" : 'Русский',
       }
     };
 
