@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled/main.dart';
 import 'package:untitled/ustawienia.dart';
 import 'language.dart';
-import 'MartynaLeman.dart';
+import 'martynaleman.dart';
 
 
 class MyApp extends StatelessWidget {
