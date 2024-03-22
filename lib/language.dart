@@ -47,6 +47,7 @@ class AppLocalization {
         "Enter a Value" : 'Enter a Value',
         "Select Output Unit" : 'Select Output Unit',
         "Convert" : 'Convert',
+        "Error" : 'Error',
       },
       'pl': {
         "Main Page"  : 'Strona Główna',
@@ -92,6 +93,7 @@ class AppLocalization {
         "Enter a Value" : 'Wprowadź Wartość',
         "Select Output Unit" : 'Wybierz Jednostkę Wyjściową',
         "Convert" : 'Konwertuj',
+        "Error" : 'Błąd',
       },
       'de': {
         "Main Page"  : 'Heim',
@@ -137,6 +139,7 @@ class AppLocalization {
         "Enter a Value" : 'Geben Sie Einen Wert Ein',
         "Select Output Unit" : 'Wählen Sie die Ausgabeeinheit',
         "Convert" : 'Konvertieren',
+        "Error" : 'Fehler',
       },
       'ru' : {
         "Main Page"  : 'Дом',
@@ -182,6 +185,7 @@ class AppLocalization {
         "Enter a Value" : 'Введите Эначение',
         "Select Output Unit" : 'Выберите Выходной Блок',
         "Convert" : 'Конвертировать',
+        "Error" : 'Ошибка',
       }
     };
 
