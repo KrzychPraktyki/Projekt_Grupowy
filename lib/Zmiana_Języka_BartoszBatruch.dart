@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.push(
               context,
@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     AppLocalization.changeLanguage('en');
                   },
-                  child: Text(AppLocalization.getTranslatedValue('English(English)'), style: TextStyle(fontSize: 18.0)),
+                  child: Text(AppLocalization.getTranslatedValue('English(English)'), style: const TextStyle(fontSize: 18.0)),
                 ),
               ),
               const SizedBox(
@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     AppLocalization.changeLanguage('pl');
                   },
-                  child: Text(AppLocalization.getTranslatedValue('Polish(Polski)'), style: TextStyle(fontSize: 18.0)),
+                  child: Text(AppLocalization.getTranslatedValue('Polish(Polski)'), style: const TextStyle(fontSize: 18.0)),
                 ),
               ),
               const SizedBox(
@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     AppLocalization.changeLanguage('de');
                   },
-                  child: Text(AppLocalization.getTranslatedValue('German(Deutsch)'), style: TextStyle(fontSize: 18.0)),
+                  child: Text(AppLocalization.getTranslatedValue('German(Deutsch)'), style: const TextStyle(fontSize: 18.0)),
                 ),
               ),
               const SizedBox(
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     AppLocalization.changeLanguage('ru');
                   },
-                  child: Text(AppLocalization.getTranslatedValue('Russian(Русский)'), style: TextStyle(fontSize: 18.0)),
+                  child: Text(AppLocalization.getTranslatedValue('Russian(Русский)'), style: const TextStyle(fontSize: 18.0)),
                 ),
               ),
               const SizedBox(
@@ -122,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => const FirstRoute()),
                     );
                   },
-                  child: Text(AppLocalization.getTranslatedValue('Apply'), style: TextStyle(fontSize: 18.0)),
+                  child: Text(AppLocalization.getTranslatedValue('Apply'), style: const TextStyle(fontSize: 18.0)),
                 ),
               ),
             ],
