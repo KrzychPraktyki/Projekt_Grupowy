@@ -13,7 +13,6 @@ import 'MartynaLeman.dart';
 void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
-
     home: FirstRoute(),
 
     debugShowCheckedModeBanner: false,
@@ -32,7 +31,7 @@ class FirstRoute extends StatelessWidget {
         home:Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
-            actions: [ IconButton(
+            leading: IconButton(
               icon: Icon(Icons.logout),
               onPressed: () {
                 Navigator.push(
@@ -40,8 +39,8 @@ class FirstRoute extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Login()),
                 );
               },
-            ),],
-            title: Text(AppLocalization.getTranslatedValue('Strona Główna')),
+            ),
+            title: Text(AppLocalization.getTranslatedValue('Main Page')),
           ),
           body: Center(
               child: Column(
@@ -57,7 +56,7 @@ class FirstRoute extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => const Ustawienia()),
                         );
                       },
-                      child: Text(AppLocalization.getTranslatedValue('Ustawienia'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Settings'), style: TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -74,7 +73,7 @@ class FirstRoute extends StatelessWidget {
                         );
                       },
 
-                      child: Text(AppLocalization.getTranslatedValue('Menedżer zadań'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Task Manager'), style: TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -91,7 +90,7 @@ class FirstRoute extends StatelessWidget {
                         );
                       },
 
-                      child: Text(AppLocalization.getTranslatedValue('Systemy Liczb'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Number Systems'), style: TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -107,7 +106,7 @@ class FirstRoute extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => const CzwartaStrona()),
                         );
                       },
-                      child: Text(AppLocalization.getTranslatedValue('Przelicznik jednostek'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Unit converter'), style: TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -124,7 +123,7 @@ class FirstRoute extends StatelessWidget {
 
                         );
                       },
-                      child:Text(AppLocalization.getTranslatedValue('Kalkulator kalorii'), style: TextStyle(fontSize: 18.0)),
+                      child:Text(AppLocalization.getTranslatedValue('Calorie Calculator'), style: TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -141,7 +140,7 @@ class FirstRoute extends StatelessWidget {
 
                         );
                       },
-                      child: Text(AppLocalization.getTranslatedValue('Kalkulator prawdopodobieńśtwa'), style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center),
+                      child: Text(AppLocalization.getTranslatedValue('Propability Calculator'), style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center),
                     ),
                   ),
 
