@@ -87,8 +87,8 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                     Expanded(
                       child: TextField(
                         controller: _nameController,
-                        decoration: const InputDecoration(
-                          labelText: 'Name',
+                        decoration: InputDecoration(
+                          labelText: AppLocalization.getTranslatedValue('Name'),
                         ),
                       ),
                     ),
@@ -97,8 +97,8 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                       child: TextField(
                         controller: _caloriesController,
                         keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                          labelText: 'Calorie',
+                        decoration: InputDecoration(
+                          labelText: AppLocalization.getTranslatedValue('Calorie'),
                         ),
                       ),
                     ),
