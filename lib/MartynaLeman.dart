@@ -59,7 +59,7 @@ class _MyAppState extends State<DrugaStrona> {
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: const Text('Motyw'),
+          title: Text(AppLocalization.getTranslatedValue('Theme')),
           leading: IconButton(onPressed:(){Navigator.of(context).pop();} ,icon: const Icon(Icons.arrow_back),),
         ),
         body: Center(
@@ -67,37 +67,37 @@ class _MyAppState extends State<DrugaStrona> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               RadioListTile(
-                title: const Text('Motyw jasny-niebieski'),
+                title: Text(AppLocalization.getTranslatedValue('Light-blue Theme')),
                 value: 0,
                 groupValue: themeIndex,
                 onChanged: _handleThemeChange,
               ),
               RadioListTile(
-                title: const Text('Motyw jasny-różowy'),
+                title: Text(AppLocalization.getTranslatedValue('Light-pink Theme')),
                 value: 1,
                 groupValue: themeIndex,
                 onChanged: _handleThemeChange,
               ),
               RadioListTile(
-                title: const Text('Motyw jasny'),
+                title: Text(AppLocalization.getTranslatedValue('Light Theme')),
                 value: 2,
                 groupValue: themeIndex,
                 onChanged: _handleThemeChange,
               ),
               RadioListTile(
-                title: const Text('Motyw ciemny-fioletowy'),
+                title: Text(AppLocalization.getTranslatedValue('Dark-purple Theme')),
                 value: 3,
                 groupValue: themeIndex,
                 onChanged: _handleThemeChange,
               ),
               RadioListTile(
-                title: const Text('Motyw ciemny-niebieski'),
+                title: Text(AppLocalization.getTranslatedValue('Dark-blue Theme')),
                 value: 4,
                 groupValue: themeIndex,
                 onChanged: _handleThemeChange,
               ),
               RadioListTile(
-                title: const Text('Motyw ciemny'),
+                title: Text(AppLocalization.getTranslatedValue('Dark Theme')),
                 value: 5,
                 groupValue: themeIndex,
                 onChanged: _handleThemeChange,
@@ -115,7 +115,7 @@ class _MyAppState extends State<DrugaStrona> {
                       MaterialPageRoute(builder: (context) => const FirstRoute()),
                     );
                   },
-                  child: Text(AppLocalization.getTranslatedValue('Zastosuj'), style: const TextStyle(fontSize: 18.0)),
+                  child: Text(AppLocalization.getTranslatedValue(AppLocalization.getTranslatedValue('Apply')), style: TextStyle(fontSize: 18.0)),
                 ),
               ),
             ],
