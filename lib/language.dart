@@ -141,7 +141,7 @@ class AppLocalization {
     return localizedStrings[defaultLanguage]?[key] ?? key;
   }
 
-  static void defaultLanguage(String languageCode) {
+  static void changeLanguage(String languageCode) {
     // Change the current language
     defaultLanguage = languageCode;
   }
