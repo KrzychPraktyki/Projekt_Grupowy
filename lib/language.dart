@@ -1,10 +1,9 @@
 class AppLocalization {
-  static String currentLanguage = 'pl'; // Default language
+  static String defaultLanguage = 'pl';
 
   static String getTranslatedValue(String key) {
-    // Map your keys to localized strings for each language
     Map<String, Map<String, String>> localizedStrings = {
-      'en': {
+      'en': <String, String>{
         "MainPage" : 'Main Page',
         "Settings" : 'Settings',
         "Task Manager" : 'Task Manager',
@@ -31,6 +30,7 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Total Number of Possible Outcomes',
         "Calculate" : 'Calculate',
         "Result:" : 'Result:',
+        "Language Changer" : 'Language Changer',
         "English(English)" : 'English(English)',
         "Polish(Polski)" : 'Polish(Polski)',
         "German(Deutsch)" : 'German(Deutsch)',
@@ -63,6 +63,7 @@ class AppLocalization {
         "Total Number of Possible Outcomes"  : 'Liczba wszystkich możliwych zdarzeń',
         "Calculate"  : 'Oblicz',
         "Result:"  : 'Wynik:',
+        "Language Changer" : 'Zmiana Języka',
         "English(English)" : 'Angielski(English)',
         "Polish(Polish)" : 'Polski(Polski)',
         "German(Deutsch)" : 'Niemiecki(Deutsch)',
@@ -95,6 +96,7 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Gesamtzahl der möglichen Ereignisse',
         "Calculate"  : 'Berechnen',
         "Result:"  : 'Ergebnis:',
+        "Language Changer" : 'Sprachwechsler',
         "English(English)" : 'Englisch(English)',
         "Polish(Polish)" : 'Polieren(Polski)',
         "German(Deutsch)" : 'Deutsch(Deutsch)',
@@ -127,6 +129,7 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Общее количество возможных исходов',
         "Calculate"  : 'Рассчитать',
         "Result:"  : 'Результат:',
+        "Language Changer" : 'Смена Языка',
         "English(English)" : 'Английский(English)',
         "Polish(Polish)" : 'Польский(Polski)',
         "German(Deutsch)" : 'Немецкий(Deutsch)',
@@ -135,11 +138,11 @@ class AppLocalization {
     };
 
     // Return the translated value for the given key
-    return localizedStrings[currentLanguage]?[key] ?? key;
+    return localizedStrings[defaultLanguage]?[key] ?? key;
   }
 
-  static void changeLanguage(String languageCode) {
+  static void defaultLanguage(String languageCode) {
     // Change the current language
-    currentLanguage = languageCode;
+    defaultLanguage = languageCode;
   }
 }
