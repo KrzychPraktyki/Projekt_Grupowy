@@ -43,6 +43,10 @@ class AppLocalization {
         "Dark-purple Theme" : 'Dark-purple Theme',
         "Dark-blue Theme" : 'Dark-blue Theme',
         "Dark Theme" : 'Dark Theme',
+        "Select Input Unit" : 'Select Input Unit',
+        "Enter a Value" : 'Enter a Value',
+        "Select Output Unit" : 'Select Output Unit',
+        "Convert" : 'Convert',
       },
       'pl': {
         "Main Page"  : 'Strona Główna',
@@ -84,6 +88,10 @@ class AppLocalization {
         "Dark-purple Theme" : 'Ciemnofioletowy Motyw',
         "Dark-blue Theme" : 'Ciemnoniebieski Motyw',
         "Dark Theme" : 'Ciemny Motyw',
+        "Select Input Unit" : 'Wybierz Jednostkę Wejściową',
+        "Enter a Value" : 'Wprowadź Wartość',
+        "Select Output Unit" : 'Wybierz Jednostkę Wyjściową',
+        "Convert" : 'Konwertuj',
       },
       'de': {
         "Main Page"  : 'Heim',
@@ -125,6 +133,10 @@ class AppLocalization {
         "Dark-purple Theme" : 'Motiv Dunkelviolett',
         "Dark-blue Theme" : 'Dunkelblaues Thema',
         "Dark Theme" : 'Dunkles Motiv',
+        "Select Input Unit" : 'Wählen Sie Eingabeeinheit',
+        "Enter a Value" : 'Geben Sie Einen Wert Ein',
+        "Select Output Unit" : 'Wählen Sie die Ausgabeeinheit',
+        "Convert" : 'Konvertieren',
       },
       'ru' : {
         "Main Page"  : 'Дом',
@@ -166,6 +178,10 @@ class AppLocalization {
         "Dark-purple Theme" : 'Темно-фиолетовый мотив',
         "Dark-blue Theme" : 'Темно-синий мотив',
         "Dark Theme" : 'Темная тема',
+        "Select Input Unit" : 'Выберите Входной Блок',
+        "Enter a Value" : 'Введите Эначение',
+        "Select Output Unit" : 'Выберите Выходной Блок',
+        "Convert" : 'Конвертировать',
       }
     };
 
