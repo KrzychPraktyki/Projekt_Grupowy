@@ -29,7 +29,7 @@ class Login extends StatelessWidget {
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: Text(AppLocalization.getTranslatedValue('Logowanie')),
+          title: Text(AppLocalization.getTranslatedValue('Login')),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -42,7 +42,7 @@ class Login extends StatelessWidget {
                   child: TextField(
                     controller: _nameController,
                     decoration: InputDecoration(
-                      labelText: 'Nazwa Użytkownika',
+                      labelText: AppLocalization.getTranslatedValue('Username'),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
@@ -55,7 +55,7 @@ class Login extends StatelessWidget {
                   child: TextField(
                     controller: _passController,
                     decoration: InputDecoration(
-                      labelText: 'Hasło',
+                      labelText: AppLocalization.getTranslatedValue('Password'),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
@@ -79,8 +79,8 @@ class Login extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text('Błąd'),
-                            content: Text('Proszę wypełnić oba pola.'),
+                            title: Text(AppLocalization.getTranslatedValue('Error')),
+                            content: Text(AppLocalization.getTranslatedValue('Please fill in both fields.')),
                             actions: <Widget>[
                               TextButton(
                                 onPressed: () {
@@ -94,7 +94,7 @@ class Login extends StatelessWidget {
                       );
                     }
                   },
-                  child: Text(AppLocalization.getTranslatedValue('Zaloguj')),
+                  child: Text(AppLocalization.getTranslatedValue('Login')),
                 ),
               ],
             ),
