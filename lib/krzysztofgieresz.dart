@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'language.dart';
-import 'MartynaLeman.dart';
+import 'martynaleman.dart';
 
 class PiataStrona extends StatelessWidget {
   const PiataStrona({super.key});
@@ -17,7 +17,7 @@ class CalorieTracker extends StatefulWidget {
   const CalorieTracker({super.key});
 
   @override
-  _CalorieTrackerState createState() => _CalorieTrackerState();
+  State<CalorieTracker> createState() => _CalorieTrackerState();
 }
 
 class _CalorieTrackerState extends State<CalorieTracker> {
@@ -51,7 +51,7 @@ class _CalorieTrackerState extends State<CalorieTracker> {
 
           appBar: AppBar(
             leading: IconButton(
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -87,8 +87,8 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                     Expanded(
                       child: TextField(
                         controller: _nameController,
-                        decoration: const InputDecoration(
-                          labelText: 'Name',
+                        decoration: InputDecoration(
+                          labelText: AppLocalization.getTranslatedValue('Name'),
                         ),
                       ),
                     ),
@@ -97,8 +97,8 @@ class _CalorieTrackerState extends State<CalorieTracker> {
                       child: TextField(
                         controller: _caloriesController,
                         keyboardType: TextInputType.number,
-                        decoration: const InputDecoration(
-                          labelText: 'Calorie',
+                        decoration: InputDecoration(
+                          labelText: AppLocalization.getTranslatedValue('Calorie'),
                         ),
                       ),
                     ),

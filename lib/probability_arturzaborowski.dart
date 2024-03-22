@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'language.dart';
-import 'MartynaLeman.dart';
+import 'martynaleman.dart';
 
 class ProbabilityCalculator extends StatefulWidget {
-  const ProbabilityCalculator({Key? key}) : super(key: key);
+  const ProbabilityCalculator({super.key});
 
   @override
-  _ProbabilityCalculatorState createState() => _ProbabilityCalculatorState();
+  State<ProbabilityCalculator> createState() => _ProbabilityCalculatorState();
 }
 
 class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
@@ -26,12 +26,12 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
 
           appBar: AppBar(
             leading: IconButton(
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
-            title: Text(AppLocalization.getTranslatedValue('Kalkulator Prawdopodobieństwa')),
+            title: Text(AppLocalization.getTranslatedValue('Propability Calculator')),
           ),
           body: Padding(
             padding: const EdgeInsets.all(20.0),
@@ -42,7 +42,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
                   controller: eventController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: AppLocalization.getTranslatedValue('Liczba korzystnych zdarzeń'),
+                    labelText: AppLocalization.getTranslatedValue('Number of Favorable Outcomes'),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -53,7 +53,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
                   controller: sampleSpaceController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: AppLocalization.getTranslatedValue('Liczba wszystkich możliwych zdarzeń'),
+                    labelText: AppLocalization.getTranslatedValue('Total Number of Possible Outcomes'),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -64,22 +64,22 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
                   onPressed: () {
                     calculateProbability();
                   },
-                  child: Text(AppLocalization.getTranslatedValue('Oblicz')),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
+                  child: Text(AppLocalization.getTranslatedValue('Calculate')),
                 ),
                 const SizedBox(height: 20.0),
                 Text(
-                  AppLocalization.getTranslatedValue('Wynik'),
-                  style: TextStyle(fontSize: 18.0),
+                  AppLocalization.getTranslatedValue('Result:'),
+                  style: const TextStyle(fontSize: 18.0),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  ' ' + (result.isEmpty ? '' : '$result%'),
-                  style: TextStyle(fontSize: 24.0),
+                  ' ${result.isEmpty ? '' : '$result%'}',
+                  style: const TextStyle(fontSize: 24.0),
                 ),
               ],
             ),
@@ -103,7 +103,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
       });
     } else {
       setState(() {
-        result = AppLocalization.getTranslatedValue('Nieprawidłowe dane');
+        result = AppLocalization.getTranslatedValue('Incorrect data');
       });
     }
   }

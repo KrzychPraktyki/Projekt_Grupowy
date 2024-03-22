@@ -1,12 +1,13 @@
+import 'language.dart';
 import 'package:flutter/material.dart';
-import 'MartynaLeman.dart';
+import 'martynaleman.dart';
 
 
 class TaskManager extends StatefulWidget {
-  const TaskManager({Key? key}) : super(key: key);
+  const TaskManager({super.key});
 
   @override
-  _TaskManager createState() => _TaskManager();
+  State<TaskManager> createState() => _TaskManager();
 }
 
 class _TaskManager extends State<TaskManager> {
@@ -26,9 +27,9 @@ class _TaskManager extends State<TaskManager> {
         home:Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
-            title: const Text('Menadzer Zadan'),
+            title: Text(AppLocalization.getTranslatedValue('Task Manager')),
             leading: IconButton(
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -39,56 +40,56 @@ class _TaskManager extends State<TaskManager> {
               children: [
                 if (counter>0) Checkbox(value: isCheked1, onChanged: (newBool){
                   setState(() {isCheked1 = newBool;});}),
-                if (counter>0) SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
+                if (counter>0) const SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
               ],
             ),
             Row(
               children: [
                 if (counter>1) Checkbox(value: isCheked2, onChanged: (newBool){
                   setState(() {isCheked2 = newBool;});}),
-                if (counter>1) SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
+                if (counter>1) const SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
               ],
             ),
             Row(
               children: [
                 if (counter>2) Checkbox(value: isCheked3, onChanged: (newBool){
                   setState(() {isCheked3 = newBool;});}),
-                if (counter>2) SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
+                if (counter>2) const SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
               ],
             ),
             Row(
               children: [
                 if (counter>3) Checkbox(value: isCheked4, onChanged: (newBool){
                   setState(() {isCheked4 = newBool;});}),
-                if (counter>3) SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
+                if (counter>3) const SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
               ],
             ),
             Row(
               children: [
                 if (counter>4) Checkbox(value: isCheked5, onChanged: (newBool){
                   setState(() {isCheked5 = newBool;});}),
-                if (counter>4) SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
+                if (counter>4) const SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
               ],
             ),
             Row(
               children: [
                 if (counter>5) Checkbox(value: isCheked6, onChanged: (newBool){
                   setState(() {isCheked6 = newBool;});}),
-                if (counter>5) SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
+                if (counter>5) const SizedBox(height: 100,width: 300,child: TextField(style: TextStyle(fontSize: 34),),),
               ],
             ),
 
           ],),
           floatingActionButton:Row(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.center,children: [
-            SizedBox(width: 35,),
+            const SizedBox(width: 35,),
             FloatingActionButton(
-              onPressed: (){setState((){if(counter==0){null;} else{counter--;};print(counter);});}, child: Icon(Icons.remove),),
-            SizedBox(width: 10,),
+              onPressed: (){setState((){if(counter==0){null;} else{counter--;}});}, child: const Icon(Icons.remove),),
+            const SizedBox(width: 10,),
             FloatingActionButton(
-              onPressed: (){setState((){counter=0;print(counter);});}, child: Icon(Icons.restart_alt),),
-            SizedBox(width: 10,),
+              onPressed: (){setState((){counter=0;});}, child: const Icon(Icons.restart_alt),),
+            const SizedBox(width: 10,),
             FloatingActionButton(
-              onPressed: (){setState((){counter++;print(counter);});}, child: Icon(Icons.add),),
+              onPressed: (){setState((){counter++;});}, child: const Icon(Icons.add),),
           ],),
         )
     );

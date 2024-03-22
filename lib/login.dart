@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/main.dart';
 import 'language.dart';
-import 'MartynaLeman.dart';
+import 'martynaleman.dart';
 
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _passController = TextEditingController();
@@ -16,7 +16,7 @@ void main() {
 }
 
 class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class Login extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: TextField(
@@ -62,7 +62,7 @@ class Login extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 35,),
+                const SizedBox(height: 35,),
                 ElevatedButton(
                   style: style,
                   onPressed: () {
@@ -86,7 +86,7 @@ class Login extends StatelessWidget {
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                                child: Text('OK'),
+                                child: const Text('OK'),
                               ),
                             ],
                           );

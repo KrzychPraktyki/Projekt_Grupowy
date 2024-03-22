@@ -1,10 +1,9 @@
 class AppLocalization {
-  static String currentLanguage = 'pl'; // Default language
+  static String defaultLanguage = 'en';
 
   static String getTranslatedValue(String key) {
-    // Map your keys to localized strings for each language
     Map<String, Map<String, String>> localizedStrings = {
-      'en': {
+      'en': <String, String>{
         "MainPage" : 'Main Page',
         "Settings" : 'Settings',
         "Task Manager" : 'Task Manager',
@@ -21,6 +20,7 @@ class AppLocalization {
         "Apply" : 'Apply',
         "Name" : 'Name',
         "Add" : 'Add',
+        "Calorie" : 'Calorie',
         "All Calories" : 'All Calories',
         "Binary System" : 'Binary System',
         "Octal System" : 'Octal System',
@@ -31,6 +31,18 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Total Number of Possible Outcomes',
         "Calculate" : 'Calculate',
         "Result:" : 'Result:',
+        "Incorrect data" : 'Incorrect data',
+        "Language Changer" : 'Language Changer',
+        "English(English)" : 'English',
+        "Polish(Polski)" : 'Polish(Polski)',
+        "German(Deutsch)" : 'German(Deutsch)',
+        "Russian(Русский)" : 'Russian(Русский)',
+        "Light-blue Theme" : 'Light-blue Theme',
+        "Light-pink Theme" : 'Light-pink Theme',
+        "Light Theme" : 'Light Theme',
+        "Dark-purple Theme" : 'Dark-purple Theme',
+        "Dark-blue Theme" : 'Dark-blue Theme',
+        "Dark Theme" : 'Dark Theme',
       },
       'pl': {
         "Main Page"  : 'Strona Główna',
@@ -49,6 +61,7 @@ class AppLocalization {
         "Apply"  : 'Zastosuj',
         "Name"  : 'Nazwa',
         "Add"  : 'Dodaj',
+        "Calorie" : 'Kalorie',
         "All Calories"  : 'Wszystkie Kalorie',
         "Binary System"  : 'System Binarny',
         "Octal System"  : 'System Ósemkowy',
@@ -59,6 +72,18 @@ class AppLocalization {
         "Total Number of Possible Outcomes"  : 'Liczba wszystkich możliwych zdarzeń',
         "Calculate"  : 'Oblicz',
         "Result:"  : 'Wynik:',
+        "Incorrect data" : 'Nieprawidłowe dane',
+        "Language Changer" : 'Zmiana Języka',
+        "English(English)" : 'Angielski(English)',
+        "Polish(Polski)" : 'Polski',
+        "German(Deutsch)" : 'Niemiecki(Deutsch)',
+        "Russian(Русский)" : 'Rosyjski(Русский)',
+        "Light-blue Theme" : 'Jasnoniebieski Motyw',
+        "Light-pink Theme" : 'Jasnoróżowy Motyw',
+        "Light Theme" : 'Jasny Motyw',
+        "Dark-purple Theme" : 'Ciemnofioletowy Motyw',
+        "Dark-blue Theme" : 'Ciemnoniebieski Motyw',
+        "Dark Theme" : 'Ciemny Motyw',
       },
       'de': {
         "Main Page"  : 'Heim',
@@ -77,6 +102,7 @@ class AppLocalization {
         "Apply"  : 'Anwenden',
         "Name"  : 'Name',
         "Add"  : 'Hinzufügen',
+        "Calorie" : 'Kalorien',
         "All Calories"  : 'Alle Kalorien',
         "Binary System"  : 'Binärsystem',
         "Octal System"  : 'Oktalsystem',
@@ -87,6 +113,18 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Gesamtzahl der möglichen Ereignisse',
         "Calculate"  : 'Berechnen',
         "Result:"  : 'Ergebnis:',
+        "Incorrect data" : 'Falsche Daten',
+        "Language Changer" : 'Sprachwechsler',
+        "English(English)" : 'Englisch(English)',
+        "Polish(Polski)" : 'Polieren(Polski)',
+        "German(Deutsch)" : 'Deutsch',
+        "Russian(Русский)" : 'Russisch(Русский)',
+        "Light-blue Theme" : 'Hellblaues Motiv',
+        "Light-pink Theme" : 'Helles Motiv - Rosa',
+        "Light Theme" : 'Lichtthema',
+        "Dark-purple Theme" : 'Motiv Dunkelviolett',
+        "Dark-blue Theme" : 'Dunkelblaues Thema',
+        "Dark Theme" : 'Dunkles Motiv',
       },
       'ru' : {
         "Main Page"  : 'Дом',
@@ -105,6 +143,7 @@ class AppLocalization {
         "Apply"  : 'Применять',
         "Name"  : 'Имя',
         "Add"  : 'Добавлять',
+        "Calorie" : 'Калорийность',
         "All Calories"  : 'Все Калории',
         "Binary System"  : 'Бинарная Система',
         "Octal System" : 'Восьмеричная Cистема',
@@ -115,15 +154,27 @@ class AppLocalization {
         "Total Number of Possible Outcomes" : 'Общее количество возможных исходов',
         "Calculate"  : 'Рассчитать',
         "Result:"  : 'Результат:',
+        "Incorrect data" : 'Неверные данные',
+        "Language Changer" : 'Смена Языка',
+        "English(English)" : 'Английский(English)',
+        "Polish(Polski)" : 'Польский(Polski)',
+        "German(Deutsch)" : 'Немецкий(Deutsch)',
+        "Russian(Русский)" : 'Русский',
+        "Light-blue Theme" : 'Светло-голубой мотив',
+        "Light-pink Theme" : 'Светло-розовый мотив',
+        "Light Theme" : 'Светлый мотив',
+        "Dark-purple Theme" : 'Темно-фиолетовый мотив',
+        "Dark-blue Theme" : 'Темно-синий мотив',
+        "Dark Theme" : 'Темная тема',
       }
     };
 
     // Return the translated value for the given key
-    return localizedStrings[currentLanguage]?[key] ?? key;
+    return localizedStrings[defaultLanguage]?[key] ?? key;
   }
 
   static void changeLanguage(String languageCode) {
     // Change the current language
-    currentLanguage = languageCode;
+    defaultLanguage = languageCode;
   }
 }

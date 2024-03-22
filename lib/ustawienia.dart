@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'MartynaLeman.dart';
+import 'martynaleman.dart';
 import 'language.dart';
-import 'Zmiana_Języka_BartoszBatruch.dart';
+import 'zmiana_jezyka_bartoszbatruch.dart';
 import 'main.dart';
 
 class Ustawienia extends StatelessWidget {
@@ -19,7 +19,7 @@ class Ustawienia extends StatelessWidget {
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
             leading: IconButton(
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -44,7 +44,7 @@ class Ustawienia extends StatelessWidget {
                             MaterialPageRoute(builder: (context) => const DrugaStrona()),
                           );
                         },
-                        child: Text(AppLocalization.getTranslatedValue('Motive'), style: TextStyle(fontSize: 18.0)),
+                        child: Text(AppLocalization.getTranslatedValue('Theme'), style: const TextStyle(fontSize: 18.0)),
                       ),
                     ),
                     const SizedBox(
@@ -58,10 +58,10 @@ class Ustawienia extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => MyApp()),
+                            MaterialPageRoute(builder: (context) => const MyApp()),
                           );
                         },
-                        child: Text(AppLocalization.getTranslatedValue('Language'), style: TextStyle(fontSize: 18.0)),
+                        child: Text(AppLocalization.getTranslatedValue('Language'), style: const TextStyle(fontSize: 18.0)),
                       ),
                     ),
                     const SizedBox (

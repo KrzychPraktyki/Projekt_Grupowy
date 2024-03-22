@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'language.dart';
 import 'MartynaLeman.dart';
@@ -7,22 +6,24 @@ void main() {
     title: 'Unit Converter',
     debugShowCheckedModeBanner: false,
     theme: Themeslist().themeses[themeIndex],
-    home: CzwartaStrona(),
+    home: const CzwartaStrona(),
   ));
 }
 
 class CzwartaStrona extends StatelessWidget {
-  const CzwartaStrona({Key? key});
+  const CzwartaStrona({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return UnitConverter();
+    return const UnitConverter();
   }
 }
 
 class UnitConverter extends StatefulWidget {
+  const UnitConverter({super.key});
+
   @override
-  _UnitConverterState createState() => _UnitConverterState();
+  State<UnitConverter> createState() => _UnitConverterState();
 }
 
 class _UnitConverterState extends State<UnitConverter> {
@@ -30,8 +31,8 @@ class _UnitConverterState extends State<UnitConverter> {
   double? _result;
   String? _selectedInputUnit;
   String? _selectedOutputUnit;
-  List<String> _inputUnits = [];
-  List<String> _outputUnits = [];
+  final List<String> _inputUnits = [];
+  final List<String> _outputUnits = [];
 
   @override
   Widget build(BuildContext context) {
@@ -41,123 +42,123 @@ class _UnitConverterState extends State<UnitConverter> {
         debugShowCheckedModeBanner: false,
         theme: Themeslist().themeses[themeIndex],
         home:Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-        title: Text(
-            AppLocalization.getTranslatedValue('Przelicznik jednostek')),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DropdownButtonFormField<String>(
-              value: _selectedInputUnit,
-              items: _inputUnits.map((unit) {
-                return DropdownMenuItem<String>(
-                  value: unit,
-                  child: Text(unit, style: TextStyle(fontSize: 20.0)),
-                );
-              }).toList(),
-              onChanged: (String? newValue) {
-                setState(() {
-                  _selectedInputUnit = newValue;
-                });
+          appBar: AppBar(
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.of(context).pop();
               },
-              decoration: InputDecoration(
-                  labelText: 'Wybierz jednostkę wejściową',
-                  labelStyle: TextStyle(fontSize: 25.0),
-              ),
             ),
-            TextField(
-              controller: _inputController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                  labelText: 'Wpisz wartość',
-                  labelStyle: TextStyle(fontSize: 20.0),
-              ),
-            ),
-            DropdownButtonFormField<String>(
-              value: _selectedOutputUnit,
-              items: _outputUnits.map((unit) {
-                return DropdownMenuItem<String>(
-                  value: unit,
-                  child: Text(unit, style: TextStyle(fontSize: 20.0)),
-                );
-              }).toList(),
-              onChanged: (String? newValue) {
-                setState(() {
-                  _selectedOutputUnit = newValue;
-                });
-              },
-              decoration: InputDecoration(
-                  labelText: 'Wybierz jednostkę wyjściową',
-                  labelStyle: TextStyle(fontSize: 25.0),
-              ),
-            ),
-            Column(
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.all(30.0),
-                  child: Center(
-                    child: ElevatedButton(
-                      style: style,
-                      onPressed: () {
-                        try {
-                          setState(() {
-                            _result = convert(
-                                _inputController.text, _selectedInputUnit!,
-                                _selectedOutputUnit!);
-                          });
-                        } catch (e) {
-                          showDialog(
-                            context: context,
-                            builder: (context) =>
-                                AlertDialog(
-                                  title: Text(
-                                      AppLocalization.getTranslatedValue(
-                                          'Błąd')),
-                                  content: Text(e.toString()),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: Text(
-                                          AppLocalization.getTranslatedValue(
-                                              'OK')),
-                                    ),
-                                  ],
-                                ),
-                          );
-                        }
-                      },
-                      child: Text(
-                          AppLocalization.getTranslatedValue('Konwertuj')),
-                    ),
+            title: Text(
+                AppLocalization.getTranslatedValue('Unit Converter')),
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                DropdownButtonFormField<String>(
+                  value: _selectedInputUnit,
+                  items: _inputUnits.map((unit) {
+                    return DropdownMenuItem<String>(
+                      value: unit,
+                      child: Text(unit, style: const TextStyle(fontSize: 20.0)),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      _selectedInputUnit = newValue;
+                    });
+                  },
+                  decoration: const InputDecoration(
+                    labelText: 'Wybierz jednostkę wejściową',
+                    labelStyle: TextStyle(fontSize: 25.0),
                   ),
                 ),
+                TextField(
+                  controller: _inputController,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    labelText: 'Wpisz wartość',
+                    labelStyle: TextStyle(fontSize: 20.0),
+                  ),
+                ),
+                DropdownButtonFormField<String>(
+                  value: _selectedOutputUnit,
+                  items: _outputUnits.map((unit) {
+                    return DropdownMenuItem<String>(
+                      value: unit,
+                      child: Text(unit, style: const TextStyle(fontSize: 20.0)),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      _selectedOutputUnit = newValue;
+                    });
+                  },
+                  decoration: const InputDecoration(
+                    labelText: 'Wybierz jednostkę wyjściową',
+                    labelStyle: TextStyle(fontSize: 25.0),
+                  ),
+                ),
+                Column(
+                  children: <Widget>[
+                    Container(
+                      margin: const EdgeInsets.all(30.0),
+                      child: Center(
+                        child: ElevatedButton(
+                          style: style,
+                          onPressed: () {
+                            try {
+                              setState(() {
+                                _result = convert(
+                                    _inputController.text, _selectedInputUnit!,
+                                    _selectedOutputUnit!);
+                              });
+                            } catch (e) {
+                              showDialog(
+                                context: context,
+                                builder: (context) =>
+                                    AlertDialog(
+                                      title: Text(
+                                          AppLocalization.getTranslatedValue(
+                                              'Błąd')),
+                                      content: Text(e.toString()),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text(
+                                              AppLocalization.getTranslatedValue(
+                                                  'OK')),
+                                        ),
+                                      ],
+                                    ),
+                              );
+                            }
+                          },
+                          child: Text(
+                              AppLocalization.getTranslatedValue('Konwertuj')),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+
+                if (_result != null)
+                  Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.deepPurple)),
+                    child: Center(
+                      child: Text(
+                          'Result: $_result', style: (const TextStyle(fontSize: 30.0))),
+                    ),
+                  ),
               ],
             ),
-            SizedBox(height: 20),
-
-            if (_result != null)
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.deepPurple)),
-                child: Center(
-                    child: Text(
-                        'Result: $_result', style: (TextStyle(fontSize: 30.0))),
-                ),
-              ),
-          ],
-        ),
-      ),
+          ),
         )
     );
   }

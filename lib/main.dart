@@ -1,18 +1,20 @@
 ///    login.dart jest teraz plikiem głównym , który powinien być plikiem uruchamiającym
+library;
 import 'package:flutter/material.dart';
 import 'package:untitled/login.dart';
-import 'Danylo Kochurov.dart';
-import 'BartoszBatruch.dart';
-import 'KrzysztofGieresz.dart';
+import 'danylo_kochurov.dart';
+import 'bartoszbatruch.dart';
+import 'krzysztofgieresz.dart';
 import 'ustawienia.dart';
-import 'systemyliczb_ArturZaborowski.dart';
+import 'systemyliczb_arturzaborowski.dart';
 import 'probability_arturzaborowski.dart';
 import 'language.dart';
-import 'MartynaLeman.dart';
+import 'martynaleman.dart';
 
 void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
+
     home: FirstRoute(),
 
     debugShowCheckedModeBanner: false,
@@ -31,15 +33,15 @@ class FirstRoute extends StatelessWidget {
         home:Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(Icons.logout),
+            actions: [ IconButton(
+              icon: const Icon(Icons.logout),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Login()),
+                  MaterialPageRoute(builder: (context) => const Login()),
                 );
               },
-            ),
+            ),],
             title: Text(AppLocalization.getTranslatedValue('Main Page')),
           ),
           body: Center(
@@ -56,7 +58,7 @@ class FirstRoute extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => const Ustawienia()),
                         );
                       },
-                      child: Text(AppLocalization.getTranslatedValue('Settings'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Settings'), style: const TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -73,7 +75,7 @@ class FirstRoute extends StatelessWidget {
                         );
                       },
 
-                      child: Text(AppLocalization.getTranslatedValue('Task Manager'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Task Manager'), style: const TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -86,11 +88,11 @@ class FirstRoute extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => NumberConverter()),
+                          MaterialPageRoute(builder: (context) => const NumberConverter()),
                         );
                       },
 
-                      child: Text(AppLocalization.getTranslatedValue('Number Systems'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Number Systems'), style: const TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -106,7 +108,7 @@ class FirstRoute extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => const CzwartaStrona()),
                         );
                       },
-                      child: Text(AppLocalization.getTranslatedValue('Unit converter'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Unit Conventer'), style: const TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -123,7 +125,7 @@ class FirstRoute extends StatelessWidget {
 
                         );
                       },
-                      child:Text(AppLocalization.getTranslatedValue('Calorie Calculator'), style: TextStyle(fontSize: 18.0)),
+                      child:Text(AppLocalization.getTranslatedValue('Calorie Calculator'), style: const TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -140,7 +142,7 @@ class FirstRoute extends StatelessWidget {
 
                         );
                       },
-                      child: Text(AppLocalization.getTranslatedValue('Propability Calculator'), style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center),
+                      child: Text(AppLocalization.getTranslatedValue('Propability Calculator'), style: const TextStyle(fontSize: 18.0),textAlign: TextAlign.center),
                     ),
                   ),
 

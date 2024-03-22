@@ -1,11 +1,14 @@
+
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'language.dart';
-import 'MartynaLeman.dart';
+import 'martynaleman.dart';
 
 class NumberConverter extends StatefulWidget {
+  const NumberConverter({super.key});
+
   @override
-  _NumberConverterState createState() => _NumberConverterState();
+  State<NumberConverter> createState() => _NumberConverterState();
 }
 
 class _NumberConverterState extends State<NumberConverter> {
@@ -113,27 +116,27 @@ class _NumberConverterState extends State<NumberConverter> {
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
             leading: IconButton(
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
-            title: Text(AppLocalization.getTranslatedValue('Systemy Liczb')),
+            title: Text(AppLocalization.getTranslatedValue('Number Systems')),
           ),
           body: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                buildTextField(_binaryController, 'System Binarny'),
-                SizedBox(height: 10),
-                buildTextField(_decimalController, 'System Decymalny'),
-                SizedBox(height: 10),
-                buildTextField(_hexController, 'System Szesnastkowy'),
-                SizedBox(height: 10),
-                buildTextField(_octalController, 'System Ósemkowy'),
-                SizedBox(height: 10),
-                buildTextField(_base20Controller, 'System Dwudziestkowy'),
+                buildTextField(_binaryController, 'Binary System'),
+                const SizedBox(height: 10),
+                buildTextField(_decimalController, 'Decimal System'),
+                const SizedBox(height: 10),
+                buildTextField(_hexController, 'Hexadecimal System'),
+                const SizedBox(height: 10),
+                buildTextField(_octalController, 'Octal System'),
+                const SizedBox(height: 10),
+                buildTextField(_base20Controller, 'Base-20 System'),
               ],
             ),
           ),
@@ -149,7 +152,7 @@ class _NumberConverterState extends State<NumberConverter> {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
-        contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
+        contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
       ),
       keyboardType: TextInputType.text,
       onChanged: (value) {
