@@ -31,7 +31,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
                 Navigator.of(context).pop();
               },
             ),
-            title: Text(AppLocalization.getTranslatedValue('Kalkulator Prawdopodobieństwa')),
+            title: Text(AppLocalization.getTranslatedValue('Propability Calculator')),
           ),
           body: Padding(
             padding: const EdgeInsets.all(20.0),
@@ -42,7 +42,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
                   controller: eventController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: AppLocalization.getTranslatedValue('Liczba korzystnych zdarzeń'),
+                    labelText: AppLocalization.getTranslatedValue('Number of Favorable Outcomes'),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -53,7 +53,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
                   controller: sampleSpaceController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: AppLocalization.getTranslatedValue('Liczba wszystkich możliwych zdarzeń'),
+                    labelText: AppLocalization.getTranslatedValue('Total Number of Possible Outcomes'),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -64,7 +64,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
                   onPressed: () {
                     calculateProbability();
                   },
-                  child: Text(AppLocalization.getTranslatedValue('Oblicz')),
+                  child: Text(AppLocalization.getTranslatedValue('Calculate')),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
@@ -73,7 +73,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
                 ),
                 const SizedBox(height: 20.0),
                 Text(
-                  AppLocalization.getTranslatedValue('Wynik'),
+                  AppLocalization.getTranslatedValue('Result:'),
                   style: TextStyle(fontSize: 18.0),
                 ),
                 SizedBox(height: 8),
@@ -103,7 +103,7 @@ class _ProbabilityCalculatorState extends State<ProbabilityCalculator> {
       });
     } else {
       setState(() {
-        result = AppLocalization.getTranslatedValue('Nieprawidłowe dane');
+        result = AppLocalization.getTranslatedValue('Incorrect data');
       });
     }
   }
