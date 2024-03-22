@@ -106,7 +106,7 @@ class FirstRoute extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => const CzwartaStrona()),
                         );
                       },
-                      child: Text(AppLocalization.getTranslatedValue('Przelicznik jednostek'), style: TextStyle(fontSize: 18.0)),
+                      child: Text(AppLocalization.getTranslatedValue('Unit converter'), style: TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -123,7 +123,7 @@ class FirstRoute extends StatelessWidget {
 
                         );
                       },
-                      child:Text(AppLocalization.getTranslatedValue('Kalkulator kalorii'), style: TextStyle(fontSize: 18.0)),
+                      child:Text(AppLocalization.getTranslatedValue('Calorie Calculator'), style: TextStyle(fontSize: 18.0)),
                     ),
                   ),
                   const SizedBox(
@@ -140,7 +140,7 @@ class FirstRoute extends StatelessWidget {
 
                         );
                       },
-                      child: Text(AppLocalization.getTranslatedValue('Kalkulator prawdopodobieńśtwa'), style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center),
+                      child: Text(AppLocalization.getTranslatedValue('Propability Calculator'), style: TextStyle(fontSize: 18.0),textAlign: TextAlign.center),
                     ),
                   ),
 
