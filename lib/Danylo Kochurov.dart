@@ -1,3 +1,4 @@
+import 'language.dart';
 import 'package:flutter/material.dart';
 import 'MartynaLeman.dart';
 
@@ -26,7 +27,7 @@ class _TaskManager extends State<TaskManager> {
         home:Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
-            title: const Text('Menadzer Zadan'),
+            title: Text(AppLocalization.getTranslatedValue('Task Manager')),
             leading: IconButton(
               icon: Icon(Icons.arrow_back),
               onPressed: () {
